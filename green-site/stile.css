@@ -151,8 +151,8 @@ color: #737373;
 .yy li{
 	display: inline-block;
 	}
-	.rq{font-size: 12px;
-	padding-top: 8px;
+.rq {
+	font-size: 12px;
 	float:right;
 	color: #f9f9f9;
 }
@@ -321,9 +321,6 @@ h3{
 .tool-item:hover .tool-description{
   top: 0;
 }
-
-
-
           /*CONTACT*/
 .content2 {
 min-height: 500px;
@@ -338,7 +335,6 @@ background-color: #ecf0f1;
     font-weight: 400;
     width: 620px;
     margin-bottom: 55px;
-  /*  margin-top: 55px;*/
 }
 .content2 p{
 	width: 635px;
@@ -349,20 +345,20 @@ background-color: #ecf0f1;
  #google-map {
         height:300px;
         width:620px;
-    }
-    .gm-style-iw * {
+}
+.gm-style-iw * {
         display: block;
         width: 100%;
-    }
-    .gm-style-iw h4, .gm-style-iw p {
+}
+.gm-style-iw h4, .gm-style-iw p {
         margin: 0;
         padding: 0;
-    }
-    .gm-style-iw a {
+}
+.gm-style-iw a {
         color: #4272db;
-    }
+}
 
-    .sidebarL {
+.sidebarL {
 float: left;
 }
 .form input, textarea {
@@ -413,4 +409,10 @@ padding-left: 30px;
 line-height: 1.5;
 font-size: 16px;
 padding-bottom: 55px;
+}
+.navigation li .active {
+	color: #000;
+}
+.rq a {
+	color: #CD4;
 }
