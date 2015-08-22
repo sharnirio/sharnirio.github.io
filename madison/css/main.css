@@ -10,7 +10,6 @@ a {
 .wrapper {
   width: 1000px;
   color: #6b3b25;
-  /*overflow: hidden;*/
   background: #E0DBD4; 
   padding-bottom: 70px;
   margin: 28px auto 0 auto;
@@ -34,7 +33,7 @@ a {
 .icons {
   margin: 0;
   float: right;
-  padding: 60px 32px;
+  padding: 60px 32px 0 32px;
 }
 
 .icons a {
@@ -47,9 +46,12 @@ a {
 
 .icons li {
   margin-left: 9px;
-  display: inline-block;
+  display: inline;
 }
-
+ .activ {
+  background: #6A473A;
+  border-bottom: 4px solid;
+}
 .icon-lastfm {
   background: #9f8461;
   background: -moz-linear-gradient(top, #9f8461 0%, #b49e83 3%, #aa9273 5%, #a28766 25%, #a28766 68%, #957b5a 98%, #6f5c43 100%);
@@ -110,6 +112,7 @@ a {
 \*------------------------------------*/
 
 #nav {
+  width: 1000px;
   height: 65px; 
   font-size: 14px;
   background: url(../img/menu.png) repeat-x;
@@ -121,23 +124,23 @@ a {
 #nav:before {   
   content: "";  
   bottom: 2px;
-  right: 21px;
+  right: 19px;
   width: 21px;
   float: left;  
   height: 69px;
   position: relative;  
-  background: url(../img/tail-left.png);
+  background: url(../img/tail-left.png) no-repeat;
 }
 
 #nav:after {   
-  left: 291px;
+  left: 20px;
   bottom: 2px;
   content: "";  
   width: 21px;
   float: right;  
   height: 69px;
   position: relative;  
-  background: url(../img/tail-right.png);
+  background: url(../img/tail-right.png) no-repeat;
 }
 
 .navigation {
@@ -399,10 +402,12 @@ h3,.dolor {
 }
 
 video {
-  width: 623px;
-  height: 354px;
+      width: 620px;
+    height: 300px;
   margin-top: 10px;
+  object-fit: fill;
 }
+
 
 .heading-video {
   font-weight: 900;
@@ -413,7 +418,7 @@ video {
  .triangle:before {
   width: 0;
   height: 0;
-  top: -13px;
+  top: -12px;
   content: "";
   position: absolute;
   border-bottom: 13px solid #543F34;
@@ -433,7 +438,9 @@ video {
 .wrapper-triangle {
   position: relative;
 }
-
+.selection li a:hover {
+  background: #F79500;
+}
 /*------------------------------------*\
     #SECTION-FOOTER
 \*------------------------------------*/
@@ -573,7 +580,6 @@ video {
 }
 
 .cd-top.cd-is-visible {
-  /* the button becomes visible */
   opacity: 1;
   visibility: visible;
 }
@@ -901,71 +907,6 @@ textarea {
   resize: vertical;
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
-
-@media print {
-* {
-  color: #000 !important; /* Black prints faster: h5bp.com/s */
-  box-shadow: none !important;
-  text-shadow: none !important;
-  background: transparent !important;
-}
-
-a[href]:after {
-  content: " (" attr(href) ")";
-}
-
-abbr[title]:after {
-  content: " (" attr(title) ")";
-}
-
-/*
- * Don't show links for images, or javascript/internal links
-*/
-
-.ir a:after,
-a[href^="javascript:"]:after,
-a[href^="#"]:after {
-  content: "";
-}
-
-pre,
-blockquote {
-  border: 1px solid #999;
-  page-break-inside: avoid;
-}
-
-thead {
-  display: table-header-group; /* h5bp.com/t */
-}
-
-tr,
-img {
-  page-break-inside: avoid;
-}
-
-img {
-  max-width: 100% !important;
-}
-
-@page {
-  margin: 0.5cm;
-}
-
-p,
-h2,
-h3 {
-  orphans: 3;
-  widows: 3;
-}
-
-h2,
-h3 {
-  page-break-after: avoid;
-}
 
 
 
