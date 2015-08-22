@@ -239,8 +239,8 @@ table {
 }
 /*--------------------------------new-----------------------------------*/
 
-body {
-    background: url(../images/bg.jpg) repeat;
+body  {
+    background: url(img/123.PNG) repeat;
 }
 
 html ,
@@ -303,7 +303,7 @@ a {
 h1 {
     color: #4a4b5f;
     text-transform: uppercase;
-    background: url(../images/h1_bg.png) left no-repeat;
+    background: url(img/h1_bg.png) left no-repeat;
     font-size: 20px;
     line-height: 20px;
     padding: 7px 0 19px 82px;
@@ -330,14 +330,14 @@ h1 i {
 }
 
 #about {
-    color: #737373;
+    color: #8B4515;
     line-height: 18px;
 }
 
 #about .img {
     background: #a0a2b1;
     width: 250px;
-    height: 250px;
+    height: 315px;
     padding: 17px 0 0 17px;
     overflow: visible;
     margin-bottom: 40px;
@@ -345,7 +345,7 @@ h1 i {
 
 #about .img img {
     width: 265px;
-    height: 265px;
+    height: 331px;
     border: 1px solid #494a5e;
 }
 
@@ -386,7 +386,7 @@ h1 i {
 }
 
 #rules {
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
     overflow: hidden;
 }
 
@@ -395,7 +395,7 @@ h1 i {
     width: 285px;
     margin: 0 0 15px 50px;
     text-align: justify;
-    color: #737373;
+    color: #8B4515;
     line-height: 18px;
 }
 
@@ -428,7 +428,7 @@ h1 i {
 }
 
 #folio {
-    background: #fff;
+  /*  background: #fff;*/
     overflow: hidden;
 }
 
@@ -638,7 +638,4 @@ h1 i {
 
 .copyright {
     padding: 10px;
-}
-.all-content {
-	
 }
