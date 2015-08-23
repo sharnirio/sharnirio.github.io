@@ -239,7 +239,7 @@ table {
 }
 /*--------------------------------new-----------------------------------*/
 
-body  {
+body {
     background: url(img/fon.png) repeat;
 }
 
@@ -330,7 +330,7 @@ h1 i {
 }
 
 #about {
-    color: #8B4515;
+    color: #8b4515;
     line-height: 18px;
 }
 
@@ -395,7 +395,7 @@ h1 i {
     width: 285px;
     margin: 0 0 15px 50px;
     text-align: justify;
-    color: #8B4515;
+    color: #8b4515;
     line-height: 18px;
 }
 
@@ -428,7 +428,7 @@ h1 i {
 }
 
 #folio {
-  /*  background: #fff;*/
+    /*  background: #fff;*/
     overflow: hidden;
 }
 

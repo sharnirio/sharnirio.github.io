@@ -7,36 +7,9 @@
 	<title>Вячеслав Горишняк - front-end developer</title>
 	<link rel="stylesheet" href="for-portfolio/stile.css" type="text/css">
 	<script src="for-portfolio/js/jquery.min.js"></script>
+	<script src="for-portfolio/js/my-script.js"></script>
 </head>
 <body>
-	<script>
-			
-
-			var res=function(){
-				outer_wrapper_width=960+($('body').width()-960)/2;
-				$('.outer_wrapper').width(outer_wrapper_width);
-			}
-			
-			$(function() {
-				res();
-				$('#rules li:nth-child(3n+1)').addClass('clr');
-				$('.album').each(function(){
-					$(this).find('.work:nth-child(3n+1)').addClass('clr');
-				})
-				
-				$('#folio .album_titles li').click(function(){
-					$('#folio .album_titles li').removeClass('active');
-					$(this).addClass('active');
-					index=$(this).index();
-					$('#folio .album').removeClass('active');
-					$('#folio .album:eq('+index+')').addClass('active');
-				})
-			})
-			
-			$(window).resize(function(){
-				res();
-			})
-		 </script>
 
 	<div class="top_menu">
 		<div class="wrapper">
@@ -303,36 +276,55 @@
 		<div class="left wrapper">
 			<div class="album active">
 
-			    <div class="work left">
+				<div class="work left">
 					<div class="img">
 						<img src="for-portfolio/img/sait/yoga.jpg" alt=""></div>
 					<div class="description">
-						<p>Интернет-магазин кофе и кофемашин.</p>
+						<p>Сайт учителя йоги!</p>
 						<p>&nbsp;</p>
-						<p>Верстка + натяжка на CMS Opencart</p>
-						<p>jQuery-слайдер</p>
-						<p>jQuery-эффекты для меню и др.элементов сайта</p>
-						<p>корзина в 1 страницу</p>
-						<p>всплывающая страница товара</p>
+						<p>Участие в проекте - верстка</p>
 						<p>&nbsp;</p>
-						<p>http://coffeestore-s.ru/</p>
+						<p>http://pebble-studios.smithysoft.com/</p>
 						<a href="http://pebble-studios.smithysoft.com/" class="work_link" target="_blank"></a>
 					</div>
 				</div>
-			    <div class="work left">
+
+				<div class="work left">
+					<div class="img">
+						<img src="for-portfolio/img/sait/olala.png" alt=""></div>
+					<div class="description">
+						<p>Сайт ивент-агенства</p>
+						<p>&nbsp;</p>
+						<p>Ведение проекта - верстка + натяжка на CMS WordPress</p>
+						<p>&nbsp;</p>
+						<p>http://olala.smithysoft.com/</p>
+						<a href="http://olala.smithysoft.com/" class="work_link" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="work left">
 					<div class="img">
 						<img src="for-portfolio/img/sait/onlineservice.jpg" alt=""></div>
 					<div class="description">
-						<p>Интернет-магазин кофе и кофемашин.</p>
+						<p>Сайт онлайн сервис по поиску авиа билетов</p>
 						<p>&nbsp;</p>
-						<p>Верстка + натяжка на CMS Opencart</p>
-						<p>jQuery-слайдер</p>
-						<p>jQuery-эффекты для меню и др.элементов сайта</p>
-						<p>корзина в 1 страницу</p>
-						<p>всплывающая страница товара</p>
+						<p>Верстка</p>
 						<p>&nbsp;</p>
-						<p>http://coffeestore-s.ru/</p>
+						<p>http://onlineservice.smithysoft.com/</p>
 						<a href="http://onlineservice.smithysoft.com/" class="work_link" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="work left">
+					<div class="img">
+						<img src="for-portfolio/img/sait/emtas.jpg" alt=""></div>
+					<div class="description">
+						<p>Интернет-магазин по продаже котлов</p>
+						<p>&nbsp;</p>
+						<p>Верстка + натяжка на CMS WordPress</p>
+						<p>&nbsp;</p>
+						<p>http://emtas.com.ua/</p>
+						<a href="http://emtas.com.ua/" class="work_link" target="_blank"></a>
 					</div>
 				</div>
 
@@ -340,33 +332,17 @@
 					<div class="img">
 						<img src="for-portfolio/img/sait/shop-wp.jpg" alt=""></div>
 					<div class="description">
-						<p>Интернет-магазин кофе и кофемашин.</p>
+						<p>Сайта по макету Angelo</p>
 						<p>&nbsp;</p>
-						<p>Верстка + натяжка на CMS Opencart</p>
-						<p>jQuery-слайдер</p>
-						<p>jQuery-эффекты для меню и др.элементов сайта</p>
-						<p>корзина в 1 страницу</p>
-						<p>всплывающая страница товара</p>
+						<p>Верстка + натяжка на CMS WordPress</p>
 						<p>&nbsp;</p>
-						<p>http://coffeestore-s.ru/</p>
+						<p>Работа с плагинами для WP - Woocommerce и др.</p>
+						<p>&nbsp;</p>
+						<p>
+							( <em>работа выполнена исключительно для портфолио!</em>
+							)
+						</p>
 						<a href="http://s08931jq.bget.ru/" class="work_link" target="_blank"></a>
-					</div>
-				</div>
-
-			    <div class="work left">
-					<div class="img">
-						<img src="for-portfolio/img/sait/emtas.jpg" alt=""></div>
-					<div class="description">
-						<p>Интернет-магазин кофе и кофемашин.</p>
-						<p>&nbsp;</p>
-						<p>Верстка + натяжка на CMS Opencart</p>
-						<p>jQuery-слайдер</p>
-						<p>jQuery-эффекты для меню и др.элементов сайта</p>
-						<p>корзина в 1 страницу</p>
-						<p>всплывающая страница товара</p>
-						<p>&nbsp;</p>
-						<p>http://coffeestore-s.ru/</p>
-						<a href="http://emtas.com.ua/" class="work_link" target="_blank"></a>
 					</div>
 				</div>
 
@@ -374,32 +350,31 @@
 					<div class="img">
 						<img src="for-portfolio/img/sait/green-site.jpg" alt=""></div>
 					<div class="description">
-						<p>Интернет-магазин кофе и кофемашин.</p>
+						<p>Сайта по макету Green-site</p>
 						<p>&nbsp;</p>
-						<p>Верстка + натяжка на CMS Opencart</p>
-						<p>jQuery-слайдер</p>
-						<p>jQuery-эффекты для меню и др.элементов сайта</p>
-						<p>корзина в 1 страницу</p>
-						<p>всплывающая страница товара</p>
+						<p>Верстка + натяжка на GetSimple</p>
 						<p>&nbsp;</p>
-						<p>http://coffeestore-s.ru/</p>
+						<p>
+							( <em>работа выполнена исключительно для портфолио!</em>
+							)
+						</p>
 						<a href="http://www.sharnirio.esy.es/" class="work_link" target="_blank"></a>
 					</div>
 				</div>
 
-			    <div class="work left">
+				<div class="work left">
 					<div class="img">
 						<img src="for-portfolio/img/sait/singolo.jpg" alt=""></div>
 					<div class="description">
-						<p>Интернет-магазин кофе и кофемашин.</p>
+						<p>Сайта по макету Singolo</p>
 						<p>&nbsp;</p>
-						<p>Верстка + натяжка на CMS Opencart</p>
-						<p>jQuery-слайдер</p>
-						<p>jQuery-эффекты для меню и др.элементов сайта</p>
-						<p>корзина в 1 страницу</p>
-						<p>всплывающая страница товара</p>
+						<p>Адаптивная верстка с использованием фрейморка - Bootstrap</p>
 						<p>&nbsp;</p>
-						<p>http://coffeestore-s.ru/</p>
+						<p>
+							(
+							<em>работа выполнена исключительно для портфолио!</em>
+							)
+						</p>
 						<a href="http://sharnirio.github.io/singolo/" class="work_link" target="_blank"></a>
 					</div>
 				</div>
@@ -408,11 +383,15 @@
 					<div class="img">
 						<img src="for-portfolio/img/sait/landing-page.jpg" alt=""></div>
 					<div class="description">
-						<p>Интернет-магазин велоодежды и велоформы.</p>
-						<p>Верстка + натяжка на CMS Opencart</p>
+						<p>Сайта по макету Landing page</p>
 						<p>&nbsp;</p>
+						<p>Верстка - Landing page</p>
 						<p>&nbsp;</p>
-						<p>http://velo-forma.ru</p>
+						<p>
+							(
+							<em>работа выполнена исключительно для портфолио!</em>
+							)
+						</p>
 						<a href="http://sharnirio.github.io/landing-page/" class="work_link" target="_blank"></a>
 					</div>
 				</div>
@@ -421,11 +400,15 @@
 					<div class="img">
 						<img src="for-portfolio/img/sait/madison.jpg" alt=""></div>
 					<div class="description">
-						<p>Интернет-магазин велоодежды и велоформы.</p>
-						<p>Верстка + натяжка на CMS Opencart</p>
+						<p>Сайта по макету Madison</p>
 						<p>&nbsp;</p>
+						<p>Верстка + работа с jquery плагинами</p>
 						<p>&nbsp;</p>
-						<p>http://velo-forma.ru</p>
+						<p>
+							(
+							<em>работа выполнена исключительно для портфолио!</em>
+							)
+						</p>
 						<a href="http://sharnirio.github.io/madison/" class="work_link" target="_blank"></a>
 					</div>
 				</div>
@@ -438,10 +421,9 @@
 
 <div class="footer">
 	<div class="wrapper">
-		<div class="copyright right">Copyright © 2015  | Vyacheslav Gorishnyack</a></div>
-  </div>
+		<div class="copyright right">Copyright © 2015  | Vyacheslav Gorishnyack</div>
+	</div>
 </div>
-
 
 </body>
 </html>
