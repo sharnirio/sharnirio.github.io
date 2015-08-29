@@ -279,6 +279,10 @@ a {
 .top_menu ,
 .footer {
     background: #494b5e;
+    padding: 10px;
+    z-index: 99;
+    width: 100%;
+    position: fixed;
 }
 .top_menu ul {
     text-align: center;
@@ -294,10 +298,6 @@ a {
     line-height: 41px;
     font-size: 16px;
     text-transform: uppercase;
-}
-
-.top_menu li a:hover {
-    text-decoration: underline;
 }
 
 h1 {
@@ -332,11 +332,12 @@ h1 i {
 #about {
     color: #8b4515;
     line-height: 18px;
+    padding-top: 65px;
 }
 
 #about .img {
     background: #a0a2b1;
-    width: 250px;
+    width: 235px;
     height: 315px;
     padding: 17px 0 0 17px;
     overflow: visible;
@@ -344,7 +345,7 @@ h1 i {
 }
 
 #about .img img {
-    width: 265px;
+    width: 250px;
     height: 331px;
     border: 1px solid #494a5e;
 }
@@ -634,8 +635,18 @@ h1 i {
     border-bottom: 1px solid #494b5e;
 }
 
-/*-----------------------add-------------------*/
-
 .copyright {
     padding: 10px;
+}
+
+/*-----------------animate-css-3-efect-hover-------------------*/
+
+.top_menu li a:hover {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+.link-resume:hover 
+{
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
 }
