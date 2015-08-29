@@ -276,13 +276,16 @@ a {
     overflow: hidden;
 }
 
-.top_menu ,
-.footer {
+.top_menu {
     background: #494b5e;
     padding: 10px;
     z-index: 99;
     width: 100%;
     position: fixed;
+}
+.footer {
+    background: #494b5e;
+    padding: 10px;
 }
 .top_menu ul {
     text-align: center;
