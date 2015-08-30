@@ -1,4 +1,4 @@
-/* cyrillic-ext */
+ cyrillic-ext */
 @font-face {
     font-family: "PT Sans";
     font-style: normal;
@@ -653,3 +653,9 @@ h1 i {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
+.top_menu .item-105 > a:hover {
+  -webkit-animation-name: bounceOutRight;
+  animation-name: bounceOutRight;
+  cursor: default;
+}
+
