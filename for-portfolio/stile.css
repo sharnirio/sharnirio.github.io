@@ -649,8 +649,6 @@ h1 i {
 .hover {
     display: inline-block;
     margin: -40px;
-    -webkit-animation-name: rubberBand;
-    animation-name: rubberBand;
 }
 /*-----------------animate-css-3-efect-hover-------------------*/
 
