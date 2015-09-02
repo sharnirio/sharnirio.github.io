@@ -41,3 +41,10 @@ $(function() {
               }
             });
           });
+/* script for add class */
+
+ $(function(){
+	$('.none2').hover(function(){
+		$('.none').toggleClass('hover')
+		  			});
+    });
