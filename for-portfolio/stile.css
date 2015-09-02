@@ -289,6 +289,7 @@ a {
 }
 .top_menu ul {
     text-align: center;
+    display: inline-block;
 }
 
 .top_menu li {
@@ -641,15 +642,21 @@ h1 i {
 .copyright {
     padding: 10px;
 }
-
+/*----------------------------test--------------------------------*/
+.none {
+    display: none;
+}
+.hover {
+    display: inline-block;
+    margin: -40px;
+}
 /*-----------------animate-css-3-efect-hover-------------------*/
 
 .top_menu li a:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
-.link-resume:hover 
-{
+.link-resume:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
@@ -657,5 +664,12 @@ h1 i {
   -webkit-animation-name: bounceOutRight;
   animation-name: bounceOutRight;
   cursor: default;
+}
+.none {
+    margin: -140px;
+    color: #e4e4e5;
+    line-height: 41px;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
