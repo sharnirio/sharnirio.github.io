@@ -650,6 +650,9 @@ h1 i {
     display: inline-block;
     margin: -40px;
 }
+#nav-two audio {
+    display: none;
+}
 /*-----------------animate-css-3-efect-hover-------------------*/
 
 .top_menu li a:hover {
