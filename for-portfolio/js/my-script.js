@@ -67,3 +67,15 @@ $(function(){
   });
 $("#beep-two").attr("id", "beep-two0");
 });
+
+/* script for add class for img*/
+
+ $(function(){
+	$('.effect').mouseover(function(){
+		$('.effect').addClass('eff-opasiti');
+		$(this).removeClass('eff-opasiti');
+		  			});
+	$('.effect').mouseout(function(){
+		$('.effect').removeClass('eff-opasiti')
+		  			});
+    });

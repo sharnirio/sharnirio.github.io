@@ -675,4 +675,7 @@ h1 i {
     font-size: 16px;
     text-transform: uppercase;
 }
+.eff-opasiti {
+    opacity: 0.5;
+}
 
