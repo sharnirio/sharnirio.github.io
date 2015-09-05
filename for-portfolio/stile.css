@@ -290,6 +290,7 @@ a {
 .top_menu ul {
     text-align: center;
     display: inline-block;
+    padding-left: 70px;
 }
 
 .top_menu li {
@@ -719,4 +720,8 @@ textarea {
     color: #fff;
     border: 2px solid #d16258;
     padding: 13px 30px;
+    border-radius: 5px;
 }
+
+/*----------------------------for-mail-php--------------------------------*/
+
