@@ -678,4 +678,45 @@ h1 i {
 .eff-opasiti {
     opacity: 0.5;
 }
+.contact {
+    margin: 20px 0;
+    overflow: hidden;
+}
+/*--------------------------for-form-------------------------------------*/
 
+button,  input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+}
+.contact-form {
+    padding-left: 210px;
+    display: block;
+}
+input[type="text"], input[type="email"], textarea {
+    display: block;
+    width: 500px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #eef0f5;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #000;
+    background: #eef0f5;
+    outline: none;
+}
+textarea {
+    width: 500px;
+    min-height: 110px;
+    margin-bottom: 40px;
+    background: #eef0f5;
+}
+.contact-button {
+    padding-left: 200px;
+}
+.form-submit-btn {
+    background: #d16258;
+    color: #fff;
+    border: 2px solid #d16258;
+    padding: 13px 30px;
+}
