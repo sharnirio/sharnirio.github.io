@@ -54,7 +54,7 @@ $("#beep-two").attr("id", "beep-two0");
     });
 /* script for avto - width */
 
-var res=function(){
+var res = function(){
 				outer_wrapper_width=960+($('body').width()-960)/2;
 				$('.outer_wrapper').width(outer_wrapper_width);
 			}
@@ -78,4 +78,19 @@ var res=function(){
 			$(window).resize(function(){
 				res();
 			});
-			
+/* script add class for form */
+
+$(document).ready('.contact-form').submit(function(){
+     $('.p-form').addClass('block');
+     
+     });
+
+/*задержка for form */
+
+// $('.contact-form').submit(function (e) {
+//     var form = this;
+//     e.preventDefault();
+//     setTimeout(function () {
+//         form.submit();
+//     }, 10000); // in milliseconds
+// });

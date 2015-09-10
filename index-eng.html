@@ -9,6 +9,7 @@
 	<link rel="shortcut icon" href="useful/img/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="for-portfolio/stile.css">
 	<link rel="stylesheet" href="useful/animate.css">
+	<!-- <link rel="stylesheet" href="useful/animate-my.css"> -->
 	<link rel="stylesheet" href="for-portfolio/animate-for-block.css">
 	<script src="for-portfolio/js/jquery.min.js"></script>
 	<script src="for-portfolio/js/yandex-metrika.js"></script>
@@ -412,5 +413,29 @@
 			<div class="copyright right">Copyright © 2015  | Vyacheslav Gorishnyack</div>
 		</div>
 	</div>
+<!-- 
+	<script type="text/javascript" language="javascript">
+    function call() {
+      var msg   = $('#formx').serialize();
+        $.ajax({
+          type: 'POST',
+          url: 'res.php',
+          data: msg,
+          success: function(data) {
+            $('.results').html(data);
+          },
+          error:  function(xhr, str){
+                alert('Возникла ошибка: ' + xhr.responseCode);
+            }
+        });
+ 
+    }
+</script>
+<form method="POST" id="formx" action="javascript:void(null);" onsubmit="call()">
+<legend>Test From</legend>
+<label for="name">Name:</label><input id="name" name="name" value="" type="text">
+<label for="email">Email:</label><input id="email" name="email" value="" type="text">
+<input value="Send" type="submit">
+</form> -->
 </body>
 </html>
