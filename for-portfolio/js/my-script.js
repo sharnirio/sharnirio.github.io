@@ -94,3 +94,20 @@ $(document).ready('.contact-form').submit(function(){
 //         form.submit();
 //     }, 10000); // in milliseconds
 // });
+
+// function delayFunc() {
+
+// $(document).ready('.contact-form').submit(function(){
+     
+//      $('.contact-form').submit(function (e) {
+//     var form = this;
+//     e.preventDefault();
+//     form.submit();
+//     // setTimeout(function () {
+//     //     form.submit();
+//     // }, 10000); // in milliseconds
+// });
+     
+//      }); // end delayFunc
+
+// setTimeout(delayFunc,1110);
