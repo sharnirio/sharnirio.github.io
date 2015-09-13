@@ -369,7 +369,7 @@ h1 i {
     list-style-type: decimal;
     list-style-position: outside;
 }
-#about .text ul li {
+.about ul li {
     list-style-type: disc;
     list-style-position: outside;
 }
@@ -732,4 +732,25 @@ textarea {
     display: block; 
 }
 
+/*-----------------------------------------------*/
+#about .work{
+    list-style: none;
+}
+ul > .work{
+    position: relative;
+    padding-left: 15px;
+}
+ul > .work:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    margin-top: 7px;
+    border-radius: 50%;
+    background: #000;
+}
+ul > .work:hover:before{
+    background: #00f;
+}
 
