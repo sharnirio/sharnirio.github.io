@@ -58,7 +58,7 @@ a {
     text-decoration: underline;
 }
 .bread-crumbs {
-    padding: 15px 150px;
+    padding: 15px 150px 0;
 }
 .bread-crumbs li {
     display: inline-block;
@@ -103,9 +103,10 @@ a {
     float: right;
     width: 225px;
 }
-.content-primary img {
+.section-h1 img {
     width: 696px;
     height: 379px;
+    margin: 18px 0 15px;
 }
 .section-category li:before {
     content: "";
@@ -119,15 +120,64 @@ a {
 .section-category a:hover {
     text-decoration: none;
 }
+.section-h1 h1 {
+    font-family: Tahoma;
+color:  #191919;
+font-size: 28px;
+margin: 40px 0 32px;
+font-weight: 400;
+line-height: 22px;
+}
+.content-primary p {
+font-family: Tahoma;
+color:  #262626;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+}
 .section-h3 {
     border-bottom: 1px dotted;
+    padding-bottom: 29px;
+}
+.section-h3 h3 {
+    color:  #191919;
+font-size: 18px;
+font-weight: 400;
+line-height: 22px;
+margin: 44px 0 22px;
+
+}
+.section-category {
+    font-family: Tahoma;
+margin-top: 28px;
+color:  #2da8dc;
+font-size: 12px;
+font-weight: 400;
+line-height: 22px;
+}
+.section-category li:not(:first-child) {
+margin-top: 17px;
 }
 .section-h4 {
     border-bottom: 1px dotted;
 }
+.section-h4 h4 {
+    font-family: Tahoma;
+    color:  #434343;
+font-size: 12px;
+font-weight: 400;
+line-height: 22px;
+margin: 30px 0 16px;
+}
 .section-h4 img {
     width: 215px;
     height: 194px;
+}
+.section-h4-img:nth-of-type(3n+2) {
+    margin: 0 20px;
+}
+.section-h4-img {
+    margin-top: 20px;
 }
 .section-h4-category {
     padding-left: 20px;
@@ -135,7 +185,7 @@ a {
 .section-table {
     border-bottom: 1px dotted;
 }
-/*tabs*/
+/*content-tabs*/
 #tab2 {
     position: fixed;
 }
@@ -169,9 +219,7 @@ a {
     border-bottom: 2px solid #fff;
 }
 
-/*tabs in js*/
-
-/* Общие элементы, обычное состояние */
+/*content-tabs in js*/
 ul#Tabs {
     font-family: Verdana, Arial;
     font-size: 12px;
@@ -181,7 +229,6 @@ ul#Tabs {
     border-bottom: 1px solid #a2b6cb;
     margin-bottom: 12px;
 }
-
 #Tabs li.Tab {
     float: right;
     height: 25px;
@@ -197,13 +244,11 @@ ul#Tabs {
     text-decoration: none;
     padding: 5px;
 }
-
 #Tabs li.Tab a:hover {
     background-color: #bfe0fe;
     border-bottom: 1px solid #bfe0fe;
 }
 
-/* Состояние: активная */
 #Tabs li.SelectedTab {
     float: right;
     height: 25px;
@@ -214,7 +259,6 @@ ul#Tabs {
     border-bottom: 1px solid #fafafa;
     border-left: 1px solid #a2b6cb;
 }
-
 #Tabs li.SelectedTab a {
     float: left;
     display: block;
@@ -225,22 +269,22 @@ ul#Tabs {
 }
 /*search*/
 .search {
-    width: 300px; /* Ширина поля с кнопкой */
-    border: 1px solid #000; /* Параметры рамки */
-    min-height: 20px; /* Минимальная высота */
+    width: 300px; 
+    border: 1px solid #000; 
+    min-height: 20px; 
 }
 .search input[type="search"] {
-    border: none; /* Убираем рамку */
-    outline: none; /* Убираем свечение в Chrome и Safari */
-    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
-    width: 274px; /* Ширина поля */
-    vertical-align: middle; /* Выравнивание по середине */
+    border: none; 
+    outline: none; 
+    -webkit-appearance: none; 
+    width: 274px; 
+    vertical-align: middle; 
 }
 .search input[type="submit"] {
-    width: 20px; /* Ширина кнопки */
-    height: 20px; /* Высота кнопки */
-    border: none; /* Убираем рамку */
-    background: url(../img/search.png) no-repeat 50% 50%; /* Параметры фона */
+    width: 20px; 
+    height: 20px; 
+    border: none; 
+    background: url(../img/search.png) no-repeat 50% 50%; 
 }
 /*footer*/
 .footer {
@@ -259,14 +303,6 @@ ul#Tabs {
 .social-network li {
     display: inline-block;
 }
-/*.social-network a {
-    display: inline-block;
-    width: 36px;
-    height: 25px;
-    padding-top: 7px;
-    border-radius: 50%;
-    border: 1px solid rgba(248,248,248,0.8);
-}*/
 .skype a {
     background: url(../img/skype.png) no-repeat;
     display: inline-block;

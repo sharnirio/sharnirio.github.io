@@ -753,4 +753,7 @@ ul > .work:before{
 ul > .work:hover:before{
     background: #00f;
 }
+/*-------------------------cursor---------------------------*/
+body {cursor: url(img/cur.cur), progress !important;}
+a:hover {cursor: url(img/cursor-hover.cur), progress !important;}
 
