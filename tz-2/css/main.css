@@ -210,10 +210,36 @@ font-size: 12px;
 font-weight: 400;
 line-height: 22px;
 }
+.section-table th {
+    padding: 14px 15px;
+    color:  #6a6a6a;
+font-size: 11px;
+font-weight: 400;
+line-height: 19px;
+}
 .section-table td {
     padding: 14px 15px;
+    color:  #262626;
+font-size: 11px;
+font-weight: 400;
+line-height: 19px;
+text-align: left;
 }
-/*content-tabs*/
+.section-table tr:nth-of-type(even) {
+   background-color: #F6F6F6;
+}
+.section-table td:nth-of-type(2) {
+   color:  #2da8dc;
+}
+.section-tab p {
+    margin: 33px 0;
+    font-family: Tahoma;
+color:  #434343;
+font-size: 12px;
+font-weight: 400;
+line-height: 22px;
+}
+/*content-tabs in css3*/
 #tab2 {
     position: fixed;
 }
@@ -222,7 +248,12 @@ line-height: 22px;
 .menu1 #tab2:target ~ a:nth-of-type(1) ,
 .menu1 > div {
     padding: 5px;
-    border: 1px solid #aaa;
+        color: #000;
+        border-radius: 5px 5px 0 0;
+}
+.menu1 > div {
+    border-top: 1px solid #2da8dc;
+    margin-top: 1px;
 }
 
 .menu1 > a {
@@ -245,7 +276,15 @@ line-height: 22px;
 .menu1 > a:nth-of-type(1) ,
 .menu1 #tab2:target ~ a:nth-of-type(2) {
     border-bottom: 2px solid #fff;
+        background-color: #2da8dc;
+            margin-right: 2px;
 }
+
+.menu1 #tab2:target ~ a:nth-of-type(1),
+.menu1 > a {
+   background: #e4e4e4;
+}
+
 
 /*content-tabs in js*/
 ul#Tabs {
