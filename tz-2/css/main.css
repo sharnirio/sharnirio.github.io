@@ -10,9 +10,10 @@ a {
 /*header*/
 .logo a {
     display: inline-block;
-    background: url(../img/logo.png) no-repeat center;
+    background: url(../img/spritesheet.png); 
     width: 122px;
     height: 34px;
+    background-position: -3px -40px;
     text-indent: -9999px;
 }
 .logo {
@@ -27,12 +28,13 @@ a {
 }
 .phone:before {
     content: "";
-    background: url(../img/phone.png) no-repeat;
+    background-image: url(../img/spritesheet.png);
     display: inline-block;
+    vertical-align: text-bottom;
+    padding-right: 6px;
     width: 18px;
     height: 28px;
-    vertical-align: text-bottom;
-    padding-right: 10px;
+    background-position: -40px -3px;
 }
 .nav {
     background-color: #eee;
@@ -101,7 +103,7 @@ a {
 }
 .bar {
     float: right;
-    width: 225px;
+    width: 230px;
 }
 .section-h1 img {
     width: 696px;
@@ -134,6 +136,81 @@ color:  #262626;
 font-size: 12px;
 font-weight: 400;
 line-height: 18px;
+}
+.section-h2 {
+overflow: hidden;
+}
+.section-h2 h2 {
+    font-family: Tahoma;
+color:  #191919;
+font-size: 24px;
+font-weight: 400;
+line-height: 22px;
+margin: 30px 0 25px;
+}
+.section-h2 p {
+  color:  #262626;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+}
+.post {
+    border-bottom: 1px dotted;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.post a {
+    color:  #2da8dc;
+font-size: 14px;
+font-weight: 400;
+line-height: 22px;
+}
+.date {
+    color:  #848484;
+font-size: 11px;
+font-weight: 400;
+line-height: 22px;
+margin: 10px 0 15px;
+}
+.button-news {
+        padding: 8px 15px;
+    background-color: #eee;
+    display: inline-block;
+    float: right;
+    text-decoration: none;
+    color:  #000000;
+font-size: 12px;
+font-weight: 400;
+}
+.button-news:hover {
+    background-color: #ccc;
+}
+.subscription h2 {
+    color:  #191919;
+font-size: 24px;
+font-weight: 400;
+margin: 40px 0 20px;
+}
+.lead_name , .lead_email {
+        padding: 3px;
+        margin-bottom: 15px;
+        border-radius: 3px;
+            border: 1px solid #ccc;
+            color: #ccc;
+            width: 96%;
+}
+.lead_subscribe {
+    color:  #ffffff;
+font-size: 14px;
+padding: 6px 15px;
+float: right;
+background-color: #2da8dc;
+border: none;
+ border-radius: 3px;
+ cursor: pointer;
+}
+.lead_subscribe:hover {
+   background-color: #2DA8F6;; 
 }
 .section-h3 {
     border-bottom: 1px dotted;
@@ -179,7 +256,7 @@ line-height: 18px;
 margin-top: 25px;
 }
 .section-h4 img {
-    width: 215px;
+    max-width: 215px;
     height: 194px;
 }
 .section-h4-img:nth-of-type(3n+2) {
@@ -245,15 +322,16 @@ line-height: 22px;
 }
 
 .menu1 > a ,
-.menu1 #tab2:target ~ a:nth-of-type(1) ,
-.menu1 > div {
+.menu1 #tab2:target ~ a:nth-of-type(1) {
     padding: 5px;
         color: #000;
         border-radius: 5px 5px 0 0;
 }
 .menu1 > div {
     border-top: 1px solid #2da8dc;
-    margin-top: 1px;
+    padding-top: 14px;
+        text-align: justify;
+        margin-top: 1px;
 }
 
 .menu1 > a {
@@ -275,14 +353,23 @@ line-height: 22px;
 
 .menu1 > a:nth-of-type(1) ,
 .menu1 #tab2:target ~ a:nth-of-type(2) {
-    border-bottom: 2px solid #fff;
         background-color: #2da8dc;
             margin-right: 2px;
+            padding: 5px 16px 2px;
+            color:  #ffffff;
+font-size: 12px;
+font-weight: 400;
+line-height: 19px;
 }
 
 .menu1 #tab2:target ~ a:nth-of-type(1),
 .menu1 > a {
    background: #e4e4e4;
+   padding: 5px 16px 2px;
+   color:  #000000;
+font-size: 12px;
+font-weight: 400;
+line-height: 19px;
 }
 
 
@@ -297,61 +384,73 @@ ul#Tabs {
     margin-bottom: 12px;
 }
 #Tabs li.Tab {
-    float: right;
-    height: 25px;
-    background-color: #deedfb;
-    margin: 2px 0 0 5px;
-    border: 1px solid #a2b6cb;
+    float: left;
+    background-color: #e4e4e4;
+    margin: 1px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+        padding: 3px 16px;
+        color:  #000000;
+font-size: 12px;
+font-weight: 400;
+line-height: 19px;
+    
 }
 
 #Tabs li.Tab a {
     float: left;
     display: block;
-    color: #666;
+    color:  #000000;
+font-size: 12px;
+font-weight: 400;
+line-height: 19px;
     text-decoration: none;
-    padding: 5px;
-}
-#Tabs li.Tab a:hover {
-    background-color: #bfe0fe;
-    border-bottom: 1px solid #bfe0fe;
 }
 
+
 #Tabs li.SelectedTab {
-    float: right;
-    height: 25px;
-    background-color: #fafafa;
-    margin: 2px 0 0 5px;
-    border-top: 1px solid #a2b6cb;
-    border-right: 1px solid #a2b6cb;
-    border-bottom: 1px solid #fafafa;
-    border-left: 1px solid #a2b6cb;
+    float: left;
+    background-color: #2da8dc;
+    margin: 1px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+    padding: 3px 16px;
+
 }
 #Tabs li.SelectedTab a {
     float: left;
     display: block;
     color: #666;
     text-decoration: none;
-    padding: 5px;
     cursor: default;
+    color:  #ffffff;
+font-size: 12px;
+font-weight: 400;
+line-height: 19px;
 }
 /*search*/
 .search {
-    width: 300px; 
-    border: 1px solid #000; 
-    min-height: 20px; 
+    width: 230px; 
+    border: 1px solid #ccc; 
+    min-height: 22px; 
+    border-radius: 3px;
 }
 .search input[type="search"] {
     border: none; 
     outline: none; 
     -webkit-appearance: none; 
-    width: 274px; 
+    width: 200px; 
     vertical-align: middle; 
+    border-radius: 3px;
 }
 .search input[type="submit"] {
     width: 20px; 
     height: 20px; 
     border: none; 
-    background: url(../img/search.png) no-repeat 50% 50%; 
+    background: url(../img/spritesheet.png); 
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    background-position: -64px -3px;
+    margin-top: 4px;
 }
 /*footer*/
 .footer {
@@ -371,23 +470,27 @@ ul#Tabs {
     display: inline-block;
 }
 .skype a {
-    background: url(../img/skype.png) no-repeat;
+    background: url(../img/spritesheet.png); 
     display: inline-block;
     width: 31px;
     height: 31px;
+    background-position: -83px -3px;
 }
 .fb a {
-    background: url(../img/fb.png) no-repeat;
+    background: url(../img/spritesheet.png); 
     display: inline-block;
     width: 31px;
     height: 31px;
+    background-position: -3px -3px;
 }
 .twitter a {
-    background: url(../img/twitter125.png) no-repeat;
+    background: url(../img/spritesheet.png); 
     display: inline-block;
     width: 31px;
     height: 31px;
+    background-position: -120px -3px;
 }
+
 .social-network a:hover {
     transform: scale(1.3);
 }

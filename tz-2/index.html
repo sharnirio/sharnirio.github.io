@@ -82,14 +82,14 @@
                 одни часы, а несколько.
               </p>
             </div>
-            <a href="#">Все новости</a>
+            <a class="button-news" href="#">Все новости</a>
           </div>
           <div class="subscription">
             <h2>Подписка</h2>
             <form action="" >
-              <input name="lead_name" type="text" value="Имя" />
-              <input name="lead_email" type="text" value="E-mail" />
-              <input name="lead_subscribe" type="submit" value="Подписаться!" />
+              <input class="lead_name" name="lead_name" type="text" placeholder="Имя"/>
+              <input class="lead_email" name="lead_email" type="text" placeholder="E-mail"/>
+              <input class="lead_subscribe" name="lead_subscribe" type="submit" value="Подписаться!"/>
 
             </form>
           </div>
@@ -211,12 +211,13 @@
                 <!-- tabs for js --> 
                 <p>Табы на JS</p>
                 <ul id="Tabs">
+                <li id="OneTab" class="SelectedTab">
+                    <a href="#One" onclick="One(); return false;">Активный таб</a>
+                  </li>
                   <li id="TwoTab" class="Tab">
                     <a href="#Two" onclick="Two(); return false;">Неактивный таб</a>
                   </li>
-                  <li id="OneTab" class="SelectedTab">
-                    <a href="#One" onclick="One(); return false;">Активный таб</a>
-                  </li>
+                  
                 </ul>
                 <div id="Content">
                   <div id="One">
