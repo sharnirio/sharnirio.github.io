@@ -391,7 +391,6 @@ h1 i {
 }
 
 #rules {
-    /*background: #f5f5f5;*/
     overflow: hidden;
 }
 
@@ -399,7 +398,7 @@ h1 i {
     float: left;
     width: 285px;
     margin: 0 0 15px 50px;
-    text-align: justify;
+    text-align: center;
     color: #8b4515;
     line-height: 18px;
 }
