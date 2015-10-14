@@ -241,8 +241,6 @@ table {
 body {
     background: url(img/fon.png) repeat;
 }
-
-html ,
 body {
     min-width: 960px;
     width: auto;
