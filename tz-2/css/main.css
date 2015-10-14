@@ -1,9 +1,11 @@
+
 /*general*/
+
 body {
-   font-family: Tahoma; 
-   font-size: 12px; 
-   font-weight: 400; 
-   line-height: 18px; 
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
 }
 .wraper {
     max-width: 1280px;
@@ -13,13 +15,15 @@ body {
 a {
     color: #2da8dc;
 }
+
 /*header*/
+
 .header {
     font-family: Arial;
 }
 .logo a {
     display: inline-block;
-    background: url(../img/spritesheet.png); 
+    background: url(../img/spritesheet.png);
     width: 122px;
     height: 34px;
     background-position: -3px -40px;
@@ -58,10 +62,8 @@ a {
     padding: 15px 142px 15px 0;
 }
 .nav a {
-    
     color: #2b2b2b;
     font-size: 15px;
-    
     display: inline-block;
     text-decoration: none;
 }
@@ -76,7 +78,7 @@ a {
 .bread-crumbs li {
     display: inline-block;
 }
-.bread-crumbs a { 
+.bread-crumbs a {
     color: #2b2b2b;
     display: inline-block;
     text-decoration: none;
@@ -100,15 +102,16 @@ a {
 .bread-crumbs li:not(:last-child):after {
     content: ">";
 }
+
 /*content*/
+
 .content {
     padding: 0 150px ;
     margin-bottom: 20px;
 }
 .content-primary {
     overflow: hidden;
-    width: 695px;
-
+    max-width: 695px;
 }
 .bar {
     float: right;
@@ -133,36 +136,26 @@ a {
     text-decoration: none;
 }
 .section-h1 h1 {
-    
-color:  #191919;
-font-size: 28px;
-margin: 40px 0 32px;
-
-line-height: 22px;
+    color: #191919;
+    font-size: 28px;
+    margin: 40px 0 32px;
+    line-height: 22px;
 }
 .content-primary p {
-
-color:  #262626;
-text-align: justify;
-
-
+    color: #262626;
+    text-align: justify;
 }
 .section-h2 {
-overflow: hidden;
+    overflow: hidden;
 }
 .section-h2 h2 {
-    
-color:  #191919;
-font-size: 24px;
-
-line-height: 22px;
-margin: 30px 0 25px;
+    color: #191919;
+    font-size: 24px;
+    line-height: 22px;
+    margin: 30px 0 25px;
 }
 .section-h2 p {
-  color:  #262626;
-
-
-
+    color: #262626;
 }
 .post {
     border-bottom: 1px dotted;
@@ -170,102 +163,86 @@ margin: 30px 0 25px;
     margin-bottom: 20px;
 }
 .post a {
-    color:  #2da8dc;
-font-size: 14px;
-
-line-height: 22px;
+    color: #2da8dc;
+    font-size: 14px;
+    line-height: 22px;
 }
 .section-h2 .date {
-    color:  #848484;
-font-size: 11px;
-
-line-height: 22px;
-margin: 5px 0 10px;
+    color: #848484;
+    font-size: 11px;
+    line-height: 22px;
+    margin: 5px 0 10px;
 }
 .button-news {
-        padding: 8px 15px;
+    padding: 8px 15px;
     background-color: #eee;
     display: inline-block;
     float: right;
     text-decoration: none;
-    color:  #000000;
-        border-radius: 3px;
-
-
+    color: #000;
+    border-radius: 3px;
 }
 .button-news:hover {
     background-color: #ccc;
 }
 .subscription h2 {
-    color:  #191919;
-font-size: 24px;
-
-margin: 40px 0 20px;
+    color: #191919;
+    font-size: 24px;
+    margin: 40px 0 20px;
 }
-.lead_name , .lead_email {
-        padding: 3px;
-        margin-bottom: 15px;
-        border-radius: 3px;
-            border: 1px solid #ccc;
-            color: #ccc;
-            width: 96%;
+.lead_name ,
+.lead_email {
+    padding: 3px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    width: 96%;
 }
 .lead_subscribe {
-    color:  #ffffff;
-font-size: 14px;
-padding: 6px 15px;
-float: right;
-background-color: #2da8dc;
-border: none;
- border-radius: 3px;
- cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    padding: 6px 15px;
+    float: right;
+    background-color: #2da8dc;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 .lead_subscribe:hover {
-   background-color: #2DA8F6;; 
+    background-color: #2da8f6;;
 }
 .section-h3 {
     border-bottom: 1px dotted;
     padding-bottom: 29px;
 }
 .section-h3 h3 {
-    color:  #191919;
-font-size: 18px;
-
-line-height: 22px;
-margin: 44px 0 22px;
-
+    color: #191919;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 44px 0 22px;
 }
 .section-category {
-    
-margin-top: 28px;
-color:  #2da8dc;
-
-
-line-height: 22px;
+    margin-top: 28px;
+    color: #2da8dc;
+    line-height: 22px;
 }
 .section-category li:not(:first-child) {
-margin-top: 17px;
+    margin-top: 17px;
 }
 .section-h4 {
     border-bottom: 1px dotted;
     padding-bottom: 27px;
 }
 .section-h4 h4 {
-    
-    color:  #434343;
+    color: #434343;
     font-size: 12px;
-
-
-line-height: 22px;
-margin: 30px 0 0px;
+    line-height: 22px;
+    margin: 30px 0 0;
 }
 .section-h4 p {
-    
-color:  #262626;
-
-
-
-margin-top: 25px;
+    color: #262626;
+    margin-top: 25px;
 }
 .section-h4 img {
     max-width: 215px;
@@ -281,111 +258,92 @@ margin-top: 25px;
     padding-left: 20px;
 }
 .section-h4-category li {
-    
-color:  #262626;
-
-
-line-height: 22px;
-margin-top: 17px;
+    color: #262626;
+    line-height: 22px;
+    margin-top: 17px;
 }
 .section-table {
     border-bottom: 1px dotted;
     padding-bottom: 30px;
 }
 .table-name {
-    margin: 30px 0; 
-    
-color:  #434343;
-
-
-line-height: 22px;
+    margin: 30px 0;
+    color: #434343;
+    line-height: 22px;
 }
 .section-table th {
     padding: 14px 15px;
-    color:  #6a6a6a;
-font-size: 11px;
-
-line-height: 19px;
+    color: #6a6a6a;
+    font-size: 11px;
+    line-height: 19px;
 }
 .section-table td {
     padding: 14px 15px;
-    color:  #262626;
-font-size: 11px;
-
-line-height: 19px;
-text-align: left;
+    color: #262626;
+    font-size: 11px;
+    line-height: 19px;
+    text-align: left;
 }
 .section-table tr:nth-of-type(even) {
-   background-color: #F6F6F6;
+    background-color: #f6f6f6;
 }
 .section-table td:nth-of-type(2) {
-   color:  #2da8dc;
+    color: #2da8dc;
 }
 .section-tab p {
     margin: 15px 0;
-    
-color:  #434343;
-
-
-line-height: 22px;
+    color: #434343;
+    line-height: 22px;
 }
+
 /*content-tabs in css3*/
+
 #tab2 {
     position: fixed;
 }
-
 .menu1 > a ,
 .menu1 #tab2:target ~ a:nth-of-type(1) {
     padding: 5px;
-        color: #000;
-        border-radius: 5px 5px 0 0;
+    color: #000;
+    border-radius: 5px 5px 0 0;
 }
 .menu1 > div {
     border-top: 1px solid #2da8dc;
     padding-top: 15px;
-        text-align: justify;
-            margin-top: 4px;
+    text-align: justify;
+    margin-top: 4px;
 }
-
 .menu1 > a {
     line-height: 28px;
     background: #fff;
     text-decoration: none;
 }
-
 #tab2 ,
 .menu1 > div ,
 .menu1 #tab2:target ~ div:nth-of-type(1) {
     display: none;
 }
-
 .menu1 > div:nth-of-type(1) ,
 .menu1 #tab2:target ~ div:nth-of-type(2) {
     display: block;
 }
-
 .menu1 > a:nth-of-type(1) ,
 .menu1 #tab2:target ~ a:nth-of-type(2) {
-        background-color: #2da8dc;
-            padding: 5px 16px;
-            color:  #ffffff;
-
-
-line-height: 19px;
+    background-color: #2da8dc;
+    padding: 5px 16px;
+    color: #fff;
+    line-height: 19px;
 }
-
-.menu1 #tab2:target ~ a:nth-of-type(1),
+.menu1 #tab2:target ~ a:nth-of-type(1) ,
 .menu1 > a {
-   background: #e4e4e4;
-   padding: 5px 16px;
-   color:  #000000;
-
-
-line-height: 19px;
+    background: #e4e4e4;
+    padding: 5px 16px;
+    color: #000;
+    line-height: 19px;
 }
-
 
 /*content-tabs in js*/
+
 ul#Tabs {
     list-style-type: none;
     padding-bottom: 28px;
@@ -396,22 +354,17 @@ ul#Tabs {
     float: left;
     background-color: #e4e4e4;
     margin: 1px 5px 0 0;
-        border-radius: 5px 5px 0 0;
-        padding: 3px 16px;
-        color:  #000000;
-
-
-line-height: 19px;
-    
+    border-radius: 5px 5px 0 0;
+    padding: 3px 16px;
+    color: #000;
+    line-height: 19px;
 }
 
 #Tabs li.Tab a {
     float: left;
     display: block;
-    color:  #000000;
-
-
-line-height: 19px;
+    color: #000;
+    line-height: 19px;
     text-decoration: none;
 }
 
@@ -420,9 +373,8 @@ line-height: 19px;
     float: left;
     background-color: #2da8dc;
     margin: 1px 5px 0 0;
-        border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
     padding: 3px 16px;
-
 }
 #Tabs li.SelectedTab a {
     float: left;
@@ -430,38 +382,40 @@ line-height: 19px;
     color: #666;
     text-decoration: none;
     cursor: default;
-    color:  #ffffff;
-
-
-line-height: 19px;
+    color: #fff;
+    line-height: 19px;
 }
+
 /*search*/
+
 .search {
-    width: 230px; 
-    border: 1px solid #ccc; 
-    min-height: 22px; 
+    width: 230px;
+    border: 1px solid #ccc;
+    min-height: 22px;
     border-radius: 3px;
 }
 .search input[type="search"] {
-    border: none; 
-    outline: none; 
-    -webkit-appearance: none; 
-    width: 200px; 
-    vertical-align: middle; 
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    width: 200px;
+    vertical-align: middle;
     border-radius: 3px;
 }
 .search input[type="submit"] {
-    width: 20px; 
-    height: 20px; 
-    border: none; 
-    background: url(../img/spritesheet.png); 
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: url(../img/spritesheet.png);
     cursor: pointer;
     width: 13px;
     height: 13px;
     background-position: -64px -3px;
     margin-top: 4px;
 }
+
 /*footer*/
+
 .footer {
     padding: 0 150px ;
     margin-bottom: 20px;
@@ -479,27 +433,26 @@ line-height: 19px;
     display: inline-block;
 }
 .skype a {
-    background: url(../img/spritesheet.png); 
+    background: url(../img/spritesheet.png);
     display: inline-block;
     width: 31px;
     height: 31px;
     background-position: -83px -3px;
 }
 .fb a {
-    background: url(../img/spritesheet.png); 
+    background: url(../img/spritesheet.png);
     display: inline-block;
     width: 31px;
     height: 31px;
     background-position: -3px -3px;
 }
 .twitter a {
-    background: url(../img/spritesheet.png); 
+    background: url(../img/spritesheet.png);
     display: inline-block;
     width: 31px;
     height: 31px;
     background-position: -120px -3px;
 }
-
 .social-network a:hover {
     transform: scale(1.3);
 }
