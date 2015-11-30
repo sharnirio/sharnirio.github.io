@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     concatCss = require('gulp-concat-css'),
     sass = require('gulp-sass'),
+    vautoprefixer = require('gulp-autoprefixer'),
     notify = require('gulp-notify');
 
 gulp.task('default', function () {
@@ -26,4 +27,12 @@ gulp.task('sass:watch', function () {
 
 gulp.task('watch', function () {
 	gulp.watch('css/*.css' , ['default']);
+});
+gulp.task('avto', function () {
+    return gulp.src('src/app.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('dist'));
 });
