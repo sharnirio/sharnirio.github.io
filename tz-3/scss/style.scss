@@ -26,6 +26,9 @@ $link-menu: #6c6c6c;
 
 
 /*general*/
+a {
+    display: flex;
+}
 body {
     font-family: 'SegoeWPN';
     font-size: 100%;
