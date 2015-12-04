@@ -1,3 +1,4 @@
 /test-for-gitignor/
 */.sass-cache/*
 */node_modules/*
+*/bower_components/*
