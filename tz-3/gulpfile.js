@@ -14,15 +14,15 @@ gulp.task('default', function () {
 
 });
 
-gulp.task('sass', function () {
+gulp.task('scss', function () {
   gulp.src('scss/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('css/'))
     .pipe(notify('Done!!!'));
 });
 
-gulp.task('sass:watch', function () {
-  gulp.watch('scss/*.scss', ['sass']);
+gulp.task('scss:watch', function () {
+  gulp.watch('scss/*.scss', ['scss']);
 });
 
 gulp.task('watch', function () {

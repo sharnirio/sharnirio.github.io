@@ -8,9 +8,6 @@
   src: url("../fonts/SegoeWP-Light.ttf"); }
 
 /*general*/
-a {
-  display: flex; }
-
 body {
   font-family: 'SegoeWPN';
   font-size: 100%;
