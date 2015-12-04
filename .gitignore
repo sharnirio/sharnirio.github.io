@@ -1,4 +1,5 @@
-/test-for-gitignor/
-*/.sass-cache/*
-*/node_modules/*
-*/bower_components/*
+/test-for-gitignor/*
+!test1.txt
+**/.sass-cache
+**/bower_components
+**/node_modules
