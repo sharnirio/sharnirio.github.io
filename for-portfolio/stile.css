@@ -721,12 +721,12 @@ textarea {
 }
 .btn:hover {
     background: #D1620E;
-} 
+}
 .p-form {
     display: none;
 }
 .block {
-    display: block; 
+    display: block;
 }
 
 /*-----------------------------------------------*/
@@ -750,7 +750,8 @@ ul > .work:before{
 ul > .work:hover:before{
     background: #00f;
 }
-/*-------------------------cursor---------------------------*/
-body {cursor: url(img/cur.cur), progress !important;}
-a:hover {cursor: url(img/cursor-hover.cur), progress !important;}
+
+/*-------------------------cursor-removed--------------------------*/
+/*body {cursor: url(img/cur.cur), progress !important;}
+a:hover {cursor: url(img/cursor-hover.cur), progress !important;}*/
 
