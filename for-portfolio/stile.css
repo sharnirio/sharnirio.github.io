@@ -750,6 +750,22 @@ ul > .work:before{
 ul > .work:hover:before{
     background: #00f;
 }
+/*------------------bottom-kill-audi-------------------*/
+
+#volume-off {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-size: contain;
+}
+.nav2 .volume{
+      background-image: url(img/volume.jpg);
+    }
+.volume{
+        background-image: url(img/volume-off.jpg);
+    }
 
 /*-------------------------cursor-removed--------------------------*/
 /*body {cursor: url(img/cur.cur), progress !important;}
