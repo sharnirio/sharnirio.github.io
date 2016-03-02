@@ -1,3 +1,29 @@
-<script src="js/main.js"></script>
+<div class="footer">
+    <p class="copy">Copyright &copy; 2012-2013 cssauthor.com</p>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+
+    $("#owl-demo").owlCarousel({
+      navigation : true,
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      pagination: false,
+      navigationText : false,
+      itemsMobile : true,
+    });
+
+  });
+</script>
+<script>
+ var burger = document.getElementById('burger-button');
+burger.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.body.classList.toggle('open');
+    burger.classList.toggle('open');
+});
+</script>
 </body>
 </html>

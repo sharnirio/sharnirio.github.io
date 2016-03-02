@@ -82,34 +82,9 @@ var res = function(){
 /* script off audi */
 
 
-$(document).ready('#volume-off').click(function(){
+$('#volume-off').click(function(){
   $('#nav-two').toggleClass("nav2")
 });
-
-
-// $(document).ready("#volume-off").bind("click", function() {
-//       $("#volume-off").attr("src","for-portfolio/img/volume-off.jpg");
-// });
-
-// var toggle = 0;
-// $('#volume-off').click(function() {
-// if(toggle == 1) {
-// $(this).attr('src', $(this).attr('src').replace('for-portfolio/img/volume.jpg', 'for-portfolio/img/volume-off.jpg'));
-// var toggle = 0;
-// } else {
-// $(this).attr('src', $(this).attr('src').replace('for-portfolio/img/volume-off.jpg', 'for-portfolio/img/volume.jpg'));
-// var toggle = 1;
-// }
-// })
-
-// $("#volume-off").bind("click", function() {
-//       var src = ($(this).attr("src") === "for-portfolio/img/volume.jpg")
-//                     ? "for-portfolio/img/volume-off.jpg"
-//                     : "for-portfolio/img/volume.jpg";
-//       $(this).attr("src", src);
-// });
-
-
 
 
 /* script add class for form */

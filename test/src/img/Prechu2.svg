@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="178px" height="44px" viewBox="0 0 178 44">
+<style type="text/css"><![CDATA[
+.style0 {
+  font-size: 42.3497px;
+  font-family: "SegoeWP-Light";
+  fill: rgb(0,0,0);
+}
+.style1 {
+  font-size: 64.3497px;
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  fill: rgb(255,255,255);
+}
+]]></style>
+<text transform="translate(56.00,37.00)" class="style0"><tspan x="0.00 22.95 37.23 58.87 78.26 102.19" fill="rgb(0,0,0)">Prechu</tspan></text><circle cx="22.00" cy="22.00" r="22.00" fill="rgb(79,148,241)"/><text transform="translate(8.00,58.00)" class="style1"><tspan x="0.00" fill="rgb(255,255,255)">“</tspan></text></svg>
