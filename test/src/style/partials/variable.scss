@@ -1,0 +1,13 @@
+// Variables
+
+$link-menu: #6c6c6c;
+
+// mixin
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
