@@ -1,16 +1,16 @@
 body {
     background-image: url(../img/Layer.jpg);
     padding-top: 25px;
-    color: #333333;
+    color: #000;
 }
 a { text-decoration: none;
 color: #fff;
 }
 h1, h2, p {
-    margin: 0; 
+    margin: 0;
 }
 .wraper {
-  width:100%; 
+  width:100%;
   max-width:960px;
   background-color: #ccc;
   margin: 0 auto;
@@ -42,7 +42,7 @@ padding: 10px 0 10px 42px;
 }
 .nav li {
     list-style: none;
-    display: inline-block; 
+    display: inline-block;
 }
 .nav li a {
     font-family: Lato;
@@ -94,27 +94,27 @@ background-color:  #2787d1;
 width: 103px;
 height: 103px;
  margin: 0 auto;
-} 
+}
 .betaal-img {
     margin: 25px 0;
 }
 .betaal-img-wraper:hover {
     background-color: #258;
-} 
+}
 .betaal-img-icon {
-    display: inline-block;   
+    display: inline-block;
     border-radius: 50%;
 width: 103px;
 height: 103px;
 }
 .icon-1 {
-  background: url(../img/Price-Tags.png) no-repeat center;  
+  background: url(../img/Price-Tags.png) no-repeat center;
 }
 .icon-2 {
-    background: url(../img/Truck.png) no-repeat center;  
+    background: url(../img/Truck.png) no-repeat center;
 }
 .icon-3 {
-background: url(../img/Bulls.png) no-repeat center;  
+background: url(../img/Bulls.png) no-repeat center;
 }
 .betaal-img-cont {
     text-align: center;
@@ -157,7 +157,7 @@ font-weight: 400;
 text-align: left;
 }
 .footer-content {
-  width:100%; 
+  width:100%;
   max-width:960px;
   margin: 0 auto;
   padding: 35px 0;
@@ -174,11 +174,11 @@ text-align: left;
 
 /*body {
 
-font-size:100%; 
+font-size:100%;
 
 }
 p {
 
-font-size: 2.25em !important; 
+font-size: 2.25em !important;
 }
 */
