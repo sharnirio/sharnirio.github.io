@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Front-end developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+    <script src="js/ie/html5.js"></script>
+    <script src="js/ie/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#menu">
+    <!-- =============================================
+=           Header block            =
+============================================= -->
+    <header id="home">
+        <nav id="menu" class="burger">
+            <a href="#" class="burger__button" id="burger-button">
+                <span class="burger__button__icon"></span>
+            </a>
+            <ul class="burger__menu nav nav-tabs" role="tablist">
+                <li class="active"><a href="#home">Главная</a></li>
+                <li><a href="#about">О себе</a></li>
+                <li><a href="#experience">Опыт работы</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--  End of Header block   ======-->
+    <!--=============================================
+=            Section  block            =
+=============================================-->
+    <section class="home" role="img" aria-label="home-background">
+        <div class="home-foto">
+            <!-- <img src="img/my-foto.jpg" class="home-foto-img" alt="photo"> -->
+             <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="img/photo.png, img/photo1.png 2x, img/photo2.png 3x" media="(min-width: 1200px)">
+                <source srcset="img/photor.png, img/photor2.png 2x, img/photor3.png 3x" media="(min-width: 100px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img srcset="img/photo.png" alt="…">
+            </picture>
+        </div>
+        <div class="home-info">
+            <h1>ВЯЧЕСЛАВ ГОРИШНЯК</h1>
+            <div>Frontend-разработчик, HTML-верстальщик</div>
+            <p>E-mail: <a href="mailto:sharnirio@gmail.com?subject=Вакансия на резюме «Frontend-разработчик, HTML-верстальщик»">sharnirio@gmail.com</a></p>
+            <p>Skype: <a href="skype:sharnirio?userinfo">sharnirio</a>
+            </p>
+            <span id="button">
+          <a class="button" href="#portfolio">Смотреть работы</a></span>
+            <span>
+              <a class="button" href="https://drive.google.com/uc?export=download&#38;id=0BwDu-oxMlPDmRG8zWGtJcmpjaTQ" target="_blank">Скачать резюме</a></span>
+        </div>
+        <span class='img-fiks'></span>
+    </section>
+    <section id="about">
+        <article class="education">
+            <h1>ОБРАЗОВАНИЕ</h1>
+            <div class="education-wrap">
+                <div class="carousel-education">
+                    <div class="item">
+                        <div class="education-block">
+                            <div>
+                                <time>05. 2014 - наст. вр.</time>
+                            </div>
+                            <span class="education-block-animate">Самообразование - </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="education-block">
+                            <div>
+                                <time>05. 2014 - наст. вр.</time>
+                            </div>
+                            <span class="education-block-animate">Самообразование - HTML, CSS, JavaScript + jQuery (базовые знания)</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="education-block">
+                            <div>
+                                <time>05. 2014 - наст. вр.</time>
+                            </div>
+                            <span class="education-block-animate">Самообразование - HTML, CSS, JavaScript + jQuery (базовые знания), PHP (начальные знания) и дрСамообразование - HTML, CSS, JavaScript + jQuery (базовые знания), PHP (начальные знания) и др
+                                Самообразование - HTML, CSS, JavaScript + jQuery (базовые знания), PHP (начальные знания) и др
+                                Самообразование - HTML, CSS, JavaScript + jQuery (базовые знания), PHP (начальные знания) и др
+                                .</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="education-block">
+                            <div>
+                                <time>05. 2014 - наст. вр.</time>
+                            </div>
+                            <span class="education-block-animate">Самообразование - HTML, CSS, JavaScript + jQuery (базовые знания), PHP (начальные знания) и др.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="skils">
+            <h1>Основные знания и навыки</h1>
+            <div>
+                <p class="skils-p">1234567891213</p>
+                <p class="skils-p">CSS3</p>
+                <p class="skils-p">Photoshop</p>
+                <p class="skils-p">Bootstrap</p>
+                <p class="skils-p">Linux</p>
+                <p class="skils-p">Git</p>
+                <p class="skils-p">Linux</p>
+                <p class="skils-p">Git</p>
+            </div>
+        </article>
+        <article id="more-skils" class="more-my-skils">
+            <h2>больше навыков</h1>
+                    <div class="more-skils-wrap">
+                        <div class="carousel-more-skils">
+                            <div class="item"><p class="more-skils-p p25">12345678912131
+                                234
+                                567891213</p></div>
+                                <div class="item"><p class="more-skils-p p50">HTML5</p></div>
+                                <div class="item"><p class="more-skils-p p65">HTML5</p></div>
+                                <div class="item"><p class="more-skils-p p75">HTML5</p></div>
+                                <div class="item"><p class="more-skils-p p85">HTML5</p></div>
+                                <div class="item"><p class="more-skils-p p25">HTML5</p></div>
+                                <div class="item"><p class="more-skils-p p50">HTML5</p></div>
+                                <div class="item"><p class="more-skils-p p65">HTML5</p></div>
+                                <div class="item"><p class="more-skils-p p75">HTML5</p></div>
+                                <div class="item"><p class="more-skils-p p85">HTML5</p></div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                <section id="experience">
+                    <article class="experience" role="img" aria-label="experience-background">
+                        <h1>Опыт работы</h1>
+                        <div class="carousel-experience owl-theme">
+                          <div class="item">
+                              <div class="item-wrap">
+                                <div>Frontend-разработчик, HTML-верстальщик</div>
+                                <span>Smithysoft</span>
+                                <p>- разработка адаптивных веб-сайтов разного уровня сложности по готовым PSD-макетам</p>
+                                <p>- наполнение,поддержка и администрирование сайтов</p>
+                                <p>- работа с CMS Wordpress - кастомизация, настройка тем и имплементация верстки</p>
+                                <p>- поддержка и доработка существующих проектов компании</p>
+                                <p>- создание проекта на GitLab, учет и добавление команды на проект
+                                    деплой сайтов на production</p>
+                                    <p>- наполнение,поддержка и администрирование сайтов</p>
+                                    <p>- работа с CMS Wordpress - кастомизация, настройка тем и имплементация верстки</p>
+                                    <p>- поддержка и доработка существующих проектов компании</p>
+                                    <p>- создание проекта на GitLab, учет и добавление команды на проект
+                                        деплой сайтов на production</p>
+                                        <p>- наполнение,поддержка и администрирование сайтов</p>
+                                        <p>- работа с CMS Wordpress - кастомизация, настройка тем и имплементация верстки</p>
+                                        <p>- поддержка и доработка существующих проектов компании</p>
+
+                                    </div>
+                                    <div class="item-date">
+                                      <p>2014</p>
+                                      <span>08. 14 - наст. вр.</span>
+                                  </div>
+                              </div>
+
+                              <div class="item">
+                                  <div class="item-wrap">
+                                    <div>Frontend-разработчик, HTML-верстальщик</div>
+                                    <span>Smithysoft</span>
+                                    <p>- разработка адаптивных веб-сайтов разного уровня сложности по готовым PSD-макетам</p>
+                                    <p>- наполнение,поддержка и администрирование сайтов</p>
+                                </div>
+                                <div class="item-date">
+                                  <p>2014</p>
+                                  <span>08. 14 - наст. вр.</span>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="item-wrap">
+                                <div>Frontend-разработчик, HTML-верстальщик</div>
+                                <span>Smithysoft</span>
+                                <p>- разработка адаптивных веб-сайтов разного уровня сложности по готовым PSD-макетам</p>
+                                <p>- наполнение,поддержка и администрирование сайтов</p>
+                                <p>- работа с CMS Wordpress - кастомизация, настройка тем и имплементация верстки</p>
+                                <p>- поддержка и доработка существующих проектов компании</p>
+                                <p>- создание проекта на GitLab, учет и добавление команды на проект
+                                    деплой сайтов на production</p></div>
+                                    <div class="item-date">
+
+                                      <p>2014</p>
+                                      <span>08. 14 - наст. вр.</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </article>
+                      <article id="rule" class="rule">
+                        <h1>Принципы работы</h1>
+                        <ul class="timeline">
+                            <li class="year">&#60;&#8260;&#62;</li>
+                            <li class="event">
+                                <div>Кроссбраузерность</div>
+                                <span>Сайты выглядят одинаково во всех современных браузерах. Нюансы верстки в IE9, IE8 обсуждаются отдельно, как правило, я следую принципу Graceful degradation.</span>
+                            </li>
+                            <li class="event">
+                                <div>Валидный HTML код</div>
+                                <span>Перед сдачей работы заказчику код проверяется валидатором http://validator.w3.org на соответствие стандартам.</span>
+                            </li>
+                            <li class="event">
+                                <div>Читабельность кода</div>
+                                <span>Код сопровождается комментариями и пишется с тем расчетом, что в дальнейшем с ним сможет легко работать другой верстальщик/программист..</span>
+                            </li>
+                            <li class="event">
+                                <div>SEO-оптимизация</div>
+                                <span>Грамотное расположение заголовков, меню и контента обеспечивает быструю индексацию сайта и "дружелюбное" отношение к нему поисковых систем.</span>
+                            </li>
+                            <li class="event">
+                                <div>Ориентация на CMS</div>
+                                <span>Верстка сайта впоследствии может быть легко имплементирована программистом на любую CMS систему без внесения правок и корректировок в сверстанный макет.</span>
+                            </li>
+                            <li class="year">&#60;&#8260;&#62;</li>
+                        </ul>
+                    </article>
+                </section>
+                <section id="portfolio" class="portfolio">
+                    <h1>Портфолио</h1>
+                    <div class="carousel-portfolio">
+                        <div class="effect eff-30">
+                            <img src="img/sait/amp.jpg" alt="Effect #30" />
+                            <div class="overlay">
+                                <div class="icon"></div>
+                            </div>
+                            <div class="bubbles">
+                                <div class="bubble bubble-1"><span>Hello word!</span></div>
+                                <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                                <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                                <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                                <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                                <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                                <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                                <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                                <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                                <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                                <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                                <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                                <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                            </div>
+                            <div class="caption">
+                                <h4>Title is Here</h4>
+                                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut. </p>
+                                <a class="btn" href="#" title="View More">View More</a>
+                            </div>
+                        </div>
+                        <div class="effect eff-30">
+                            <img src="img/sait/amp.jpg" alt="Effect #30" />
+                            <div class="overlay">
+                                <div class="icon"></div>
+                            </div>
+                            <div class="bubbles">
+                                <div class="bubble"></div>
+                                <div class="bubble bubble-2"></div>
+                                <div class="bubble bubble-3"></div>
+                                <div class="bubble bubble-4"></div>
+                                <div class="bubble bubble-5"></div>
+                                <div class="bubble bubble-6"></div>
+                                <div class="bubble bubble-7"></div>
+                                <div class="bubble bubble-8"></div>
+                                <div class="bubble bubble-9"></div>
+                                <div class="bubble bubble-10"></div>
+                                <div class="bubble bubble-11"></div>
+                                <div class="bubble bubble-12"></div>
+                                <div class="bubble bubble-13"></div>
+                            </div>
+                            <div class="caption">
+                                <h4>Title is Here</h4>
+                                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut. </p>
+                                <a class="btn" href="#" title="View More">View More</a>
+                            </div>
+                        </div>
+                        <div class="effect eff-30">
+                            <img src="img/sait/amp.jpg" alt="Effect #30" />
+                            <div class="overlay">
+                                <div class="icon"></div>
+                            </div>
+                            <div class="bubbles">
+                                <div class="bubble"></div>
+                                <div class="bubble bubble-2"></div>
+                                <div class="bubble bubble-3"></div>
+                                <div class="bubble bubble-4"></div>
+                                <div class="bubble bubble-5"></div>
+                                <div class="bubble bubble-6"></div>
+                                <div class="bubble bubble-7"></div>
+                                <div class="bubble bubble-8"></div>
+                                <div class="bubble bubble-9"></div>
+                                <div class="bubble bubble-10"></div>
+                                <div class="bubble bubble-11"></div>
+                                <div class="bubble bubble-12"></div>
+                                <div class="bubble bubble-13"></div>
+                            </div>
+                            <div class="caption">
+                                <h4>Title is Here</h4>
+                                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut. </p>
+                                <a class="btn" href="#" title="View More">View More</a>
+                            </div>
+                        </div>
+                        <div class="effect eff-30">
+                            <img src="img/sait/amp.jpg" alt="Effect #30" />
+                            <div class="overlay">
+                                <div class="icon"></div>
+                            </div>
+                            <div class="bubbles">
+                                <div class="bubble"></div>
+                                <div class="bubble bubble-2"></div>
+                                <div class="bubble bubble-3"></div>
+                                <div class="bubble bubble-4"></div>
+                                <div class="bubble bubble-5"></div>
+                                <div class="bubble bubble-6"></div>
+                                <div class="bubble bubble-7"></div>
+                                <div class="bubble bubble-8"></div>
+                                <div class="bubble bubble-9"></div>
+                                <div class="bubble bubble-10"></div>
+                                <div class="bubble bubble-11"></div>
+                                <div class="bubble bubble-12"></div>
+                                <div class="bubble bubble-13"></div>
+                            </div>
+                            <div class="caption">
+                                <h4>Title is Here</h4>
+                                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut. </p>
+                                <a class="btn" href="#" title="View More">View More</a>
+                            </div>
+                        </div>
+                        <div class="effect eff-30">
+                            <img src="img/sait/amp.jpg" alt="Effect #30" />
+                            <div class="overlay">
+                                <div class="icon"></div>
+                            </div>
+                            <div class="bubbles">
+                                <div class="bubble"></div>
+                                <div class="bubble bubble-2"></div>
+                                <div class="bubble bubble-3"></div>
+                                <div class="bubble bubble-4"></div>
+                                <div class="bubble bubble-5"></div>
+                                <div class="bubble bubble-6"></div>
+                                <div class="bubble bubble-7"></div>
+                                <div class="bubble bubble-8"></div>
+                                <div class="bubble bubble-9"></div>
+                                <div class="bubble bubble-10"></div>
+                                <div class="bubble bubble-11"></div>
+                                <div class="bubble bubble-12"></div>
+                                <div class="bubble bubble-13"></div>
+                            </div>
+                            <div class="caption">
+                                <h4>Title is Here</h4>
+                                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut. </p>
+                                <a class="btn" href="#" title="View More">View More</a>
+                            </div>
+                        </div>
+                        <div class="effect eff-30">
+                            <img src="img/sait/amp.jpg" alt="Effect #30" />
+                            <div class="overlay">
+                                <div class="icon"></div>
+                            </div>
+                            <div class="bubbles">
+                                <div class="bubble"></div>
+                                <div class="bubble bubble-2"></div>
+                                <div class="bubble bubble-3"></div>
+                                <div class="bubble bubble-4"></div>
+                                <div class="bubble bubble-5"></div>
+                                <div class="bubble bubble-6"></div>
+                                <div class="bubble bubble-7"></div>
+                                <div class="bubble bubble-8"></div>
+                                <div class="bubble bubble-9"></div>
+                                <div class="bubble bubble-10"></div>
+                                <div class="bubble bubble-11"></div>
+                                <div class="bubble bubble-12"></div>
+                                <div class="bubble bubble-13"></div>
+                            </div>
+                            <div class="caption">
+                                <h4>Title is Here</h4>
+                                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut. </p>
+                                <a class="btn" href="#" title="View More">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- =====  End of Header block   ======-->
+    <!-- =============================================
+     =           Footer block           =
+     =============================================-->
+     <footer>
+        <article class="footer-left">
+            <span>E-mail:<a href="mailto:sharnirio@gmail.com?subject=Вакансия на резюме «Frontend-разработчик, HTML-верстальщик»">sharnirio@gmail.com</a></span>
+            <span>Skype:<a href="skype:sharnirio?userinfo">sharnirio</a></span>
+        </article>
+        <article class="footer-right">
+            <span>Copyright &copy; 2016</span>
+            <span>Vyacheslav Gorishnyack</span>
+        </article>
+    </footer>
+    <script async src="js/main.js"></script>
+</body>
+
+</html>
+<!-- =====  End of Footer block  ======-->
