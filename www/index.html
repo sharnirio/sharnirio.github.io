@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My test project</title>
+	<link rel="stylesheet" href="css/my-main.css">
+	<link rel="stylesheet" href="link/link.css">
+	<link rel="stylesheet" href="cube/main.css">
+
+</head>
+<body>
+<header><h1>My test project</h1></header>
+
+<section class="item1">
+	<h2>Плавные переходы - папка link</h2>
+	<ul class="nav">
+    <li class="main-menu">
+        <a href>Main Menu</a>
+        <a href>Products</a>
+        <a href>Store</a>
+        <a href>Forum</a>
+    </li>
+    <li class="settings">
+        <a href>Settings</a>
+        <a href>Account</a>
+        <a href>Notifications</a>
+        <a href>Dislpay</a>
+    </li>
+    <li class="link">
+        <a href>Link</a>
+        <a href>Embed</a>
+        <a href>Short link</a>
+        <a href>Full link</a>
+    </li>
+    <li class="search">
+        <a href>Search</a>
+        <a href>Item 2</a>
+        <a href>Item 3</a>
+        <a href>Item 4</a>
+    </li>
+</ul>
+</section>
+<section class="item2">
+	<h2>Трехмерный куб на CSS3 - папка cube</h2>
+		<div id="wrapper">
+		<div id="cube">
+			<div class="side" id="side1">1</div>
+			<div class="side" id="side2">2</div>
+			<div class="side" id="side3">3</div>
+			<div class="side" id="side4">4</div>
+			<div class="side" id="side5">5</div>
+			<div class="side" id="side6">6</div>
+		</div>
+	</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$(document).mousemove(function(e){
+				$('#cube').css({
+					'-moz-transform':'rotateX('+e.pageY+'deg) rotateY('+e.pageX+'deg)',
+					'-webkit-transform':'rotateX('+e.pageY+'deg) rotateY('+e.pageX+'deg)',
+					'transform':'rotateX('+e.pageY+'deg) rotateY('+e.pageX+'deg)'
+				});
+			});
+		});
+	</script>
+</section>
+<section class="item3">
+	<h2></h2>
+</section>
+<section>
+	<h2></h2>
+</section>
+<section class="item4">
+	<h2></h2>
+</section>
+<footer>
+
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
