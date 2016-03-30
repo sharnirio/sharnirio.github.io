@@ -44,13 +44,13 @@
             })
         };
         $('.button-del').hide();
-        $('[name="button"]').on('click', myFunction);
+        $('.button').on('click', myFunction);
 
         // method 1
 
         $('.button-del2').hide();
 
-        function myFunction() {
+        function myFunction2() {
             $('.for-js').clone().appendTo('.js-add2');
 
             $('.button-del2').show();
@@ -60,7 +60,7 @@
             })
         };
         $('.button-del2').hide();
-        $('.button2').on('click', myFunction);
+        $('.button2').on('click', myFunction2);
 
     })(jQuery);
     </script>
