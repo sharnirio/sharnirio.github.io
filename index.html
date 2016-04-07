@@ -5,16 +5,39 @@
     <meta charset="utf-8">
     <title>Front-end developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="img/other/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/other/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <!--[if lt IE 9]>
-    <script src="js/html5.js"></script>
-    <script src="js/css3-mediaqueries.js"></script>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
-<body data-spy="scroll" data-target="#menu">
+
+<body id="body" data-spy="scroll" data-target="#menu">
+  <!-- =============================================
+=           preload block            =
+============================================= -->
+<div id="preload" style="position:fixed;left:0;top:0;right:0;bottom:0;background:#009aff;z-index:500;display:none;"><span style="width:256px;height:76px;position:absolute;left:40%;top:45%;background:url('./img/other/load.gif') no-repeat;"></span></div>
+<script>
+    (function () {
+        var elem = document.getElementById('preload'),
+        body = document.getElementById('body');
+        body.style.visibility='hidden';
+        elem.style.display='block';
+        elem.style.visibility='visible';
+        console.log(body);
+        console.log(elem);
+
+        window.onload = function () {
+            elem.style.display='none';
+            body.style.visibility=' visible';
+        }
+    }());
+</script>
+
     <!-- =============================================
 =           Header block            =
 ============================================= -->
@@ -121,7 +144,7 @@
                         <h2>больше навыков</h1>
                             <div class="more-skils-wrap">
                                 <div class="carousel-more-skils">
-                                <!-- interest specified skills through class p25-25% p50-50% p65-65% p75-75% p85-85%-->
+                                    <!-- interest specified skills through class p25-25% p50-50% p65-65% p75-75% p85-85%-->
                                     <div class="item"><p class="more-skils-p p75">Bootstrap<span class="jQtooltip" title="Bootstrap это фреймворк для создания современных, кросс-браузерных и стандартизованных интерфейсов.">?</span></p></div>
                                     <div class="item"><p class="more-skils-p p65">Photoshop<span class="jQtooltip" title="Photoshop - многофункциональный графический редактор">?</span></p></div>
                                     <div class="item"><p class="more-skils-p p65">Wordpress<span class="jQtooltip" title="WordPress - это популярная бесплатная система управления сайтом (CMS) с открытым исходным кодом.">?</span></p></div>
@@ -139,8 +162,8 @@
                         <article class="experience" role="img" aria-label="experience-background">
                             <h1>Опыт работы</h1>
                             <div class="carousel-experience">
-                            <div class="item">
-                              <div class="item-wrap">
+                                <div class="item">
+                                  <div class="item-wrap">
                                     <div>Frontend-разработчик, HTML-верстальщик</div>
                                     <span>Smithysoft</span>
                                     <p>разработка адаптивных веб-сайтов разного уровня сложности по готовым PSD-макетам</p>
@@ -149,405 +172,405 @@
                                     <p>работа с CMS Wordpress - кастомизация,настройка тем и имплементация верстки</p>
                                     <p>поддержка и доработка существующих проектов компании</p>
                                     <p>создание проекта на GitLab, учет и добавление команды на проэкт</p>
-                                    </div>
-                                    <div class="item-date">
-                                      <p>2015</p>
-                                      <span>Март - наст. вр.</span>
-                                    </div>
-                              </div>
-                              <div class="item">
-                                <div class="item-wrap">
-                                    <div>HTML-верстальщик</div>
-                                    <span>Freelance</span>
-                                    <p>верстка сайтов по готовым PSD-макетам</p>
-                                    <p>разработка адаптивных веб-сайтов разного уровня сложности по готовым PSD-макетам</p>
-                                    <p>установка и кастомизация плагинов на JS и jQuery</p>
-                                    <p>наполнение,поддержка и администрирование сайтов</p>
                                 </div>
                                 <div class="item-date">
-                                  <p>2014</p>
-                                  <span>Август - наст. вр.</span>
-                                </div>
+                                  <p>2015</p>
+                                  <span>Март - наст. вр.</span>
+                              </div>
+                          </div>
+                          <div class="item">
+                            <div class="item-wrap">
+                                <div>HTML-верстальщик</div>
+                                <span>Freelance</span>
+                                <p>верстка сайтов по готовым PSD-макетам</p>
+                                <p>разработка адаптивных веб-сайтов разного уровня сложности по готовым PSD-макетам</p>
+                                <p>установка и кастомизация плагинов на JS и jQuery</p>
+                                <p>наполнение,поддержка и администрирование сайтов</p>
+                            </div>
+                            <div class="item-date">
+                              <p>2014</p>
+                              <span>Август - наст. вр.</span>
                           </div>
                       </div>
-                  </article>
-                  <article id="rule" class="rule">
-                    <h1>Принципы работы</h1>
-                    <ul class="timeline">
-                        <li class="year">&#60;<!-- &#8260; -->start&#62;</li>
-                        <li class="event">
-                            <div>Кроссбраузерность</div>
-                            <span>Сайты выглядят одинаково во всех современных браузерах. Нюансы верстки в IE9, IE8 обсуждаются отдельно, как правило, я следую принципу Graceful degradation.</span>
-                        </li>
-                        <li class="event">
-                            <div>Валидный HTML код</div>
-                            <span>Перед сдачей работы заказчику код проверяется валидатором http://validator.w3.org на соответствие стандартам.</span>
-                        </li>
-                        <li class="event">
-                            <div>Читабельность кода</div>
-                            <span>Код сопровождается комментариями и пишется с тем расчетом, что в дальнейшем с ним сможет легко работать другой верстальщик/программист.</span>
-                        </li>
-                        <li class="event">
-                            <div>SEO-оптимизация</div>
-                            <span>Грамотное расположение заголовков, меню и контента обеспечивает быструю индексацию сайта и "дружелюбное" отношение к нему поисковых систем.</span>
-                        </li>
-                        <li class="event">
-                            <div>Ориентация на CMS</div>
-                            <span>Верстка сайта впоследствии может быть легко имплементирована программистом на любую CMS систему без внесения правок и корректировок в сверстанный макет.</span>
-                        </li>
-                        <li class="event">
-                            <div>Оптимизация сайта</div>
-                            <span>Оптимизация картинок (выбор оптимального размера, формата и качества картинки), js-кода (отсутствие повторяющегося кода), количества подгружаемых файлов (использование технологии спрайтов).</span>
-                        </li>
-                        <li class="year">&#60;&#8260; finish&#62;</li>
-                    </ul>
-                </article>
-            </section>
-            <section id="portfolio" class="portfolio">
-                <h1>Портфолио</h1>
-                <div class="carousel-portfolio">
-                    <div class="effect eff-30">
-                        <img src="img/site/amp.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт дизайн студии</h4>
-                            <p>Имплементация на CMS WordPress</p>
-                            <a class="btn" href="http://ampdesign.com.ua/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
+                  </div>
+              </article>
+              <article id="rule" class="rule">
+                <h1>Принципы работы</h1>
+                <ul class="timeline">
+                    <li class="year">&#60;<!-- &#8260; -->start&#62;</li>
+                    <li class="event">
+                        <div>Кроссбраузерность</div>
+                        <span>Сайты выглядят одинаково во всех современных браузерах. Нюансы верстки в IE9, IE8 обсуждаются отдельно, как правило, я следую принципу Graceful degradation.</span>
+                    </li>
+                    <li class="event">
+                        <div>Валидный HTML код</div>
+                        <span>Перед сдачей работы заказчику код проверяется валидатором http://validator.w3.org на соответствие стандартам.</span>
+                    </li>
+                    <li class="event">
+                        <div>Читабельность кода</div>
+                        <span>Код сопровождается комментариями и пишется с тем расчетом, что в дальнейшем с ним сможет легко работать другой верстальщик/программист.</span>
+                    </li>
+                    <li class="event">
+                        <div>SEO-оптимизация</div>
+                        <span>Грамотное расположение заголовков, меню и контента обеспечивает быструю индексацию сайта и "дружелюбное" отношение к нему поисковых систем.</span>
+                    </li>
+                    <li class="event">
+                        <div>Ориентация на CMS</div>
+                        <span>Верстка сайта впоследствии может быть легко имплементирована программистом на любую CMS систему без внесения правок и корректировок в сверстанный макет.</span>
+                    </li>
+                    <li class="event">
+                        <div>Оптимизация сайта</div>
+                        <span>Оптимизация картинок (выбор оптимального размера, формата и качества картинки), js-кода (отсутствие повторяющегося кода), количества подгружаемых файлов (использование технологии спрайтов).</span>
+                    </li>
+                    <li class="year">&#60;&#8260; finish&#62;</li>
+                </ul>
+            </article>
+        </section>
+        <section id="portfolio" class="portfolio">
+            <h1>Портфолио</h1>
+            <div class="carousel-portfolio">
+                <div class="effect eff-30">
+                    <img src="img/site/amp.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
                     </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/teacher-yoga.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт учителя йоги</h4>
-                            <p>Участие в проекте - верстка</p>
-                            <a class="btn" href="http://www.chrisjamesmindbody.com" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
                     </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/ravon.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт автомобильной компании</h4>
-                            <p>Участие в проекте - верстка</p>
-                            <a class="btn" href="http://ravon.ru/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
+                    <div class="caption">
+                        <h4>Сайт дизайн студии</h4>
+                        <p>Имплементация на CMS WordPress</p>
+                        <a class="btn" href="http://ampdesign.com.ua/" title="View More" target="_blank">Посмотреть сайт</a>
                     </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/olala.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт ивент-агенства</h4>
-                            <p>Верстка + имплементация на CMS WordPress</p>
-                            <a class="btn" href="http://oohlala.com.ua/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/chasomania.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт интернет магазин</h4>
-                            <p>Правка верстки</p>
-                            <a class="btn" href="http://www.chasomania.com/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/my-resume.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт резюме</h4>
-                            <p>Верстка</p>
-                            <a class="btn" href="http://sharnirio.github.io/resume-old/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/online.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт онлайн сервис по поиску авиа билетов</h4>
-                            <p>Версткa</p>
-                            <a class="btn" href="http://onlineservice.smithysoft.com/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/emtas.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Интернет-магазин по продаже котлов</h4>
-                            <p>Верстка + имплементация на CMS WordPres</p>
-                            <a class="btn" href="http://emtas.com.ua/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/angelo.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт по макету Angelo</h4>
-                            <p>Верстка + имплементация на CMS WordPress</p>
-                            <a class="btn" href="http://s08931jq.bget.ru/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/green-site.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт по макету Green-site</h4>
-                            <p>Верстка + имплементация на GetSimple</p>
-                            <a class="btn" href="http://sharnirio.github.io/green-site" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/singolo.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт по макету Singolo</h4>
-                            <p>Адаптивная верстка с использованием фрейморка - Bootstrap</p>
-                            <a class="btn" href="http://sharnirio.github.io/singolo/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/madison.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт по макету madison</h4>
-                            <p>Верстка + работа с jquery плагинами</p>
-                            <a class="btn" href="http://sharnirio.github.io/madison/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-                    <div class="effect eff-30">
-                        <img src="img/site/landing-page.jpg" alt="Effect #30" />
-                        <div class="overlay">
-                            <div class="icon"></div>
-                        </div>
-                        <div class="bubbles">
-                            <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                            <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                            <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                            <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                            <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                            <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                            <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                            <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                            <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                            <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                            <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                            <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                            <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                        </div>
-                        <div class="caption">
-                            <h4>Сайт по макету landing page</h4>
-                            <p>Верстка - Landing page</p>
-                            <a class="btn" href="http://sharnirio.github.io/landing-page/" title="View More" target="_blank">Посмотреть сайт</a>
-                        </div>
-                    </div>
-
                 </div>
-            </section>
-            <!-- =====  End of Header block   ======-->
+                <div class="effect eff-30">
+                    <img src="img/site/teacher-yoga.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт учителя йоги</h4>
+                        <p>Участие в проекте - верстка</p>
+                        <a class="btn" href="http://www.chrisjamesmindbody.com" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/ravon.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт автомобильной компании</h4>
+                        <p>Участие в проекте - верстка</p>
+                        <a class="btn" href="http://ravon.ru/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/olala.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт ивент-агенства</h4>
+                        <p>Верстка + имплементация на CMS WordPress</p>
+                        <a class="btn" href="http://oohlala.com.ua/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/chasomania.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт интернет магазин</h4>
+                        <p>Правка верстки</p>
+                        <a class="btn" href="http://www.chasomania.com/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/my-resume.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт резюме</h4>
+                        <p>Верстка</p>
+                        <a class="btn" href="http://sharnirio.github.io/resume-old/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/online.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт онлайн сервис по поиску авиа билетов</h4>
+                        <p>Версткa</p>
+                        <a class="btn" href="http://onlineservice.smithysoft.com/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/emtas.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Интернет-магазин по продаже котлов</h4>
+                        <p>Верстка + имплементация на CMS WordPres</p>
+                        <a class="btn" href="http://emtas.com.ua/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/angelo.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт по макету Angelo</h4>
+                        <p>Верстка + имплементация на CMS WordPress</p>
+                        <a class="btn" href="http://s08931jq.bget.ru/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/green-site.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт по макету Green-site</h4>
+                        <p>Верстка + имплементация на GetSimple</p>
+                        <a class="btn" href="http://sharnirio.github.io/green-site" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/singolo.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт по макету Singolo</h4>
+                        <p>Адаптивная верстка с использованием фрейморка - Bootstrap</p>
+                        <a class="btn" href="http://sharnirio.github.io/singolo/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/madison.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт по макету madison</h4>
+                        <p>Верстка + работа с jquery плагинами</p>
+                        <a class="btn" href="http://sharnirio.github.io/madison/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+                <div class="effect eff-30">
+                    <img src="img/site/landing-page.jpg" alt="Effect #30" />
+                    <div class="overlay">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                        <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                        <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                        <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                        <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                        <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                        <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                        <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                        <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                        <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                        <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                        <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                        <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                    </div>
+                    <div class="caption">
+                        <h4>Сайт по макету landing page</h4>
+                        <p>Верстка - Landing page</p>
+                        <a class="btn" href="http://sharnirio.github.io/landing-page/" title="View More" target="_blank">Посмотреть сайт</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- =====  End of Header block   ======-->
     <!-- =============================================
      =           Footer block           =
      =============================================-->
