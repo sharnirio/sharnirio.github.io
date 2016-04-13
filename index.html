@@ -20,21 +20,26 @@
   <!-- =============================================
 =           preload block            =
 ============================================= -->
-<div id="preload" style="position:fixed;left:0;top:0;right:0;bottom:0;background:#009aff;z-index:500;display:none;"><span style="width:256px;height:76px;position:absolute;left:40%;top:45%;background:url('./img/other/load.gif') no-repeat;"></span></div>
+<div id="preload"><span class="preload-img"></span></div>
+<style>
+    #preload {
+        position:fixed;left:0;top:0;right:0;bottom:0;background:#009aff;z-index:500;display:none;
+    }
+    .preload-img {
+        min-width:150px;min-height:150px;position:absolute;left:47%;top:40%;background:url('./img/other/load.gif') no-repeat;
+    }
+</style>
 <script>
     (function () {
-        var elem = document.getElementById('preload'),
+    var elem = document.getElementById('preload'),
         body = document.getElementById('body');
         body.style.visibility='hidden';
         elem.style.display='block';
         elem.style.visibility='visible';
-        console.log(body);
-        console.log(elem);
-
-        window.onload = function () {
+        window.onload = setTimeout(function () {
             elem.style.display='none';
             body.style.visibility=' visible';
-        }
+        }, 800);
     }());
 </script>
 
