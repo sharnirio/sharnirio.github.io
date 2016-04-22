@@ -66,25 +66,25 @@
 =            Section  block            =
 =============================================-->
 <section class="home" role="img" aria-label="home-background">
-    <div class="home-foto" data-anijs="if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">
-            <!-- <img src="img/photo/photo650.png" class="home-foto-img" alt="photo"> -->
-            <picture>
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                <source srcset="img/photo/photo650.png, img/photo/photo1200.png 2x" media="(min-width: 1200px)">
-                    <source srcset="img/photo/photo650.png, img/photo/photo1200.png 2x" media="(min-width: 800px)">
-                        <source srcset="img/photo/photo300.png, img/photo/photo650.png 2x, img/photo/photo1200.png 3x" media="(min-width: 480px)">
-                            <!--[if IE 9]></video><![endif]-->
-                            <img srcset="img/photo/photo650.png" alt="…">
-                        </picture>
+    <div class="home-foto" data-anijs="if: load, on: window, do: bounceInDown animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">
+        <!-- <img src="img/photo/photo650.png" class="home-foto-img" alt="photo"> -->
+        <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="img/photo/photo650.png, img/photo/photo1200.png 2x" media="(min-width: 1200px)">
+                <source srcset="img/photo/photo650.png, img/photo/photo1200.png 2x" media="(min-width: 800px)">
+                    <source srcset="img/photo/photo300.png, img/photo/photo650.png 2x, img/photo/photo1200.png 3x" media="(min-width: 480px)">
+                        <!--[if IE 9]></video><![endif]-->
+                        <img srcset="img/photo/photo650.png" alt="">
+                    </picture>
                 </div>
                 <div class="home-info">
-                    <h1  data-anijs="if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim">ВЯЧЕСЛАВ ГОРИШНЯК</h1>
-                    <div data-anijs="if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim">Frontend-разработчик, HTML-верстальщик</div>
-                    <p data-anijs="if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim">E-mail: <a class="tooltip" data-title="Чтобы отправить мне письмо, перейдите по ссылке!" href="mailto:sharnirio@gmail.com?subject=Вакансия на резюме «Frontend-разработчик, HTML-верстальщик»">sharnirio@gmail.com</a></p>
-                    <p data-anijs="if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim">Skype: <a class="tooltip" data-title="Чтобы добавить меня в скайп, перейдите по ссылке!" href="skype:sharnirio?userinfo">sharnirio</a>
+                    <h1  data-anijs="if: load, on: window, do: bounceInRight animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim">ВЯЧЕСЛАВ ГОРИШНЯК</h1>
+                    <div data-anijs="if: load, on: window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim">Frontend-разработчик, HTML-верстальщик</div>
+                    <p data-anijs="if: load, on: window, do: bounceInRight animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim">E-mail: <a class="tooltip" data-title="Чтобы отправить мне письмо, перейдите по ссылке!" href="mailto:sharnirio@gmail.com?subject=Вакансия на резюме «Frontend-разработчик, HTML-верстальщик»">sharnirio@gmail.com</a></p>
+                    <p data-anijs="if: load, on: window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim">Skype: <a class="tooltip" data-title="Чтобы добавить меня в скайп, перейдите по ссылке!" href="skype:sharnirio?userinfo">sharnirio</a>
                     </p>
-                    <span id="button" data-anijs="if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim"><a class="button" href="#portfolio">Смотреть работы</a></span>
-                    <span data-anijs="if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim"><a class="button" href="https://drive.google.com/uc?export=download&#38;id=0BwDu-oxMlPDmRG8zWGtJcmpjaTQ" target="_blank"><i class="flaticon-web"></i>Скачать резюме</a></span>
+                    <span id="button" data-anijs="if: load, on: window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim"><a class="button" href="#portfolio">Смотреть работы</a></span>
+                    <span data-anijs="if: load, on: window, do: bounceInRight animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim"><a class="button" href="https://drive.google.com/uc?export=download&#38;id=0BwDu-oxMlPDmRG8zWGtJcmpjaTQ" target="_blank"><i class="flaticon-web"></i>Скачать резюме</a></span>
                 </div>
                 <span class='img-fiks'></span>
             </section>
@@ -231,7 +231,7 @@
         <h1 data-anijs="if: scroll, on:window, do: bounceInUp animated, before: scrollReveal, after: removeAnim">Портфолио</h1>
         <div class="carousel-portfolio">
             <div class="effect eff-30">
-                <img src="img/site/amp.jpg" alt="Effect #30" />
+                <img src="img/site/amp.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -257,7 +257,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/teacher-yoga.jpg" alt="Effect #30" />
+                <img src="img/site/teacher-yoga.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -283,7 +283,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/ravon.jpg" alt="Effect #30" />
+                <img src="img/site/ravon.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -309,7 +309,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/olala.jpg" alt="Effect #30" />
+                <img src="img/site/olala.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -335,7 +335,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/chasomania.jpg" alt="Effect #30" />
+                <img src="img/site/chasomania.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -361,7 +361,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/my-resume.jpg" alt="Effect #30" />
+                <img src="img/site/my-resume.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -387,7 +387,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/online.jpg" alt="Effect #30" />
+                <img src="img/site/online.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -413,7 +413,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/emtas.jpg" alt="Effect #30" />
+                <img src="img/site/emtas.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -439,7 +439,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/angelo.jpg" alt="Effect #30" />
+                <img src="img/site/angelo.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -465,7 +465,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/green-site.jpg" alt="Effect #30" />
+                <img src="img/site/green-site.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -491,7 +491,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/singolo.jpg" alt="Effect #30" />
+                <img src="img/site/singolo.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -517,7 +517,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/madison.jpg" alt="Effect #30" />
+                <img src="img/site/madison.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
@@ -543,7 +543,7 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/landing-page.jpg" alt="Effect #30" />
+                <img src="img/site/landing-page.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
                 </div>
