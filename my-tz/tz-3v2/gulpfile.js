@@ -2,7 +2,7 @@
 
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    prefixer = require('gulp-autoprefixer'),
+    autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -135,4 +135,4 @@ gulp.task('watch', function(){
 });
 
 
-gulp.task('default', ['clean',build', 'webserver', 'watch']);
+gulp.task('default', [/*'clean', */'build', 'webserver', 'watch']);
