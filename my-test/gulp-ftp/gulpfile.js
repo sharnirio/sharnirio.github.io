@@ -12,22 +12,16 @@ gulp.task( 'deploy', function() {
     } );
 
     var globs = [
-        // 'src/**',
         'css/main2.css',
-        '!node_modules/**/*.css'
-        // 'style/css/main3.css',
-        // 'js/**',
-        // 'fonts/**',
-        // 'index2.html'
+        // '!node_modules/**/*.css'
     ];
 
-    // using base = '.' will transfer everything to /public_html correctly
-    // turn off buffering in gulp.src for best performance
+    var newerFolder = 'style/css/';
 
-    // return gulp.src( globs, { base: 'ohter', buffer: true } )
-    return gulp.src('style/css/main3.css')
-        .pipe( conn.newer( 'style/css/' ) ) // only upload newer files
-        .pipe( conn.dest( 'style2/test/3/' ) );
+    var path = 'style2/test/3/';
+
+    return gulp.src(globs)
+        .pipe( conn.newer(newerFolder) ) // only upload newer files
+        .pipe( conn.dest(path) );
 
 } );
-
