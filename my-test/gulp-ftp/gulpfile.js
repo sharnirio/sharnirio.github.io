@@ -8,7 +8,9 @@ gulp.task( 'deploy', function() {
         host:     '178.63.197.105',
         user:     'dvelop_test',
         password: 'K6e2I1x4',
-        port: 21
+        port: 21,
+        // parallel: 1,
+        // maxConnections:1
     } );
 
     var globs = [
