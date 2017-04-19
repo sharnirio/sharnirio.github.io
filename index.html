@@ -8,7 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="img/other/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/other/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
+    <script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)};function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n};function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <!-- Load Custom CSS Start -->
+    <script>loadCSS( "css/main.css?ver=1.0.0", false, "all" );</script>
+    <!-- Load Custom CSS End -->
+    <!-- Load Custom CSS Compiled without JS Start -->
+    <noscript>
+        <link rel="stylesheet" href="css/main.css">
+    </noscript>
     <!--[if lt IE 9]>
     <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
@@ -390,32 +400,6 @@
                 </div>
             </div>
             <div class="effect eff-30">
-                <img src="img/site/online.jpg" alt="" />
-                <div class="overlay">
-                    <div class="icon"></div>
-                </div>
-                <div class="bubbles">
-                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                </div>
-                <div class="caption">
-                    <h4>Сайт онлайн сервис по поиску авиа билетов</h4>
-                    <p>Версткa</p>
-                    <a class="btn" href="http://onlineservice.smithysoft.com/" title="View More" target="_blank">Посмотреть сайт</a>
-                </div>
-            </div>
-            <div class="effect eff-30">
                 <img src="img/site/emtas.jpg" alt="" />
                 <div class="overlay">
                     <div class="icon"></div>
@@ -467,111 +451,6 @@
                     <a class="btn" href="http://s08931jq.bget.ru/" title="View More" target="_blank">Посмотреть сайт</a>
                 </div>
             </div>
-            <div class="effect eff-30">
-                <img src="img/site/green-site.jpg" alt="" />
-                <div class="overlay">
-                    <div class="icon"></div>
-                </div>
-                <div class="bubbles">
-                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                </div>
-                <div class="caption">
-                    <h4>Сайт по макету Green-site</h4>
-                    <p>Верстка + имплементация на GetSimple</p>
-                    <a class="btn" href="http://sharnirio.github.io/green-site" title="View More" target="_blank">Посмотреть сайт</a>
-                </div>
-            </div>
-            <div class="effect eff-30">
-                <img src="img/site/singolo.jpg" alt="" />
-                <div class="overlay">
-                    <div class="icon"></div>
-                </div>
-                <div class="bubbles">
-                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                </div>
-                <div class="caption">
-                    <h4>Сайт по макету Singolo</h4>
-                    <p>Адаптивная верстка с использованием фрейморка - Bootstrap</p>
-                    <a class="btn" href="http://sharnirio.github.io/singolo/" title="View More" target="_blank">Посмотреть сайт</a>
-                </div>
-            </div>
-            <div class="effect eff-30">
-                <img src="img/site/madison.jpg" alt="" />
-                <div class="overlay">
-                    <div class="icon"></div>
-                </div>
-                <div class="bubbles">
-                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                </div>
-                <div class="caption">
-                    <h4>Сайт по макету madison</h4>
-                    <p>Верстка + работа с jquery плагинами</p>
-                    <a class="btn" href="http://sharnirio.github.io/madison/" title="View More" target="_blank">Посмотреть сайт</a>
-                </div>
-            </div>
-            <div class="effect eff-30">
-                <img src="img/site/landing-page.jpg" alt="" />
-                <div class="overlay">
-                    <div class="icon"></div>
-                </div>
-                <div class="bubbles">
-                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
-                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
-                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
-                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
-                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
-                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
-                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
-                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
-                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
-                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
-                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
-                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
-                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
-                </div>
-                <div class="caption">
-                    <h4>Сайт по макету landing page</h4>
-                    <p>Верстка - Landing page</p>
-                    <a class="btn" href="http://sharnirio.github.io/landing-page/" title="View More" target="_blank">Посмотреть сайт</a>
-                </div>
-            </div>
-
         </div>
         <div class="hello-block">
             <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="882.5" height="331" viewBox="200 75 489 183">
@@ -631,7 +510,15 @@
                     <span>Vyacheslav Gorishnyack</span>
                 </article>
             </footer>
-            <script async src="js/main.js"></script>
+            <!-- <script async src="js/main.js"></script> -->
+            <!-- Optimized loading JS Start -->
+    <script>var scr = {"scripts":[
+        /*{"src" : "js/libs.min.js", "async" : false},*/
+        {"src" : "js/main.js", "async" : false}
+        ]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
+    </script>
+    <!-- Optimized loading JS End -->
+
         </body>
 
         </html>
