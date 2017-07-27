@@ -10,10 +10,34 @@
     <link rel="shortcut icon" href="img/other/favicon.ico" type="image/x-icon">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
     <!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
-    <script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)};function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n};function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>
+    <script>
+    ! function(e) { "use strict";
+
+        function t(e, t, n) { e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n) };
+
+        function n(t, n) { return e.localStorage && localStorage[t + "_content"] && localStorage[t + "_file"] === n };
+
+        function a(t, a) { if (e.localStorage && e.XMLHttpRequest) n(t, a) ? o(localStorage[t + "_content"]) : l(t, a);
+            else { var s = r.createElement("link");
+                s.href = a, s.id = t, s.rel = "stylesheet", s.type = "text/css", r.getElementsByTagName("head")[0].appendChild(s), r.cookie = t } }
+
+        function l(e, t) { var n = new XMLHttpRequest;
+            n.open("GET", t, !0), n.onreadystatechange = function() { 4 === n.readyState && 200 === n.status && (o(n.responseText), localStorage[e + "_content"] = n.responseText, localStorage[e + "_file"] = t) }, n.send() }
+
+        function o(e) { var t = r.createElement("style");
+            t.setAttribute("type", "text/css"), r.getElementsByTagName("head")[0].appendChild(t), t.styleSheet ? t.styleSheet.cssText = e : t.innerHTML = e } var r = e.document;
+        e.loadCSS = function(e, t, n) { var a, l = r.createElement("link"); if (t) a = t;
+            else { var o;
+                o = r.querySelectorAll ? r.querySelectorAll("style,link[rel=stylesheet],script") : (r.body || r.getElementsByTagName("head")[0]).childNodes, a = o[o.length - 1] } var s = r.styleSheets;
+            l.rel = "stylesheet", l.href = e, l.media = "only x", a.parentNode.insertBefore(l, t ? a : a.nextSibling); var c = function(e) { for (var t = l.href, n = s.length; n--;)
+                    if (s[n].href === t) return e();
+                setTimeout(function() { c(e) }) }; return l.onloadcssdefined = c, c(function() { l.media = n || "all" }), l }, e.loadLocalStorageCSS = function(l, o) { n(l, o) || r.cookie.indexOf(l) > -1 ? a(l, o) : t(e, "load", function() { a(l, o) }) } }(this);
+    </script>
     <!-- <link rel="stylesheet" href="css/main.css"> -->
     <!-- Load Custom CSS Start -->
-    <script>loadCSS( "css/main.css?ver=1.0.0", false, "all" );</script>
+    <script>
+    loadCSS("css/main.css?ver=1.0.0", false, "all");
+    </script>
     <!-- Load Custom CSS End -->
     <!-- Load Custom CSS Compiled without JS Start -->
     <noscript>
@@ -25,149 +49,164 @@
     <![endif]-->
 </head>
 
-
 <body id="body" data-spy="scroll" data-target="#menu">
-  <!-- =============================================
+    <!-- =============================================
 =           preload block            =
 ============================================= -->
-<div id="preload"><span class="preload-img">Loading</span></div>
-<style>
+    <div id="preload"><span class="preload-img">Loading</span></div>
+    <style>
     #preload {
-        position:fixed;left:0;top:0;right:0;bottom:0;background:#009aff;z-index:500;display:none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #009aff;
+        z-index: 500;
+        display: none;
     }
-    .preload-img {
-        min-width:150px;min-height:150px;line-height:150px;position:absolute;left:47%;
-        left:calc(50% - 75px);top:40%;top:calc(50% - 75px);background:url('./img/other/load.gif') no-repeat;
-    }
-</style>
-<script>
-  var elem = document.getElementById('preload'),
-  body = document.getElementById('body');
-  body.style.visibility='hidden';
-  elem.style.display='block';
-  elem.style.visibility='visible';
-  window.onload =  function() {
-    elem.style.display='none';
-    body.style.visibility=' visible';
-};
-</script>
 
+    .preload-img {
+        min-width: 150px;
+        min-height: 150px;
+        line-height: 150px;
+        position: absolute;
+        left: 47%;
+        left: calc(50% - 75px);
+        top: 40%;
+        top: calc(50% - 75px);
+        background: url('./img/other/load.gif') no-repeat;
+    }
+    </style>
+    <script>
+    var elem = document.getElementById('preload'),
+        body = document.getElementById('body');
+    body.style.visibility = 'hidden';
+    elem.style.display = 'block';
+    elem.style.visibility = 'visible';
+    window.onload = function() {
+        elem.style.display = 'none';
+        body.style.visibility = ' visible';
+    };
+    </script>
     <!-- =============================================
 =           Header block            =
 ============================================= -->
-<header id="home">
-    <nav id="menu" class="burger">
-        <a href=":)" class="burger__button" id="burger-button">
+    <header id="home">
+        <nav id="menu" class="burger">
+            <a href=":)" class="burger__button" id="burger-button">
             <span class="burger__button__icon"></span>
         </a>
-        <ul class="burger__menu nav nav-tabs" role="tablist">
-            <li class="active"><a href="#home">Главная</a></li>
-            <li><a href="#about">О себе</a></li>
-            <li><a href="#experience">Опыт работы</a></li>
-            <li><a href="#portfolio">Портфолио</a></li>
-        </ul>
-        <div>
-            <a href="#home" class="js-scrollup js-none">GO UP :)</a>
-            <a href="#footer" class="js-scrolldown js-none">GO DOWN :)</a>
-        </div>
-    </nav>
-</header>
-<!--  End of Header block   ======-->
+            <ul class="burger__menu nav nav-tabs" role="tablist">
+                <li class="active"><a href="#home">Главная</a></li>
+                <li><a href="#about">О себе</a></li>
+                <li><a href="#experience">Опыт работы</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+            </ul>
+            <div>
+                <a href="#home" class="js-scrollup js-none">GO UP :)</a>
+                <a href="#footer" class="js-scrolldown js-none">GO DOWN :)</a>
+            </div>
+        </nav>
+    </header>
+    <!--  End of Header block   ======-->
     <!--=============================================
 =            Section  block            =
 =============================================-->
-<section class="home" role="img" aria-label="home-background">
-    <div class="home-foto" data-anijs="if: load, on: window, do: bounceInDown animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">
-        <!-- <img src="img/photo/photo650.png" class="home-foto-img" alt="photo"> -->
-        <picture>
-            <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source srcset="img/photo/photo650.png, img/photo/photo1200.png 2x" media="(min-width: 1200px)">
+    <section class="home" role="img" aria-label="home-background">
+        <div class="home-foto" data-anijs="if: load, on: window, do: bounceInDown animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">
+            <!-- <img src="img/photo/photo650.png" class="home-foto-img" alt="photo"> -->
+            <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="img/photo/photo650.png, img/photo/photo1200.png 2x" media="(min-width: 1200px)">
                 <source srcset="img/photo/photo650.png, img/photo/photo1200.png 2x" media="(min-width: 800px)">
-                    <source srcset="img/photo/photo300.png, img/photo/photo650.png 2x, img/photo/photo1200.png 3x" media="(min-width: 480px)">
-                        <!--[if IE 9]></video><![endif]-->
-                        <img srcset="img/photo/photo650.png" alt="">
-                    </picture>
-                </div>
-                <div class="home-info">
-                    <h1  data-anijs="if: load, on: window, do: bounceInRight animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim">ВЯЧЕСЛАВ ГОРИШНЯК</h1>
-                    <div data-anijs="if: load, on: window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim">Frontend-разработчик, HTML-верстальщик</div>
-                    <p data-anijs="if: load, on: window, do: bounceInRight animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim">E-mail: <a class="tooltip" data-title="Чтобы отправить мне письмо, перейдите по ссылке!" href="mailto:sharnirio@gmail.com?subject=Вакансия на резюме «Frontend-разработчик, HTML-верстальщик»">sharnirio@gmail.com</a></p>
-                    <p data-anijs="if: load, on: window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim">Skype: <a class="tooltip" data-title="Чтобы добавить меня в скайп, перейдите по ссылке!" href="skype:sharnirio?userinfo">sharnirio</a>
-                    </p>
-                    <span id="button" data-anijs="if: load, on: window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim"><a class="button" href="#portfolio">Смотреть работы</a></span>
-                    <span data-anijs="if: load, on: window, do: bounceInRight animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim"><a class="button" href="https://drive.google.com/uc?export=download&#38;id=0BwDu-oxMlPDmQWxiVHFzRmE3b1U" target="_blank"><i class="flaticon-web"></i>Скачать резюме</a></span>
-                </div>
-                <span class='img-fiks'></span>
-            </section>
-            <section id="about"  class="js">
-                <article class="education">
-                    <h1 data-anijs="if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">ОБРАЗОВАНИЕ</h1>
-                    <div class="education-wrap">
-                        <div class="carousel-education">
-                        <div class="item">
-                                <div class="education-block">
-                                    <div>
-                                        <time>Декабрь 2014 - наст. вр.</time>
-                                    </div>
-                                    <span class="education-block-animate">Самообразование - HTML, CSS, jQuery, SCSS, LESS, Bootstrap, Gulp</span>
-                                </div>
+                <source srcset="img/photo/photo300.png, img/photo/photo650.png 2x, img/photo/photo1200.png 3x" media="(min-width: 480px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img srcset="img/photo/photo650.png" alt="">
+            </picture>
+        </div>
+        <div class="home-info">
+            <h1 data-anijs="if: load, on: window, do: bounceInRight animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim">ВЯЧЕСЛАВ ГОРИШНЯК</h1>
+            <div data-anijs="if: load, on: window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim">Frontend-разработчик, HTML-верстальщик</div>
+            <p data-anijs="if: load, on: window, do: bounceInRight animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim">E-mail: <a class="tooltip" data-title="Чтобы отправить мне письмо, перейдите по ссылке!" href="mailto:sharnirio@gmail.com?subject=Вакансия на резюме «Frontend-разработчик, HTML-верстальщик»">sharnirio@gmail.com</a></p>
+            <p data-anijs="if: load, on: window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim">Skype: <a class="tooltip" data-title="Чтобы добавить меня в скайп, перейдите по ссылке!" href="skype:sharnirio?userinfo">sharnirio</a>
+            </p>
+            <span id="button" data-anijs="if: load, on: window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal, after: removeAnim"><a class="button" href="#portfolio">Смотреть работы</a></span>
+            <span data-anijs="if: load, on: window, do: bounceInRight animated, before: scrollReveal, after: removeAnim; if: scroll, on:window, do: bounceInRight animated, before: scrollReveal, after: removeAnim"><a class="button" href="https://drive.google.com/uc?export=download&#38;id=0BwDu-oxMlPDmQWxiVHFzRmE3b1U" target="_blank"><i class="flaticon-web"></i>Скачать резюме</a></span>
+        </div>
+        <span class='img-fiks'></span>
+    </section>
+    <section id="about" class="js">
+        <article class="education">
+            <h1 data-anijs="if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">ОБРАЗОВАНИЕ</h1>
+            <div class="education-wrap">
+                <div class="carousel-education">
+                    <div class="item">
+                        <div class="education-block">
+                            <div>
+                                <time>Декабрь 2014 - наст. вр.</time>
                             </div>
-                            <div class="item">
-                                <div class="education-block">
-                                    <div>
-                                        <time>Февраль 2016 - Апрель 2016</time>
-                                    </div>
-                                    <span class="education-block-animate">Курсы по Java Script - от <a href="http://web-manufacture.net/" target="_blank"><i class="flaticon-arrow"></i>web - manufacture</a></span>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="education-block">
-                                    <div>
-                                        <time>Декабрь 2014 - Март 2015</time>
-                                    </div>
-                                    <span class="education-block-animate">Окончил курс компании <a href="http://ru.smithysoft.com/" target="_blank"><i class="flaticon-arrow"></i>Smithysoft</a> по программе «Frontend developer» получен диплом-сертификат.
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="education-block">
-                                    <div>
-                                        <time>Февраль 2015 – Май 2015</time>
-                                    </div>
-                                    <span class="education-block-animate">Тренинг от школы лидерства «МОСТ» по направлению "IT", участие в хакатоне.</span>
-                                </div>
-                            </div>
+                            <span class="education-block-animate">Самообразование - HTML, CSS, jQuery, SCSS, LESS, Bootstrap, Gulp, Bash script, Jade</span>
                         </div>
                     </div>
-                </article>
-                <article class="skils">
-                    <h1 data-anijs="if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">Основные знания и навыки</h1>
-                    <div>
-                        <p class="skils-p">HTML5<span class="jQtooltip" title="HTML5 — это не просто продолжатель языка разметки гипертекста, а новая открытая платформа, предназначенная для создания веб-приложений использующих аудио, видео, графику, анимацию и многое другое.">?</span></p>
-                        <p class="skils-p">CSS3<span class="jQtooltip" title="CSS3 — являются основным средством для любого типа деятельности в области веб-дизайна, будь то компоновка страниц, создание интерактивных кнопок и меню или декоративного оформления.">?</span></p>
-                        <p class="skils-p">SCSS<span class="jQtooltip" title="SCSS — это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.">?</span></p>
-                        <p class="skils-p">Gulp<span class="jQtooltip" title="Gulp — это инструмент сборки веб-приложения, позволяющий автоматизировать повторяющиеся задачи, такие как сборка и минификация CSS- и JS-файлов, запуск тестов, перезагрузка браузера и т.д. Тем самым Gulp ускоряет и оптимизирует процесс веб-разработки.">?</span></p>
-                        <p class="skils-p">Git<span class="jQtooltip" title="Git — система контроля версий.">?</span></p>
-                        <p class="skils-p">Redmine<span class="jQtooltip" title="Redmine — открытое серверное веб-приложение для управления проектами и задачами">?</span></p>
-                        <p class="skils-p">jQuery<span class="jQtooltip" title="jQuery — библиотека JavaScript, фокусирующаяся на взаимодействии JavaScript и HTML.">?</span></p>
+                    <div class="item">
+                        <div class="education-block">
+                            <div>
+                                <time>Февраль 2016 - Апрель 2016</time>
+                            </div>
+                            <span class="education-block-animate">Курсы по Java Script - от <a href="http://web-manufacture.net/" target="_blank"><i class="flaticon-arrow"></i>web - manufacture</a></span>
+                        </div>
                     </div>
-                </article>
-                <article id="more-skils" class="more-my-skils">
-                    <h2 data-anijs="if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">больше навыков</h1>
+                    <div class="item">
+                        <div class="education-block">
+                            <div>
+                                <time>Декабрь 2014 - Март 2015</time>
+                            </div>
+                            <span class="education-block-animate">Окончил курс компании <a href="http://ru.smithysoft.com/" target="_blank"><i class="flaticon-arrow"></i>Smithysoft</a> по программе «Frontend developer» получен диплом-сертификат.
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="education-block">
+                            <div>
+                                <time>Февраль 2015 – Май 2015</time>
+                            </div>
+                            <span class="education-block-animate">Тренинг от школы лидерства «МОСТ» по направлению "IT", участие в хакатоне.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="skils">
+            <h1 data-anijs="if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">Основные знания и навыки</h1>
+            <div>
+                <p class="skils-p">HTML5<span class="jQtooltip" title="HTML5 — это не просто продолжатель языка разметки гипертекста, а новая открытая платформа, предназначенная для создания веб-приложений использующих аудио, видео, графику, анимацию и многое другое.">?</span></p>
+                <p class="skils-p">CSS3<span class="jQtooltip" title="CSS3 — являются основным средством для любого типа деятельности в области веб-дизайна, будь то компоновка страниц, создание интерактивных кнопок и меню или декоративного оформления.">?</span></p>
+                <p class="skils-p">SCSS<span class="jQtooltip" title="SCSS — это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.">?</span></p>
+                <p class="skils-p">Gulp<span class="jQtooltip" title="Gulp — это инструмент сборки веб-приложения, позволяющий автоматизировать повторяющиеся задачи, такие как сборка и минификация CSS- и JS-файлов, запуск тестов, перезагрузка браузера и т.д. Тем самым Gulp ускоряет и оптимизирует процесс веб-разработки.">?</span></p>
+                <p class="skils-p">Git<span class="jQtooltip" title="Git — система контроля версий.">?</span></p>
+                <p class="skils-p">Jade<span class="jQtooltip" title="Jade (Pug)- это высокопроизводительный шаблонизатор для html">?</span></p>
+                <p class="skils-p">JS<span class="jQtooltip" title="JavaScript язык программирования общего назначения">?</span></p>
+            </div>
+        </article>
+        <article id="more-skils" class="more-my-skils">
+            <h2 data-anijs="if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">больше навыков</h1>
                         <div class="more-skils-wrap">
                             <div class="carousel-more-skils">
                                 <!-- interest specified skills through class p25-25% p50-50% p65-65% p75-75% p85-85%-->
                                 <div class="item"><p class="more-skils-p p75">Bootstrap<span class="jQtooltip" title="Bootstrap это фреймворк для создания современных, кросс-браузерных и стандартизованных интерфейсов.">?</span></p></div>
-                                <div class="item"><p class="more-skils-p p65">Photoshop<span class="jQtooltip" title="Photoshop - многофункциональный графический редактор">?</span></p></div>
+                                <div class="item"><p class="more-skils-p p75">Photoshop<span class="jQtooltip" title="Photoshop - многофункциональный графический редактор">?</span></p></div>
                                 <div class="item"><p class="more-skils-p p65">Wordpress<span class="jQtooltip" title="WordPress - это популярная бесплатная система управления сайтом (CMS) с открытым исходным кодом.">?</span></p></div>
                                 <div class="item"><p class="more-skils-p p85">Sublime Text<span class="jQtooltip" title="Sublime Text — текстовый редактор, с большим количество полезных возможностей">?</span></p></div>
-                                <div class="item"><p class="more-skils-p p65">Cross-browser compatibility<span class="jQtooltip" title="Cross-browser compatibility — свойство сайта отображаться и работать во всех популярных браузерах идентично.">?</span></p></div>
+                                <div class="item"><p class="more-skils-p p75">Cross-browser compatibility<span class="jQtooltip" title="Cross-browser compatibility — свойство сайта отображаться и работать во всех популярных браузерах идентично.">?</span></p></div>
                                 <div class="item"><p class="more-skils-p p85">Adaptive layout<span class="jQtooltip" title="Adaptive layout — дизайн веб-страниц, обеспечивающий корректное отображение сайта на различных устройствах, подключённых к интернету и динамически подстраивающийся под заданные размеры окна браузера.">?</span></p></div>
                                 <div class="item"><p class="more-skils-p p50">Adobe сreative cloud<span class="jQtooltip" title="Adobe сreative cloud - онлайн работа с графикой">?</span></p></div>
                                 <div class="item"><p class="more-skils-p p75">Pixel Perfect<span class="jQtooltip" title="Pixel perfect - это техника верстки, при которой сверстанный HTML-шаблон в точности (пиксель-в-пиксель) совпадает с оригиналом, PSD-макетом.">?</span></p></div>
-                                <div class="item"><p class="more-skils-p p25">GetSimple<span class="jQtooltip" title="GetSimple - статическая CMS">?</span></p></div>
                                 <div class="item"><p class="more-skils-p p50">LESS<span class="jQtooltip" title="SCSS — это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.">?</span></p></div>
-                                <div class="item"><p class="more-skils-p p75">Prepros<span class="jQtooltip" title="Prepros - это программа которая умеет компилировать файлы LESS, Sass, SCSS, Stylus, Jade, Slim, Coffeescript, LiveScript, Haml и Markdown, минифицировать и объединять в один JavaScript-файлы и это еще не все.">?</span></p></div>
+                                <div class="item"><p class="more-skils-p p65">Redmine<span class="jQtooltip" title="Redmine — открытое серверное веб-приложение для управления проектами и задачами">?</span></p></div>
+                                <div class="item"><p class="more-skils-p p75">jQuery<span class="jQtooltip" title="jQuery — библиотека JavaScript, фокусирующаяся на взаимодействии JavaScript и HTML.">?</span></p></div>
+                                <div class="item"><p class="more-skils-p p50">Linux<span class="jQtooltip" title="семейство Unix-подобных операционных систем на базе ядра Linux">?</span></p></div>
+                                <div class="item"><p class="more-skils-p p50">Bash script<span class="jQtooltip" title="Bash script - сценарии командной строки, написанные для оболочки bash.">?</span></p></div>
                             </div>
                         </div>
                     </article>
@@ -176,10 +215,26 @@
                     <article class="experience" role="img" aria-label="experience-background">
                         <h1 data-anijs="if: scroll, on:window, do: bounceInDown animated, before: scrollReveal, after: removeAnim">Опыт работы</h1>
                         <div class="carousel-experience">
+                        <div class="item">
+                              <div class="item-wrap">
+                                <div>Frontend-разработчик</div>
+                                <span>DvelopUs company</span>
+                                <p>разработка адаптивных веб-сайтов разного уровня сложности по готовым PSD-макетам</p>
+                                <p>установка и кастомизация плагинов на JS и jQuery</p>
+                                <p>создание общего gulp шаблона для удобной командной работы</p>
+                                <p>создание и ведение приватного Git-репозитория для удобной командной работы</p>
+                                <p>создание Bash скрипта для автоматизации разворачивания и ведения нового проекта</p>
+                                <p>администрирование сервера компании с панелью управления ISPmanager</p>
+                            </div>
+                            <div class="item-date">
+                              <p>2016</p>
+                              <span>ноябрь - н.вр</span>
+                            </div>
+                            </div>
                             <div class="item">
                               <div class="item-wrap">
                                 <div>Frontend-разработчик, HTML-верстальщик</div>
-                                <span>Smithysoft</span>
+                                <span>Smithysoft company</span>
                                 <p>разработка адаптивных веб-сайтов разного уровня сложности по готовым PSD-макетам</p>
                                 <p>наполнение,поддержка и администрирование сайтов</p>
                                 <p>установка и кастомизация плагинов на JS и jQuery</p>
@@ -189,8 +244,8 @@
                             </div>
                             <div class="item-date">
                               <p>2015</p>
-                              <span>Март - Июнь2016</span>
-                          </div>
+                              <span>Март - Июль2016</span>
+                            </div>
                       </div>
                       <div class="item">
                         <div class="item-wrap">
@@ -243,6 +298,162 @@
     <section id="portfolio" class="portfolio">
         <h1 data-anijs="if: scroll, on:window, do: bounceInUp animated, before: scrollReveal, after: removeAnim">Портфолио</h1>
         <div class="carousel-portfolio">
+        <div class="effect eff-30">
+                <img src="img/site/ruptureseal.jpg" alt="" />
+                <div class="overlay">
+                    <div class="icon"></div>
+                </div>
+                <div class="bubbles">
+                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                </div>
+                <div class="caption">
+                    <h4>Интернет магазин пробок</h4>
+                    <p>Верстка</p>
+                    <a class="btn" href="http://lp.ruptureseal.com/" title="View More" target="_blank">Посмотреть сайт</a>
+                </div>
+            </div>
+            <div class="effect eff-30">
+                <img src="img/site/bijusvit.jpg" alt="" />
+                <div class="overlay">
+                    <div class="icon"></div>
+                </div>
+                <div class="bubbles">
+                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                </div>
+                <div class="caption">
+                    <h4>Интернет магазин бижутерии</h4>
+                    <p>Верстка</p>
+                    <a class="btn" href="http://bijusvit.com.ua/" title="View More" target="_blank">Посмотреть сайт</a>
+                </div>
+            </div>
+        <div class="effect eff-30">
+                <img src="img/site/svit-express.jpg" alt="" />
+                <div class="overlay">
+                    <div class="icon"></div>
+                </div>
+                <div class="bubbles">
+                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                </div>
+                <div class="caption">
+                    <h4>Сайт аренда автобусов</h4>
+                    <p>Верстка</p>
+                    <a class="btn" href="http://svit-express.com.ua/" title="View More" target="_blank">Посмотреть сайт</a>
+                </div>
+            </div>
+            <div class="effect eff-30">
+                <img src="img/site/Safety2You.jpg" alt="" />
+                <div class="overlay">
+                    <div class="icon"></div>
+                </div>
+                <div class="bubbles">
+                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                </div>
+                <div class="caption">
+                    <h4>Тестовый - сайт web технологии</h4>
+                    <p>Верстка</p>
+                    <a class="btn" href="https://sharnirio.bitbucket.io/project/Safety2You/home.html" title="View More" target="_blank">Посмотреть сайт</a>
+                </div>
+            </div>
+            <div class="effect eff-30">
+                <img src="img/site/GardenER.jpg" alt="" />
+                <div class="overlay">
+                    <div class="icon"></div>
+                </div>
+                <div class="bubbles">
+                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                </div>
+                <div class="caption">
+                    <h4>Тестовый - интернет магазин</h4>
+                    <p>Верстка</p>
+                    <a class="btn" href="https://sharnirio.bitbucket.io/project/GardenER/home.html" title="View More" target="_blank">Посмотреть сайт</a>
+                </div>
+            </div>
+            <div class="effect eff-30">
+                <img src="img/site/AutoSearch.jpg" alt="" />
+                <div class="overlay">
+                    <div class="icon"></div>
+                </div>
+                <div class="bubbles">
+                    <div class="bubble bubble-1">&#60;<span>Hello!</span>&#62;</div>
+                    <div class="bubble bubble-2">&#60;<span>html</span>&#62;</div>
+                    <div class="bubble bubble-3">&#60;<span>body</span>&#62;</div>
+                    <div class="bubble bubble-4">&#60;<span>header</span>&#62;</div>
+                    <div class="bubble bubble-5">&#60;<span>nav</span>&#62;</div>
+                    <div class="bubble bubble-6">&#60;<span>section</span>&#62;</div>
+                    <div class="bubble bubble-7">&#60;<span>div</span>&#62;</div>
+                    <div class="bubble bubble-8">&#60;<span>p</span>&#62;</div>
+                    <div class="bubble bubble-9">&#60;<span>h1</span>&#62;</div>
+                    <div class="bubble bubble-10">&#60;<span>span</span>&#62;</div>
+                    <div class="bubble bubble-11">&#60;<span>strong</span>&#62;</div>
+                    <div class="bubble bubble-12">&#60;<span>script</span>&#62;</div>
+                    <div class="bubble bubble-13">&#60;<span>footer</span>&#62;</div>
+                </div>
+                <div class="caption">
+                    <h4>Тестовый - поиск автомобилей</h4>
+                    <p>Верстка</p>
+                    <a class="btn" href="https://sharnirio.bitbucket.io/project/AutoSearch/home.html" title="View More" target="_blank">Посмотреть сайт</a>
+                </div>
+            </div>
             <div class="effect eff-30">
                 <img src="img/site/amp.jpg" alt="" />
                 <div class="overlay">
