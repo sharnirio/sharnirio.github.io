@@ -115,3 +115,15 @@ return number;
 }
 
 console.log(pow(3,5));
+
+function powV2(a,b) {
+	var number = 1;
+	var i = 1;
+	while(i<=b) {
+		number *= a;
+		b--;
+	}
+return number;
+}
+
+console.log(powV2(3,7));
