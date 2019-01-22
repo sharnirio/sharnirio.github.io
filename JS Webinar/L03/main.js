@@ -86,18 +86,22 @@ console.log(checkAgeV1(19));
 //вариант с ||
 console.log("с вариантом через || не понял как сделать");
 
+function checkAgeV2(age) {
+		return age > 18 || confirm("Тебе точно есть 18?");
+}
+console.log(checkAgeV2(19));
 // 5 task
 function calcAvarage(a,b,с) {
 	var min, max, average;
 
-	max = (a > b && a > с) ? a : (b > a && b > с) ? b : (c > a && c > b) ? c : c;
-	min = (a < b && a < с) ? a : (b < a && b < с) ? b : (c < a && c < b) ? c : c;
-	average = (a == undefined) ? a : (b == undefined) ? b : (с == undefined) ? с : с;
+	max = (a > b && a > с) ? a : (b > a && b > с) ? b : с;
+	min = (a < b && a < с) ? a : (b < a && b < с) ? b : с;
+	average = (a != max && a != min) ? a : (b != max && b != min) ? b : с;
 
 	console.log("Минимальное значение - " + min + ", среднее значение - " + average + ", максимальное значение - " + max)
 }
 
-calcAvarage(1,6,3);
+calcAvarage(3,66,33);
 
 // 6 task
 function pow(a,b) {
