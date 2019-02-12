@@ -8,6 +8,10 @@ console.log(pifagor(12,5));
 // 2 task
 var integer = function(number) {
 	var integerBoolean;
+	if (typeof(number) == "string") {
+		console.log("Введенный аргумент не является числом");
+		return false;
+	}
 	if (number != 0) {
 	var numberAbs = Math.abs(number);
 	var numberAbsRound = Math.ceil(numberAbs);
@@ -22,8 +26,10 @@ var integer = function(number) {
 	else {
 		integerBoolean = "целым";
 	}
-return console.log("число является " + integerBoolean);
+console.log("число является " + integerBoolean);
 }
+integer("string1");
+integer("string2");
 integer(5);
 integer(-5);
 integer(0);
@@ -39,7 +45,7 @@ var calcSum = function(arg) {
 	for (var i = numString.length - 1; i >= 0; i--) {
 		numNew += Number(numString[i]);
 	}
-	return console.log(numNew);
+	console.log(numNew);
 }
 calcSum(125);
 // 4 task
@@ -59,7 +65,7 @@ var seasons = function(month) {
 	else if (month>=9 && month<=11) {
 		seasonsName = "осень";
 	}
-	return console.log(seasonsName);
+	console.log(seasonsName);
 }
 seasons(3);
 seasons(7);
@@ -70,7 +76,7 @@ seasons(12);
 var getCleanPrice = function(price) {
 	var priceSubstring = price.substring(1)
 	var priceToNum = parseFloat(priceSubstring);
-	return console.log(priceToNum);
+	console.log(priceToNum);
 }
 getCleanPrice('$156');
 getCleanPrice('$15.6');
@@ -80,11 +86,11 @@ var truncate = function(str, maxlength) {
 	var strlength = str.length;
 	var strNew;
 	if (strlength<maxlength) {
-		return console.log(str);
+		console.log(str);
 	}
 	else {
 		strNew = str.substr(0,maxlength);
-		return console.log(strNew + "...");
+		console.log(strNew + "...");
 	}
 }
 truncate("Я длинная строка и явно не влезу в блок - так что обреж меня", 35);
@@ -93,18 +99,18 @@ truncate("А я влезу меня не надо обрезать", 35);
 var stringUper = function(str) {
 	var lastChar = str.length-1;
 	var strNew = str[0].toUpperCase() + str.slice(1,lastChar) + str[lastChar].toUpperCase() ;
-	return console.log(strNew);
+	return strNew;
 }
-stringUper("эй я просто строка");
+console.log(stringUper("эй я просто строка"));
 // 8 task
 console.log("Возможно есть более лучший способ либо специальный метод получить дни с милисекунд но я его не нашел");
 var daysPassed = function(date) {
 	var now = new Date();
 	var nowMS = Date.parse(now);
-	var dateMS = Date.parse(date);
+	var dateFormat = date.format("m/dd/yy");
+	// var dateMS = Date.parse(dateFormat);
 	var dateDiff = nowMS - dateMS;
 	var dateDiffDay = Math.ceil(dateDiff/1000/60/60/24);
-
 	console.log("C " + date + " прошло дней - " + dateDiffDay);
 }
 daysPassed('11.09.2001');
@@ -127,10 +133,9 @@ var whatSeason = function(date) {
 	else if (tryMonth>=9 && tryMonth<=11) {
 		seasonsName = "осень";
 	}
-
-	return console.log(seasonsName);
+	return seasonsName;
 }
-whatSeason('2010-11-25');
+console.log(whatSeason('2010-11-25'));
 // 10 task
 var formatMyDate = function(date) {
 	var dateMS = Date.parse(date);
@@ -140,7 +145,6 @@ var formatMyDate = function(date) {
 	var dateTryMonth = dateMonth+1;
 	var dateDay = tryDate.getDate();
 	var dateFormat = dateDay +"/"+ dateYear +"/"+ dateTryMonth;
-
-	return console.log(dateFormat);
+	return dateFormat;
 }
-formatMyDate('2010-11-25');// выведет '25/2010/11'
+console.log(formatMyDate('2010-11-25'));// выведет '25/2010/11'
