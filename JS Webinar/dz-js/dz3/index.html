@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My dz</title>
+    <link rel="stylesheet" href="my-css.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Test for Web-Manufacture.net</h1>
+    <div class="for-js">
+        <div class="item_1">Text-1 </div>
+        <div class="item_2">Text-2 </div>
+        <div class="item_3">Text-3 </div>
+        <div class="item_4">Text-4 </div>
+        <div class="item_5">Text-5 </div>
+        <div class="item_6">Text-6 </div>
+        <div class="item_7">Text-7 </div>
+        <div class="item_8">Text-8 </div>
+    </div>
+    <button class="button" name="button" autofocus>Получить текст</button>
+    <button class="button-del">Удалить текст</button>
+    <h1>Способ 1 через метод text()</h1>
+    <div class="js-add"></div>
+    <button class="button2">Нажми меня</button>
+    <button class="button-del2">Удалить текст</button>
+    <h1>Способ 2 через метод clone()</h1>
+    <div class="js-add2"></div>
+    <script>
+    (function($) {
+        'use strict'
+        // method 1
+        function myFunction() {
+            var diVtext = $('.for-js > div').text();
+            var block = $('.js-add');
+            block.text(diVtext);
+            $('.button-del').show();
+            $('.button-del').click(function() {
+                $('.js-add').empty();
+                $('.button-del').hide();
+
+            })
+        };
+        $('.button-del').hide();
+        $('.button').on('click', myFunction);
+
+        // method 2
+
+        $('.button-del2').hide();
+
+        function myFunction2() {
+            $('.for-js').clone().appendTo('.js-add2');
+
+            $('.button-del2').show();
+            $('.button-del2').click(function() {
+                $('.js-add2').empty();
+                $('.button-del2').hide();
+            })
+        };
+        $('.button-del2').hide();
+        $('.button2').on('click', myFunction2);
+
+    })(jQuery);
+    </script>
+</body>
+
+</html>
