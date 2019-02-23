@@ -1,150 +1,215 @@
-// 1 task
-var pifagor = function(cathetus1,cathetus2) {
-	var hypotenuse;
-	hypotenuse = Math.sqrt(Math.pow(cathetus1, 2) + Math.pow(cathetus2, 2))
-	return hypotenuse;
+// 1. Есть массив matrix. Необходимо посчитать сумму всех чисел этого массива.
+var matrix = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9]
+];
+function matrixSum(arr) {
+	var matrixSumElement = 0;
+	for (var i = 0; i < arr.length; i++) {
+		for (var j = 0; j < arr[i].length; j++) {
+			matrixSumElement += arr[i][j];
+		}
+	}
+	console.log("Сумма чисел в многомерном массиве - " + matrixSumElement);
 }
-console.log(pifagor(12,5));
-// 2 task
-var integer = function(number) {
-	var integerBoolean;
-	if (typeof(number) == "string") {
-		console.log("Введенный аргумент не является числом");
+
+matrixSum(matrix);
+
+// 2. Получить значение последнего элемента массива. Колиество элементов может быть разным.
+var arrayEx = [1, 2, 3, "Last Element"];
+
+function lastElement(arr) {
+	var lastIndex = arr.length-1;
+	console.log(arr[lastIndex]);
+}
+lastElement(arrayEx);
+
+// 4. Напишите код для вывода в консоль случайного значения из массива: var arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+
+var arrayEx2 = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+function randomElement(arr) {
+	var min = 0;
+	var max = arr.length-1;
+	var randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+	console.log(arr[randomIndex]);
+}
+randomElement(arrayEx2);
+
+// 5. Создайте функцию find(arr, value), которая ищет в массиве arr значение value и возвращает его номер, если найдено, или -1, если не найдено.
+// var arr = ["test", 2, 1.5, false];
+// find(arr, "test"); // 0
+// find(arr, 2); // 1
+// find(arr, 1.5); // 2
+// find(arr, 0); // -1
+// find(arr, 'Tilek'); // -1
+
+var arrEx3 = ["test", 2, 1.5, false];
+
+function find(arr, value) {
+	var numm = arr.indexOf(value);
+	console.log(numm);
+}
+find(arrEx3, "test"); // 0
+find(arrEx3, 2); // 1
+find(arrEx3, 1.5); // 2
+find(arrEx3, 0); // -1
+find(arrEx3, 'Tilek'); // -1
+
+//6. Создайте функцию filterRange(arr, a, b), которая принимает массив чисел arr и возвращает новый массив, который содержит только числа из arr из диапазона от a до b.
+// var arr = [5, 4, 3, 8, 0];
+// var filtered = filterRange(arr, 3, 5); // [5, 4, 3]
+var arrEx4 = [5, 4, 3, 8, 0];
+
+function filterRange(arr, a, b) {
+	var newArray = [];
+	for (var i = 0; i < arr.length; i++) {
+		if (a > b) {
+			if (arr[i] <= a && arr[i] >= b) {
+				newArray.push(arr[i]);
+			}
+		}
+		if (b > a) {
+			if (arr[i] >= a && arr[i] <= b) {
+				newArray.push(arr[i]);
+			}
+		}
+	}
+	return newArray;
+}
+var filtered = filterRange(arrEx4, 3, 5); // [5, 4, 3]
+
+console.log(filtered);
+
+// 7. У объекта есть свойство className, которое хранит список «классов» – слов, разделенных пробелами:
+// var obj = {
+//   className: 'open menu  mymenu menu'
+// };
+// Напишите функцию removeClass(obj, cls), которая удаляет класс cls, если он есть.  Функция должна корректно обрабатывать дублирование класса в строке.
+// removeClass(obj, 'menu'); // obj.className = 'open mymenu'
+
+var objEx = {
+  className: 'open menu mymenu menu'
+};
+function removeClass(obj, cls) {
+	var classArray = obj.className.split(' ');
+	var newClassArray = [];
+	var newString;
+	console.log(classArray);
+	for (var i = 0; i < classArray.length; i++) {
+		if (classArray[i] !== cls) {
+			newClassArray.push(classArray[i]);
+		}
+	}
+	newString = newClassArray.join(" ");
+	obj.className = newString;
+	console.log(obj.className);
+}
+removeClass(objEx, 'menu'); // obj.className = 'open mymenu'
+
+// 8. Напишите код, который отсортирует массив объектов people по полю age.
+var vasya = { name: "Вася", age: 23 };
+var masha = { name: "Маша", age: 18 };
+var vovochka = { name: "Вовочка", age: 6 };
+
+var people = [ vasya , masha , vovochka ];
+
+
+function peopleSort(arr) {
+	function sortFunction(strings1, strings2) {
+		return strings1.age - strings2.age;
+	}
+	arr.sort(sortFunction);
+}
+peopleSort(people);
+
+console.log(people);
+console.log(people[0].age) // 6
+console.log(people[1].age) // 18
+console.log(people[2].age) // 23
+
+// 9. Напишите функцию unique(arr), которая возвращает массив, содержащий только уникальные элементы arr. 
+var strings = ["Tilek", "Ilona", "Ivan", "Ivan", "Vladimir", "Alex", "Alice", "Alex", "Viktor", "Alex", "Viktor", "Ilona"];
+
+function unique(arr) {
+	var newArr = [];
+	var obj = {};
+	for (var i = 0; i < arr.length; i++) {
+		var str = arr[i];
+		obj[str] = 1;
+	}
+	for (var key in obj) {
+		newArr.push(key);
+	}
+	console.log(newArr);
+}
+unique(strings);
+//10. Создайте функцию isEmpty(obj), которая возвращает true, если в объекте нет свойств и false – если хоть одно свойство есть.
+var objNew = {};
+var objNew1 = {1: "test"};
+var objNew2 = {"test": 1};
+
+// вариант 1
+function isEmpty(obj) {
+	for (var key in obj) {
 		return false;
 	}
-	if (number != 0) {
-	var numberAbs = Math.abs(number);
-	var numberAbsRound = Math.ceil(numberAbs);
-	var numberResidue = numberAbsRound%numberAbs;
-	if (numberResidue > 0) {
-		integerBoolean = "дробным";
-	}
-	else {
-		integerBoolean = "целым";
-	}
-	}
-	else {
-		integerBoolean = "целым";
-	}
-console.log("число является " + integerBoolean);
+	return true;
 }
-integer("string1");
-integer("string2");
-integer(5);
-integer(-5);
-integer(0);
-integer(2.0);
-integer(2.12);
-integer(-2.0);
-integer(-5.1);
+// вариант 2
+function isEmpty2(obj) {
+	if (Object.keys(obj).length == 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
-// 3 task 
-var calcSum = function(arg) {
-	var numString = String(arg);
-	var numNew = 0;
-	for (var i = numString.length - 1; i >= 0; i--) {
-		numNew += Number(numString[i]);
-	}
-	console.log(numNew);
-}
-calcSum(125);
-// 4 task
+console.log(isEmpty(objNew));
+console.log(isEmpty(objNew1));
+console.log(isEmpty(objNew2));
+console.log(isEmpty2(objNew));
+console.log(isEmpty2(objNew1));
+console.log(isEmpty2(objNew2));
 
-console.log("Мне кажется можно сделать это более красиво, но пока в голову ничего не приходит");
-var seasons = function(month) {
-	var seasonsName;
-	if (month>=1 && month<=2 || month==12) {
-		seasonsName = "зима";
-	}
-	else if (month>=3 && month<=5) {
-		seasonsName = "весна";
-	}
-	else if (month>=6 && month<=8) {
-		seasonsName = "лето";
-	}
-	else if (month>=9 && month<=11) {
-		seasonsName = "осень";
-	}
-	console.log(seasonsName);
-}
-seasons(3);
-seasons(7);
-seasons(9);
-seasons(12);
+// 11. Есть объект salaries с зарплатами. Напишите код, который выведет сумму всех зарплат.
+var salaries = {
+	"Вася": 100,
+	"Петя": 300,
+	"Даша": 250
+};
+// Ответ: 650
 
-// 5 task
-var getCleanPrice = function(price) {
-	var priceSubstring = price.substring(1)
-	var priceToNum = parseFloat(priceSubstring);
-	console.log(priceToNum);
-}
-getCleanPrice('$156');
-getCleanPrice('$15.6');
-getCleanPrice('$1.56');
-// 6 task
-var truncate = function(str, maxlength) {
-	var strlength = str.length;
-	var strNew;
-	if (strlength<maxlength) {
-		console.log(str);
+function salariesSum(arg) {
+	var sum = 0;
+	for (var key in arg) {
+		sum += arg[key];
 	}
-	else {
-		strNew = str.substr(0,maxlength);
-		console.log(strNew + "...");
-	}
+	console.log(sum);
 }
-truncate("Я длинная строка и явно не влезу в блок - так что обреж меня", 35);
-truncate("А я влезу меня не надо обрезать", 35);
-// 7 task
-var stringUper = function(str) {
-	var lastChar = str.length-1;
-	var strNew = str[0].toUpperCase() + str.slice(1,lastChar) + str[lastChar].toUpperCase() ;
-	return strNew;
-}
-console.log(stringUper("эй я просто строка"));
-// 8 task
-console.log("Возможно есть более лучший способ либо специальный метод получить дни с милисекунд но я его не нашел");
-var daysPassed = function(date) {
-	var now = new Date();
-	var nowMS = Date.parse(now);
-	var dateFormat = date.format("m/dd/yy");
-	// var dateMS = Date.parse(dateFormat);
-	var dateDiff = nowMS - dateMS;
-	var dateDiffDay = Math.ceil(dateDiff/1000/60/60/24);
-	console.log("C " + date + " прошло дней - " + dateDiffDay);
-}
-daysPassed('11.09.2001');
-// 9 task
-var whatSeason = function(date) {
-	var dateMS = Date.parse(date);
-	var tryDate = new Date(dateMS);
-	var month = tryDate.getMonth();
-	var tryMonth = month + 1;
+salariesSum(salaries) // Ответ: 650
 
-	if (tryMonth>=1 && tryMonth<=2 || tryMonth==12) {
-		seasonsName = "зима";
+// 12.Создайте функцию multiplyNumeric, которая получает объект и умножает все численные свойства на 2. Например:
+
+// до вызова
+var menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+function multiplyNumeric(arg) {
+	for (var key in arg) {
+		if (!isNaN(arg[key])) {
+			arg[key] *= 2;
+		};
 	}
-	else if (tryMonth>=3 && tryMonth<=5) {
-		seasonsName = "весна";
-	}
-	else if (tryMonth>=6 && tryMonth<=8) {
-		seasonsName = "лето";
-	}
-	else if (tryMonth>=9 && tryMonth<=11) {
-		seasonsName = "осень";
-	}
-	return seasonsName;
+	console.log(arg);
 }
-console.log(whatSeason('2010-11-25'));
-// 10 task
-var formatMyDate = function(date) {
-	var dateMS = Date.parse(date);
-	var tryDate = new Date(dateMS);
-	var dateYear = tryDate.getFullYear();
-	var dateMonth = tryDate.getMonth();
-	var dateTryMonth = dateMonth+1;
-	var dateDay = tryDate.getDate();
-	var dateFormat = dateDay +"/"+ dateYear +"/"+ dateTryMonth;
-	return dateFormat;
-}
-console.log(formatMyDate('2010-11-25'));// выведет '25/2010/11'
+multiplyNumeric(menu);
+// после вызова
+// menu = {
+//   width: 400,
+//   height: 600,
+//   title: "My menu"
+// };
