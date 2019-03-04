@@ -40,7 +40,7 @@ stingToArray(string);
 console.log("Возможно надо было сделать через два prompt(), но так как не было указано, я реализовал через один с переводом в маccив");
 var calculator = {
 	read: function () {
-		var stringNumber = prompt("Введите два значения через пробел", '');
+		var stringNumber = prompt("Введите два значения через пробел (ps.задание 3)", '');
 		var arrNumber = stringNumber.split(' ');
 		this.numbers1 = +arrNumber[0];
 		this.numbers2 = +arrNumber[1];
@@ -53,9 +53,9 @@ var calculator = {
 	}
 }
 
-// calculator.read();
+calculator.read();
 console.log( 'Sum = ' + calculator.sum() );
-console.log( 'Mul12 = ' + calculator.mul() );
+console.log( 'Mul = ' + calculator.mul() );
 
 // 5. Напишите функцию-конструктор Accumulator(startingValue). Объекты, которые она создает, должны хранить текущую сумму и прибавлять к ней то, что вводит посетитель.
 
@@ -67,13 +67,13 @@ console.log( 'Mul12 = ' + calculator.mul() );
 
 function Accumulator(startingValue) {
 	this.value = startingValue;
-	this.read = function () {3
-		this.value += +prompt("Введите число", '');
+	this.read = function () {
+		this.value += +prompt("Введите число которое прибавиться к текущему (ps.задание 5)", '');
 	};
 }
 var accumulator = new Accumulator(1); // начальное значение 1
-// accumulator.read(); // прибавит ввод prompt к текущему значению
-// accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
 console.log( accumulator.value); // выведет текущее значение
 
 // 6. Напишите конструктор Calculator, который создаёт расширяемые объекты-калькуляторы.
@@ -94,6 +94,7 @@ console.log( accumulator.value); // выведет текущее значени
 // Поддержка скобок и сложных математических выражений в этой задаче не требуется.
 // Числа и операции могут состоять из нескольких символов. Между ними ровно один пробел.
 // Предусмотрите обработку ошибок. Какая она должна быть – решите сами.
+console.log("Сделал версию калькулятора через eval - утончить почему в некоторых источниках не рекомендуют с ним работать");
 function CalculatorEval() {
 	this.calculate = function(str) {
 		var arrString = str.split(' ');
@@ -117,17 +118,47 @@ console.log(calcEval.calculate("4 + 2")); // Sum = 6
 console.log(calcEval.calculate("4 - 2")); // Sum = 2
 console.log(calcEval.calculate("4 * 2")); // Sum = 8
 console.log(calcEval.calculate("4 / 2")); // Sum = 2
+console.log(calcEval.calculate("4 ** 2")); // Sum = 16
 console.log(calcEval.calculate("4 ^ 2")); // Sum = 16
 
-
+console.log("Переделал функцию калькулятор через конструктор");
 function Calculator() {
+	var metods = {
+		"+": function(a,b) {
+			return a + b;
+		},
+		"-": function(a,b) {
+			return a - b;
+		}
+	}
 	this.calculate = function(str) {
 		var arrString = str.split(' ');
 		this.num1 = +arrString[0];
 		this.num2 = +arrString[2];
 		this.symbol = arrString[1];
-		return arrString;
+		return metods[this.symbol](this.num1,this.num2)
 	}
+	this.metodAdd = function(name, func) {
+		metods[name] = func;
+	}
+
 }
 var calc = new Calculator;
-console.log(calc.calculate("2 ^ 3")); // Sum = 10
+var powerCalc = new Calculator;
+
+powerCalc.metodAdd("*", function(a, b) {
+	return a * b;
+});
+powerCalc.metodAdd("/", function(a, b) {
+	return a / b;
+});
+powerCalc.metodAdd("**", function(a, b) {
+	return Math.pow(a, b);
+});
+
+console.log(calcEval.calculate("4 + 2")); // Sum = 6
+console.log(calcEval.calculate("4 - 2")); // Sum = 2
+console.log(calcEval.calculate("4 * 2")); // Sum = 8
+console.log(calcEval.calculate("4 / 2")); // Sum = 2
+console.log(calcEval.calculate("4 ** 2")); // Sum = 16
+console.log(calcEval.calculate("4 ^ 2")); // Sum = 16
