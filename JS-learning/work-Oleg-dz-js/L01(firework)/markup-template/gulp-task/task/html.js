@@ -36,7 +36,7 @@ module.exports = function() {
 			//replace js path
 			.pipe($.gp.gulpReplace('="js/', '="assets/js/'))
 			.pipe($.gp.gulpReplace('=\'js/', '="assets\'js/'))
-			.pipe($.gp.imgRetina($.config.retinizeOpts))
+			// .pipe($.gp.imgRetina($.config.retinizeOpts))
 			.pipe($.gulp.dest($.config.pathVar.path.build.html))
 	});
 
@@ -60,7 +60,7 @@ module.exports = function() {
 			//replace js path
 			.pipe($.gp.gulpReplace('="js/', '="assets/js/'))
 			.pipe($.gp.gulpReplace('=\'js/', '=\'assets/js/'))
-			.pipe($.gp.imgRetina($.config.retinizeOpts))
+			// .pipe($.gp.imgRetina($.config.retinizeOpts))
 			.pipe($.gp.gulpHtmlBeautify(options))
 			.pipe($.gulp.dest($.config.pathVar.path.production.html))
 	});

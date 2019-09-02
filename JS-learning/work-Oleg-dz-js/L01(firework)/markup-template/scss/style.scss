@@ -9,6 +9,19 @@
 @import 'base/forms';
 @import 'base/typography';
 
+//keyframes
+@keyframes fly {
+
+	0%,
+	100% {
+		top: 30px
+	}
+
+	50% {
+		top: -30px
+	}
+}
+
 // if the project is on wp
 // @import 'base/wp-reset';
 .bg-stretch {
@@ -30,7 +43,60 @@
 		transform: translate(-50%, -50%);
 	}
 }
-#main {
+
+.main {
 	position: relative;
 	z-index: 2;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.title-block {
+	padding-top: 80px;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title-img {
+	text-align: center;
+}
+
+.btn-wrapper {
+	text-align: center;
+	margin-top: auto;
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+.btn-start {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	img {
+		position: relative;
+		z-index: 2;
+		animation: fly 6s linear infinite;
+	}
+
+.btn {
+	margin-top: 40px;
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 8px;
+		height: 100px;
+		background: linear-gradient(to right, #6a4f3d 0, #b18c5d 100%);
+		;
+	}
+}
 }

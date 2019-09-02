@@ -115,35 +115,13 @@ $button-hover-darken-persent: 15% !default;
 	}
 }
 
-.btn-dark {
-	//color button mixin $background | $color | $border | $hover-background | $hover-color | $hover-border
-	@include button-variant($color-brand-dark , $white, $color-brand-dark);
-}
+
 
 .btn-outline{
 	//color outline-button mixin $color | $color-hover | $hover-background | $color-border | $hover-border
-	@include button-outline-variant($btn-bg-color);
-}
-.btn-outline-dark {
-	//color outline-button mixin $color | $color-hover | $hover-background | $color-border | $hover-border
-	@include button-outline-variant($color-brand-dark);
+	@include button-outline-variant($white);
 }
 
-.btn-YOU_NAME_BUTTON {
-	@include button-variant(#cd5c5c, #adff2f, #0000ff, #ffff00, #0000ff, #000000);
-}
-
-//
-// Button Sizes
-//
-
-.btn-lg {
-	@include button-size(15px, 25px, 20px, 8px, 3px, 1.2);
-}
-
-.btn-sm {
-	@include button-size(3px, 10px, 20px, 3px, 2px, 1.2);
-}
 
 
 //
