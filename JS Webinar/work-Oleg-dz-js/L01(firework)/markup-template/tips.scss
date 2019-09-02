@@ -1,0 +1,40 @@
+$breakpoints: (
+	'full': 1920px,
+	'xl': 1680px,
+	'macbook': 1440px,
+	'ipad-pro': 1366px,
+	'desktop': 1024px,
+	'tablet': 768px,
+	'phone': 667px,
+	'xs-phone': 375px,
+);
+
+//div {@include aspect-ratio(16,9,".class-within");}
+// width: p(100px, $container-width-diz);
+
+
+-block
+-container
+-wrapper
+-inner
+-img
+-pre-tittle
+-tittle
+-after-tittle
+-name
+-desription
+-text
+-button
+-item
+-list
+-info
+-left
+-right
+-center
+-top
+-bottom
+
+
+<div class="bg-stretch">
+	<img src="img/img1.png" alt="img">
+</div>
