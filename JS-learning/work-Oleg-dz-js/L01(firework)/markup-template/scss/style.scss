@@ -8,9 +8,17 @@
 @import 'base/helpers';
 @import 'base/forms';
 @import 'base/typography';
+//-----module greensock style
+@import "vendors/greensock";
+
+//
+.main-section {
+	// display: none;
+	z-index: 2;
+}
 
 //keyframes
-@keyframes fly {
+@keyframes its-my-unic-animation-i-not-copy {
 
 	0%,
 	100% {
@@ -22,8 +30,14 @@
 	}
 }
 
-// if the project is on wp
-// @import 'base/wp-reset';
+// common
+.js-hidden {
+	opacity: 0;
+	transition: opacity 0.6s ease;
+	&.js-hidden-off {
+		opacity: 1;
+	}
+}
 .bg-stretch {
 	position: absolute;
 	top: 0;
@@ -80,23 +94,82 @@
 	img {
 		position: relative;
 		z-index: 2;
-		animation: fly 6s linear infinite;
+		animation: its-my-unic-animation-i-not-copy 6s linear infinite;
 	}
 
-.btn {
-	margin-top: 40px;
-	position: relative;
+	.btn {
+		margin-top: 40px;
+		position: relative;
 
-	&:after {
-		content: "";
-		position: absolute;
-		bottom: 100%;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 8px;
-		height: 100px;
-		background: linear-gradient(to right, #6a4f3d 0, #b18c5d 100%);
-		;
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 8px;
+			height: 100px;
+			background: linear-gradient(to right, #6a4f3d 0, #b18c5d 100%);
+			;
+		}
 	}
 }
+
+.firework-section {
+}
+
+.firework-count {
+	position: absolute;
+	top: 20px;
+	left: 30px;
+	@include size(60px, 68px);
+	font-size: 20px;
+	background-image: url("../img/ico02.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	span {
+		padding-top: em(10px, 20px);
+	}
+}
+#slider {
+	position: absolute;
+	height: 8px;
+	top: calc(100% - 8px);
+	left: 0;
+	background: linear-gradient(to right, red 15%, orange  25%, yellow  35%, green  50%, blue  65%, indigo 80%, violet 100%);
+	width: 100%;
+}
+.firework-amount {
+	position: absolute;
+	top: 40px;
+	right: 30px;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		@include size(54px, 45px);
+		margin-right: 10px;
+		background-image: url("../img/ico01.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+.firework-block {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.firework-item {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
 }

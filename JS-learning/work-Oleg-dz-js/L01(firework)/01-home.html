@@ -12,19 +12,31 @@
 	<div id="wrapper">
 		<div class="bg-stretch"><img src="assets/img/bg01.jpg" alt="image description" width="1920"></div>
 		<main class="main">
-			<div class="title-block">
-				<h1>Einfach auf die vorbeifliegenden Raketen klicken und knallen lassen!</h1>
-				<h2>Du hast 30 Sek Zeit!</h2>
-				<div class="title-img">
-					<img src="assets/img/img04.png" alt="title-img">
+			<div class="main-section">
+				<div class="title-block">
+					<h1>Einfach auf die vorbeifliegenden Raketen klicken und knallen lassen!</h1>
+					<h2>Du hast 30 Sek Zeit!</h2>
+					<div class="title-img">
+						<img src="assets/img/img04.png" alt="title-img">
+					</div>
+				</div>
+				<div class="btn-wrapper">
+					<div class="btn-start">
+						<img src="assets/img/img02.png" alt="firework">
+						<a href="#" class="btn btn-outline">Jetzt spielen</a>
+					</div>
 				</div>
 			</div>
-			<div class="btn-wrapper">
-				<div class="btn-start">
-					<img src="assets/img/img02.png" alt="firework">
-					<a href="#" class="btn btn-outline">Jetzt spielen</a>
+			<div class="firework-section js-hidden">
+				<div class="firework-count"><span id="output">30</span></div>
+				<div class="firework-amount"><span>0</span></div>
+			</div>
+			<div class="firework-block js-hidden">
+				<div class="firework-item">
+					<img src="assets/img/img03.png" alt="firework">
 				</div>
 			</div>
+			<div id="slider" class="js-hidden"></div>
 		</main>
 	</div>
 	<!-- loading JS Start -->
