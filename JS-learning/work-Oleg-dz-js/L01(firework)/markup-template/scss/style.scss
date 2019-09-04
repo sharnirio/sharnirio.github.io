@@ -32,10 +32,15 @@
 
 // common
 .js-hidden {
-	opacity: 0;
-	transition: opacity 0.6s ease;
+	display: none;
 	&.js-hidden-off {
-		opacity: 1;
+		display: block;
+	}
+}
+.js-hidden2 {
+	display: none;
+	&.js-hidden2-off {
+		display: block;
 	}
 }
 .bg-stretch {
@@ -115,10 +120,10 @@
 	}
 }
 
-.firework-section {
+.second-section {
 }
 
-.firework-count {
+.second-count {
 	position: absolute;
 	top: 20px;
 	left: 30px;
@@ -143,7 +148,7 @@
 	background: linear-gradient(to right, red 15%, orange  25%, yellow  35%, green  50%, blue  65%, indigo 80%, violet 100%);
 	width: 100%;
 }
-.firework-amount {
+.second-amount {
 	position: absolute;
 	top: 40px;
 	right: 30px;
@@ -172,4 +177,36 @@
 	position: absolute;
 	bottom: 0;
 	left: 50%;
+}
+.result-wrapper {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.result {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+		h2 {
+		font-size: rem(50px);
+		line-height: 1;
+		margin-bottom: 10px;
+	}
+}
+.result-amount {
+	text-align: center;
+	font-size: rem(30px);
+
+	span {
+		color: red;
+		font-size: rem(40px);
+	}
+}
+.result-btn {
+	margin-top: 20px;
 }
