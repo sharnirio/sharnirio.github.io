@@ -45,9 +45,4 @@ module.exports = function() {
 			.pipe($.gulp.dest($.config.pathVar.path.production.other))
 	});
 
-	//message that you can fill
-	$.gulp.task('messageProd', function() {
-		$.gp.notify("Production version on project compiled, you may commit and push you project!").write('');
-	});
-
 };

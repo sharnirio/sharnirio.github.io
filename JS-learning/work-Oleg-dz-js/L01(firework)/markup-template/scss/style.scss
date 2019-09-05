@@ -19,7 +19,6 @@
 
 //keyframes
 @keyframes its-my-unic-animation-i-not-copy {
-
 	0%,
 	100% {
 		top: 30px
@@ -28,6 +27,25 @@
 	50% {
 		top: -30px
 	}
+}
+
+@keyframes bottom-to-top {
+	0% {
+		bottom: 0%;
+		transform: translateY(100%);
+	}
+
+	100% {
+		bottom: 100%;
+		transform: translateY(0%);
+	}
+}
+.animation-btt {
+	animation: bottom-to-top 2.3s linear forwards;
+}
+.firework-item {
+
+	cursor: pointer;
 }
 
 // common
@@ -69,6 +87,7 @@
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 .title-block {
@@ -172,11 +191,13 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
+	z-index: 1;
 }
 .firework-item {
 	position: absolute;
-	bottom: 0;
+	bottom: 0%;
 	left: 50%;
+	transform: translateY(100%);
 }
 .result-wrapper {
 	position: absolute;
@@ -187,6 +208,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	z-index: 1;
 }
 .result {
 	max-width: 400px;

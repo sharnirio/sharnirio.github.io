@@ -48,13 +48,20 @@ $.gulp.task('build', $.gulp.parallel(
 	'htmlBuild',
 	'jsBuild',
 	'cssBuild',
-	'fontsBuild',
+	'fontsBuild'
+))
+
+//TASK ---- gulp allImageTask
+$.gulp.task('allImageTask', $.gulp.parallel(
 	'imageBuild',
 	'imageTrashBuild'
 ))
 
 //TASK ---- gulp
-$.gulp.task('default', $.gulp.parallel('build', 'webserver', 'watch'));
+$.gulp.task('default', $.gulp.series(
+	$.gulp.parallel('build', 'buildDev'),
+	$.gulp.parallel('allImageTask', 'webserver', 'watch')
+));
 
 //TASK ---- gulp dev-easy
 $.gulp.task('dev-easy', $.gulp.parallel('webserver', 'watch'));
@@ -62,8 +69,9 @@ $.gulp.task('dev-easy', $.gulp.parallel('webserver', 'watch'));
 //TASK ---- gulp dev
 $.gulp.task('dev', $.gulp.series(
 	'clean',
-	$.gulp.parallel('build', 'justCssBuild', 'otherBuild', 'watch', 'webserver',
-	'buildDev')
+	$.gulp.parallel('build', 'justCssBuild', 'otherBuild',
+	'buildDev'),
+	$.gulp.parallel('webserver', 'watch', 'allImageTask')
 ))
 
 
@@ -73,7 +81,11 @@ $.gulp.task('buildProd', $.gulp.parallel(
 	'htmlProdBuild',
 	'jsBuildProd',
 	'cssBuildProd',
-	'fontsBuildProd',
+	'fontsBuildProd'
+))
+
+//TASK ---- gulp allImageTaskProd
+$.gulp.task('allImageTaskProd', $.gulp.parallel(
 	'imageBuildProd',
 	'imageTrashBuildProd'
 ))
@@ -81,7 +93,8 @@ $.gulp.task('buildProd', $.gulp.parallel(
 //TASK  ---- gulp dist
 $.gulp.task('dist', $.gulp.series(
 	'cleanProd',
-	$.gulp.parallel('buildProd', 'justCssBuildProd', 'jsMinBuildProd', 'otherBuildProd','webserverProd', "watchProd",'messageProd')
+	$.gulp.parallel('buildProd', 'justCssBuildProd', 'jsMinBuildProd', 'otherBuildProd'),
+	$.gulp.parallel('allImageTaskProd', 'webserverProd', 'watchProd')
 ))
 
 //TASK ---- gulp buildProd-noImgFont
@@ -92,4 +105,4 @@ $.gulp.task('buildProd-noImgFont', $.gulp.parallel(
 ))
 
 //TASK  ---- gulp dist-easy
-$.gulp.task('dist-easy', $.gulp.parallel('buildProd-noImgFont', 'justCssBuildProd', 'jsMinBuildProd', 'otherBuildProd','webserverProd', "watchProd",'messageProd'))
+$.gulp.task('dist-easy', $.gulp.parallel('buildProd-noImgFont', 'justCssBuildProd', 'jsMinBuildProd', 'otherBuildProd','webserverProd', "watchProd"))

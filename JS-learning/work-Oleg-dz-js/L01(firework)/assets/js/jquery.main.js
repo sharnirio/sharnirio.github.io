@@ -8,26 +8,51 @@ function _typeof(obj) {
     })(obj);
 }
 
-// function on
-jQuery(document).ready(function() {
-    greensockInit(), greensockInit2(), btmAnimate();
-});
+document.addEventListener("DOMContentLoaded", function() {
+    btmAnimate(), // animateFirework();
+    clickFirework(), pageReload();
+}, !1);
 
 //-------- -------- -------- --------
 //-------- js custom start
 //-------- -------- -------- --------
-var btmAnimate = function() {
+var pageReload = function() {
+    document.querySelector(".result-btn a").addEventListener("click", function() {
+        location.reload();
+    });
+}, btmAnimate = function() {
     var btnVar = document.querySelector(".btn-start"), mainPageVar = document.querySelector(".main-section"), jsHiddenVar = document.querySelectorAll(".js-hidden"), tl = new TimelineMax();
     btnVar.addEventListener("click", function() {
         tl.to(mainPageVar, 1, {
             opacity: 0,
-            scale: .9
+            scale: .9,
+            onComplete: timerInit(30)
+        }).set(mainPageVar, {
+            className: "+=js-hidden"
         }).set(jsHiddenVar, {
             className: "+=js-hidden-off"
         });
     });
-}, timerInit = function() {
-    var timer1 = new function(obj) {
+}, afterTimer = function() {
+    for (var jsHiddenOffVar = document.querySelectorAll(".js-hidden-off"), jsHidden2Var = document.querySelectorAll(".js-hidden2"), i = 0; i < jsHiddenOffVar.length; i++) jsHiddenOffVar[i].classList.remove("js-hidden-off");
+    for (i = 0; i < jsHidden2Var.length; i++) jsHidden2Var[i].classList.add("js-hidden2-off");
+}, randomNum = function(min, max) {
+    return (min + Math.random() * (max + 1 - min)).toFixed(2);
+}, animateFirework = function() {
+    $(".firework-item");
+    var fireworkBlock = $(".firework-block"), div = $("<div>").addClass("firework-item animation-btt").html('<img src="assets/img/img03.png" alt="firework">'), counter = 500;
+    setTimeout(function myFunction() {
+        counter = randomNum(500, 1500);
+        var leftVar = randomNum(10, 90);
+        fireworkBlock.append(div.clone().css("left", leftVar + "%")), setTimeout(myFunction, counter);
+    }, counter);
+}, clickFirework = function() {
+    var fireworkBlock = $(".firework-block"), countRemoveBlock = $(".second-amount span"), resultAmountBlock = $(".result-amount span"), countRemoveEl = 0;
+    fireworkBlock.on("mousedown", ".firework-item", function() {
+        this.remove(), countRemoveEl++, countRemoveBlock.text(countRemoveEl), resultAmountBlock.text(countRemoveEl);
+    });
+}, timerInit = function(argument_0) {
+    var time = 0 < arguments.length && void 0 !== argument_0 ? argument_0 : 20, timer1 = new function(obj) {
         var _this = this;
         this.time = obj.time, this.fps = obj.fps, this.onEnd = obj.onEnd || null, this.onStart = obj.onStart || null, 
         this.onTick = obj.onTick || null, this.intervalID = null, this.start = function() {
@@ -51,148 +76,27 @@ var btmAnimate = function() {
             }
         };
     }({
-        time: 30,
+        time: time,
         fps: 60,
         onTick: tick,
         onEnd: function() {
-            console.log("timer ended");
+            // console.log("timer ended");
+            afterTimer();
         },
         onStart: function() {
-            console.log("timer started");
-        }
+            // console.log("timer started");
+            animateFirework();
+ // clickFirework();
+                }
     });
     function tick() {
-        id("output").innerHTML = timer1.get("dig"), id("slider").style.width = timer1.get() / 30 * 100 + "%";
+        id("output").innerHTML = timer1.get("dig"), id("slider").style.width = timer1.get() / time * 100 + "%";
     }
     function id(id) {
         return document.getElementById(id);
     }
     timer1.start(), requestAnimationFrame(tick);
-};
-
- //https://www.youtube.com/watch?v=BAfiXPkubYw
-// tutorial https://abraxabra.ru/blog/prochee/greensock-for-beginners-a-tutorial-on-web-animation-part-1/
-// function init
-function greensockInit() {
-    TweenMax.set(".my-element", {
-        paddingBottom: 60,
-        rotation: -15
-    }), // just css value
-    TweenMax.from(".my-element", 6, {
-        color: "#DC143C"
-    }), TweenMax.to(".my-element", 6, {
-        rotation: 0,
-        color: "#00FF00",
-        delay: 6
-    });
-    //second animation with construction
-    var tl = new TimelineMax();
-    TweenMax.set(".my-element2", {
-        position: "relative"
-    }), tl.fromTo(".my-element2", 4, {
-        // from state
-        opacity: 1,
-        top: "-100px"
-    }, {
-        // to end state
-        opacity: .5,
-        top: "100px"
-    }).to(".my-element2", 4, {
-        top: "-100px",
-        opacity: 1,
-        ease: Bounce.line
-    }).to(".my-element3", 4, {
-        scale: .5
-    }).to(".my-element2", 4, {
-        top: "0px",
-        scale: .8
-    });
-    //The third animation with group
-    var tl2 = new TimelineMax();
-    TweenMax.set(".my-element4", {
-        display: "flex"
-    }), tl2.staggerTo(".my-element4 img", .5, {
-        rotation: 180
-    }, 1).staggerTo(".my-element4 img", .5, {
-        rotation: 0
-    }, 1);
-}
-
-function greensockInit2() {
-    var tl = new TimelineMax(), $box1 = $(".box1"), $box2 = $(".box2"), $box3 = $(".box3"), $box4 = $(".box4"), $allBox = $(".box1, .box2, .box3, .box4"), restart = $(".restart-box"), pause = $(".pause-box"), play = $(".play-box");
-    tl.to($box1, 1, {
-        left: "100%"
-    }).to($box2, 1, {
-        right: "100%"
-    }, "-=1").to($box2, 1, {
-        bottom: "-100%"
-    }).to($box3, 1, {
-        top: "-100%"
-    }, "-=1").to($box4, 1, {
-        top: "-100%"
-    }).to($box1, 1, {
-        bottom: "-100%"
-    }, "-=1").to($box2, 1, {
-        right: "0"
-    }).to($box1, 1, {
-        left: "0"
-    }, "-=1").to($box1, 1, {
-        top: "0"
-    }).to($box2, 1, {
-        top: "0"
-    }, "-=1").to($box3, 1, {
-        top: "0%"
-    }, "-=1").to($box4, 1, {
-        top: "0%"
-    }, "-=1").to($allBox, 3, {
-        rotation: 180
-    }).to($allBox, 3, {
-        fontSize: "100px"
-    }, "+=1").add("newPoint").to($allBox, 5, {
-        scale: .5
-    }).to($allBox, 5, {
-        scale: .9
-    }).to($box1, 3, {
-        rotation: 360,
-        fontSize: "50px"
-    }, "newPoint").to($box2, 3, {
-        rotation: 0,
-        fontSize: "80px"
-    }, "newPoint").to($box3, 3, {
-        rotation: 360,
-        fontSize: "120px"
-    }, "newPoint").to($box4, 3, {
-        rotation: 0,
-        fontSize: "140px"
-    }, "newPoint"), restart.on("click", function() {
-        $allBox.removeAttr("style"), tl.restart();
-    }), pause.on("click", function() {
-        tl.pause();
-    }), play.on("click", function() {
-        tl.play();
-    });
-}
-
- //-------- -------- -------- --------
-//-------- js custom end
-//-------- -------- -------- --------
-//-------- -------- -------- --------
-//-------- included js libs start
-//-------- -------- -------- --------
-//-----module greensock js
-/*!
- * VERSION: 2.1.3
- * DATE: 2019-05-17
- * UPDATES AND DOCS AT: http://greensock.com
- *
- * Includes all of the following: TweenLite, TweenMax, TimelineLite, TimelineMax, EasePack, CSSPlugin, RoundPropsPlugin, BezierPlugin, AttrPlugin, DirectionalRotationPlugin
- *
- * @license Copyright (c) 2008-2019, GreenSock. All rights reserved.
- * This work is subject to the terms at http://greensock.com/standard-license or for
- * Club GreenSock members, the software agreement that was issued with your membership.
- *
- * @author: Jack Doyle, jack@greensock.com
- **/ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != typeof global ? global : window;
+}, _gsScope = "undefined" != typeof module && module.exports && "undefined" != typeof global ? global : window;
 
 (_gsScope._gsQueue || (_gsScope._gsQueue = [])).push(function() {
     var a, b, c, d, e, f, g, i, j, k, l, m, n, o, p, q;

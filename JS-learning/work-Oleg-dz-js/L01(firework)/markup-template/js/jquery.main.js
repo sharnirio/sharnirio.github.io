@@ -1,21 +1,26 @@
-// without jQuery (doesn't work in older IEs)
-document.addEventListener('DOMContentLoaded', function(){
-	// greensockInit();
-	// greensockInit2();
+document.addEventListener('DOMContentLoaded', function() {
 	btmAnimate();
-	// timerInit();
+	// animateFirework();
+	clickFirework();
+	pageReload()
 }, false);
-
 //-------- -------- -------- --------
 //-------- js custom start
 //-------- -------- -------- --------
+let pageReload = () => {
+	let btnVar = document.querySelector('.result-btn a');
+	btnVar.addEventListener('click', () => {
+		location.reload();
+	})
+}
+
 let btmAnimate = () => {
 	let btnVar = document.querySelector('.btn-start');
 	let mainPageVar = document.querySelector('.main-section');
 	let jsHiddenVar = document.querySelectorAll('.js-hidden');
 	var tl = new TimelineMax();
 	btnVar.addEventListener('click', () => {
-		tl.to(mainPageVar, 1, { opacity: 0, scale: 0.9,onComplete: timerInit(3) }).set(mainPageVar, {className:"+=js-hidden"}).set(jsHiddenVar, {className:"+=js-hidden-off"});
+		tl.to(mainPageVar, 1, { opacity: 0, scale: 0.9, onComplete: timerInit(30) }).set(mainPageVar, { className: "+=js-hidden" }).set(jsHiddenVar, { className: "+=js-hidden-off" });
 	});
 }
 
@@ -28,14 +33,46 @@ let afterTimer = () => {
 	for (var i = 0; i < jsHidden2Var.length; i++) {
 		jsHidden2Var[i].classList.add('js-hidden2-off');
 	}
-	// jsHiddenOffVar.classList.remove('js-hidden-off');
-	// jsHidden2Var.classList.add('js-hidden2-off');
 }
+
+let randomNum = (min, max)  => {
+	let rand = min + Math.random() * (max + 1 - min);
+	return rand.toFixed(2);
+}
+
+let animateFirework = () => {
+		let fireworkItem = $('.firework-item');
+		let fireworkBlock = $('.firework-block');
+		let div = $("<div>").addClass("firework-item animation-btt").html("<img src=\"assets/img/img03.png\" alt=\"firework\">");
+		let counter = 500;
+		let myFunction = function() {
+			counter = randomNum(500, 1500);
+			let leftVar = randomNum(10, 90);
+			fireworkBlock.append(div.clone().css("left", leftVar + "%"));
+			setTimeout(myFunction, counter);
+		}
+		setTimeout(myFunction, counter);
+}
+
+let clickFirework = () => {
+	let fireworkBlock = $('.firework-block');
+	let countRemoveBlock = $('.second-amount span');
+	let resultAmountBlock = $('.result-amount span');
+
+	let countRemoveEl = 0;
+	fireworkBlock.on('mousedown', '.firework-item', function(){
+		this.remove();
+		countRemoveEl++;
+		countRemoveBlock.text(countRemoveEl);
+		resultAmountBlock.text(countRemoveEl);
+	});
+}
+
 
 // more info https://www.youtube.com/watch?v=BAfiXPkubYw
 let timerInit = (timeArg = 20) => {
 	var time = timeArg,
-			fps = 60;
+		fps = 60;
 	var Timer = function(obj) {
 		this.time = obj.time;
 		this.fps = obj.fps;
@@ -80,12 +117,14 @@ let timerInit = (timeArg = 20) => {
 	});
 
 	function onTimerStart() {
-		console.log("timer started");
+		// console.log("timer started");
+		animateFirework();
+		// clickFirework();
 	}
 
 	function endTimer() {
 		// console.log("timer ended");
-		afterTimer()
+		afterTimer();
 	}
 	timer1.start()
 	requestAnimationFrame(tick);
@@ -132,7 +171,6 @@ let timerInit = (timeArg = 20) => {
 // 		rotation: 0,
 // 	}, 1);
 // }
-
 // function greensockInit2() {
 // 	var tl = new TimelineMax();
 // 	var $box1 = $('.box1');

@@ -1,14 +1,5 @@
 module.exports = function() {
 	//----------#BUILD FOLDER
-	function fontMessage(cb) {
-		$.gp.notify("FONTS file was changed!").write('');
-		cb();
-	}
-
-	function imgMessage(cb) {
-		$.gp.notify("IMG file was changed!").write('');
-		cb();
-	}
 
 	// watch task with DEV
 	$.gulp.task('watch', function() {
@@ -30,14 +21,12 @@ module.exports = function() {
 
 		$.gulp.watch($.config.pathVar.path.watch.fonts, $.gulp.series(
 			$.gulp.parallel('fontsBuild'),
-			$.bsr,
-			fontMessage
+			$.bsr
 		))
 
 		$.gulp.watch($.config.pathVar.path.watch.img, $.gulp.series(
-			$.gulp.parallel('imageBuild', 'imageTrashBuild'),
-			$.bsr,
-			imgMessage
+			$.gulp.parallel('allImageTask'),
+			$.bsr
 		))
 
 	});
@@ -67,7 +56,7 @@ module.exports = function() {
 		))
 
 		$.gulp.watch($.config.pathVar.path.watch.img, $.gulp.series(
-			$.gulp.parallel('imageBuildProd', 'imageTrashBuildProd'),
+			$.gulp.parallel('allImageTask'),
 			$.bsr
 		))
 	});
