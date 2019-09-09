@@ -1,12 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
 	btmAnimate();
-	// animateFirework();
 	clickFirework();
-	pageReload()
+	pageReload();
+	initRemResize();
 }, false);
 //-------- -------- -------- --------
 //-------- js custom start
 //-------- -------- -------- --------
+
+function initRemResize() {
+	$(window).on("load resize", function() {
+		var e, t;
+		window.innerWidth <= 640 ? (window.innerHeight, window.innerWidth, e = window.innerWidth / 640 * 100, t = window.innerHeight / 960 * 100) : (e = window.innerWidth > 640 ? "100%" : window.innerWidth / 640 * 100, t = window.innerHeight > 960 ? "100%" : window.innerHeight / 960 * 100), e <= t ? $("html").css("font-size", e + "%") : $("html").css("font-size", 100 + "%")
+	}).trigger("resize")
+}
+
+
 let pageReload = () => {
 	let btnVar = document.querySelector('.result-btn a');
 	btnVar.addEventListener('click', () => {
@@ -20,7 +29,7 @@ let btmAnimate = () => {
 	let jsHiddenVar = document.querySelectorAll('.js-hidden');
 	var tl = new TimelineMax();
 	btnVar.addEventListener('click', () => {
-		tl.to(mainPageVar, 1, { opacity: 0, scale: 0.9, onComplete: timerInit(30) }).set(mainPageVar, { className: "+=js-hidden" }).set(jsHiddenVar, { className: "+=js-hidden-off" });
+		tl.to(mainPageVar, 1, { opacity: 0, scale: 0.9, onComplete: timerInit(3) }).set(mainPageVar, { className: "+=js-hidden" }).set(jsHiddenVar, { className: "+=js-hidden-off" });
 	});
 }
 
@@ -40,16 +49,23 @@ let randomNum = (min, max)  => {
 	return rand.toFixed(2);
 }
 
+let stopAnimateFirework = false;
 let animateFirework = () => {
+
 		let fireworkItem = $('.firework-item');
 		let fireworkBlock = $('.firework-block');
 		let div = $("<div>").addClass("firework-item animation-btt").html("<img src=\"assets/img/img03.png\" alt=\"firework\">");
 		let counter = 500;
 		let myFunction = function() {
+			if(stopAnimateFirework == true) {
+				fireworkBlock.children().remove();
+				return false;
+			};
 			counter = randomNum(500, 1500);
 			let leftVar = randomNum(10, 90);
 			fireworkBlock.append(div.clone().css("left", leftVar + "%"));
 			setTimeout(myFunction, counter);
+
 		}
 		setTimeout(myFunction, counter);
 }
@@ -124,6 +140,7 @@ let timerInit = (timeArg = 20) => {
 
 	function endTimer() {
 		// console.log("timer ended");
+		stopAnimateFirework = true;
 		afterTimer();
 	}
 	timer1.start()
