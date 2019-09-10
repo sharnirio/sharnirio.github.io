@@ -18,7 +18,7 @@ module.exports = function() {
 			.pipe($.gp.rigger())
 			.pipe($.gp.babel())
 			.pipe($.gp.uglify({
-						//reduce or not the name of the arguments of variables, etc.
+			// 			//reduce or not the name of the arguments of variables, etc.
 						mangle: false,
 							output: {
 								// align js code

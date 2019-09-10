@@ -8,14 +8,23 @@ function _typeof(obj) {
     })(obj);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    btmAnimate(), // animateFirework();
-    clickFirework(), pageReload();
-}, !1);
-
 //-------- -------- -------- --------
 //-------- js custom start
 //-------- -------- -------- --------
+// tutorial https://abraxabra.ru/blog/prochee/greensock-for-beginners-a-tutorial-on-web-animation-part-1/
+function initRemResize() {
+    $(window).on("load resize", function() {
+        var e, t;
+        t = window.innerWidth <= 640 ? (window.innerHeight, window.innerWidth, e = window.innerWidth / 640 * 100, 
+        window.innerHeight / 960 * 100) : (e = 640 < window.innerWidth ? "100%" : window.innerWidth / 640 * 100, 
+        960 < window.innerHeight ? "100%" : window.innerHeight / 960 * 100), e <= t ? $("html").css("font-size", e + "%") : $("html").css("font-size", "100%");
+    }).trigger("resize");
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    btmAnimate(), clickFirework(), pageReload(), initRemResize();
+}, !1);
+
 var pageReload = function() {
     document.querySelector(".result-btn a").addEventListener("click", function() {
         location.reload();
@@ -38,10 +47,11 @@ var pageReload = function() {
     for (i = 0; i < jsHidden2Var.length; i++) jsHidden2Var[i].classList.add("js-hidden2-off");
 }, randomNum = function(min, max) {
     return (min + Math.random() * (max + 1 - min)).toFixed(2);
-}, animateFirework = function() {
+}, stopAnimateFirework = !1, animateFirework = function() {
     $(".firework-item");
     var fireworkBlock = $(".firework-block"), div = $("<div>").addClass("firework-item animation-btt").html('<img src="assets/img/img03.png" alt="firework">'), counter = 500;
     setTimeout(function myFunction() {
+        if (1 == stopAnimateFirework) return fireworkBlock.children().remove(), !1;
         counter = randomNum(500, 1500);
         var leftVar = randomNum(10, 90);
         fireworkBlock.append(div.clone().css("left", leftVar + "%")), setTimeout(myFunction, counter);
@@ -81,7 +91,7 @@ var pageReload = function() {
         onTick: tick,
         onEnd: function() {
             // console.log("timer ended");
-            afterTimer();
+            stopAnimateFirework = !0, afterTimer();
         },
         onStart: function() {
             // console.log("timer started");

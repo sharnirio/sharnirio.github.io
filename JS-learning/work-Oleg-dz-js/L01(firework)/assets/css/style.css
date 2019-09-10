@@ -1,22 +1,22 @@
 @-webkit-keyframes its-my-unic-animation-i-not-copy {
 	0%,
 	to {
-		top:30px;
+		top:1.875rem;
 	}
 
 	50% {
-		top:-30px;
+		top:-1.875rem;
 	}
 }
 
 @keyframes its-my-unic-animation-i-not-copy {
 	0%,
 	to {
-		top:30px;
+		top:1.875rem;
 	}
 
 	50% {
-		top:-30px;
+		top:-1.875rem;
 	}
 }
 
@@ -289,8 +289,8 @@ th {
 	-webkit-transition:all .3s ease;
 	-o-transition:all .3s ease;
 	transition:all .3s ease;
-	padding:25px 50px;
-	font-size:38px;
+	padding:1.5rem 3rem;
+	font-size:3rem;
 	border-radius:3px;
 	border-width:1px;
 	line-height:1.1;
@@ -384,8 +384,8 @@ input[type=tel],
 input[type=text],
 input[type=url],
 textarea {
-	padding:25px 50px;
-	font-size:38px;
+	padding:1.5rem 3rem;
+	font-size:3rem;
 	border-radius:3px;
 	border-width:1px;
 	line-height:1.1;
@@ -440,27 +440,21 @@ textarea {
 	height:250px;
 }
 
-.wpcf7-form textarea,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-	font-size:38px;
+	padding:1.5rem 3rem;
+	font-size:3rem;
 	border-radius:3px;
 	border-width:1px;
 	line-height:1.1;
-	text-align:left;
-}
-
-input[type=button],
-input[type=reset],
-input[type=submit] {
-	padding:25px 50px;
-	border-style:solid;
-	-webkit-appearance:none;
-	cursor:pointer;
 	color:#fff;
 	background-color:#6b9d52;
 	border-color:#6b9d52;
+	border-style:solid;
+	-webkit-appearance:none;
+	cursor:pointer;
+	text-align:left;
 }
 
 .wpcf7-form .form-btn-block .wpcf7-submit:hover,
@@ -478,8 +472,18 @@ input[type=submit]:hover {
 .wpcf7-form input[type=tel],
 .wpcf7-form input[type=text],
 .wpcf7-form input[type=url] {
-	padding:25px 50px;
-	font-size:38px;
+	outline:0;
+}
+
+.wpcf7-form input[type=email],
+.wpcf7-form input[type=password],
+.wpcf7-form input[type=search],
+.wpcf7-form input[type=tel],
+.wpcf7-form input[type=text],
+.wpcf7-form input[type=url],
+.wpcf7-form textarea {
+	padding:1.5rem 3rem;
+	font-size:3rem;
 	border-radius:3px;
 	border-width:1px;
 	line-height:1.1;
@@ -487,14 +491,6 @@ input[type=submit]:hover {
 	background-color:#f1f1f1;
 	border-color:#f1f1f1;
 	text-align:left;
-	text-transform:uppercase;
-	outline:0;
-}
-
-.wpcf7-form textarea {
-	color:#000;
-	background-color:#f1f1f1;
-	border-color:#f1f1f1;
 	text-transform:uppercase;
 }
 
@@ -547,8 +543,8 @@ input[type=submit]:hover {
 }
 
 .wpcf7-form .form-btn-block .wpcf7-submit {
-	padding:25px 50px;
-	font-size:38px;
+	padding:1.5rem 3rem;
+	font-size:3rem;
 	border-radius:3px;
 	border-width:1px;
 	line-height:1.1;
@@ -972,11 +968,13 @@ dl dd {
 	-webkit-box-direction:normal;
 	-ms-flex-direction:column;
 	flex-direction:column;
+	-webkit-box-pack:center;
+	-ms-flex-pack:center;
+	justify-content:center;
 	overflow:hidden;
 }
 
 .title-block {
-	padding-top:80px;
 	max-width:400px;
 	margin-left:auto;
 	margin-right:auto;
@@ -987,10 +985,14 @@ dl dd {
 	text-align:center;
 }
 
+.title-img img {
+	width:15.813rem;
+	height:3.313rem;
+}
+
 .btn-wrapper {
 	margin-top:auto;
-	padding-top:20px;
-	padding-bottom:50px;
+	padding-top:1.25rem;
 }
 
 .btn-start,
@@ -1017,13 +1019,15 @@ dl dd {
 
 .btn-start img {
 	position:relative;
+	word-spacing:4.375rem;
+	height:16.375rem;
 	z-index:2;
 	-webkit-animation:its-my-unic-animation-i-not-copy 6s linear infinite;
 	animation:its-my-unic-animation-i-not-copy 6s linear infinite;
 }
 
 .btn-start .btn {
-	margin-top:40px;
+	margin-top:2.5rem;
 	position:relative;
 }
 
@@ -1035,8 +1039,8 @@ dl dd {
 	-webkit-transform:translateX(-50%);
 	-ms-transform:translateX(-50%);
 	transform:translateX(-50%);
-	width:8px;
-	height:100px;
+	width:.5rem;
+	height:6.25rem;
 	background:-webkit-gradient(linear,left top,right top,color-stop(0,#6a4f3d),to(#b18c5d));
 	background:-o-linear-gradient(left,#6a4f3d 0,#b18c5d 100%);
 	background:linear-gradient(to right,#6a4f3d 0,#b18c5d 100%);
@@ -1051,17 +1055,17 @@ dl dd {
 }
 
 .second-count {
-	left:30px;
-	width:60px;
-	height:68px;
+	left:1.875rem;
+	width:3.75rem;
+	height:4.25rem;
 	background-image:url(../img/ico02.png);
 	background-repeat:no-repeat;
 	background-size:contain;
 	-webkit-box-pack:center;
 	-ms-flex-pack:center;
 	justify-content:center;
-	top:20px;
-	font-size:20px;
+	top:1.25rem;
+	font-size:1.25rem;
 }
 
 .second-count span {
@@ -1080,17 +1084,17 @@ dl dd {
 }
 
 .second-amount {
-	top:40px;
-	right:30px;
-	font-size:30px;
+	top:2.5rem;
+	right:1.875rem;
+	font-size:1.875rem;
 }
 
 .second-amount:before {
 	content:"";
 	display:inline-block;
-	width:54px;
-	height:45px;
-	margin-right:10px;
+	width:3.375rem;
+	height:2.813rem;
+	margin-right:.625rem;
 	background-image:url(../img/ico01.png);
 	background-repeat:no-repeat;
 	background-size:contain;
@@ -1112,6 +1116,11 @@ dl dd {
 	-webkit-transform:translateY(100%);
 	-ms-transform:translateY(100%);
 	transform:translateY(100%);
+}
+
+.firework-item img {
+	width:2.75rem;
+	height:14.25rem;
 }
 
 .result-wrapper {
@@ -1155,6 +1164,7 @@ dl dd {
 }
 
 .result-btn {
+	text-align:center;
 	margin-top:20px;
 }
 

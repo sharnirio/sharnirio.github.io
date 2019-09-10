@@ -2,6 +2,7 @@
 
 global.$ = {
 	gulp: require('gulp'),
+	eslint: require('gulp-eslint'),
 
 	//gulp-load-plugins init
 	gp: require('gulp-load-plugins') ({
@@ -36,6 +37,19 @@ global.$ = {
 		done();
 	}
 }
+
+$.gulp.task('lint', function() {
+	return $.gulp.src(['../assets/js/*.js'])
+	// eslint() attaches the lint output to the "eslint" property
+	// of the file object so it can be used by other modules.
+	.pipe($.eslint({configFile: 'eslint.json'}))
+	// eslint.format() outputs the lint results to the console.
+	// Alternatively use eslint.formatEach() (see Docs).
+	.pipe($.eslint.format())
+	// To have the process exit with an error code (1) on
+	// lint error, return the stream and pipe to failAfterError last.
+	// .pipe($.eslint.failAfterError());
+});
 
 //cycle for all tasks
 $.config.configInit.forEach(function (taskPath) {
@@ -94,7 +108,7 @@ $.gulp.task('allImageTaskProd', $.gulp.parallel(
 $.gulp.task('dist', $.gulp.series(
 	'cleanProd',
 	$.gulp.parallel('buildProd', 'justCssBuildProd', 'jsMinBuildProd', 'otherBuildProd'),
-	$.gulp.parallel('allImageTaskProd', 'webserverProd', 'watchProd')
+	$.gulp.parallel('allImageTaskProd', 'webserverProd', 'watchProd', 'lint',)
 ))
 
 //TASK ---- gulp buildProd-noImgFont
