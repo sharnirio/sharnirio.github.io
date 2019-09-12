@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	clickFirework();
 	pageReload();
 	initRemResize();
+	firewokInnit();
 }, false);
 //-------- -------- -------- --------
 //-------- js custom start
@@ -166,8 +167,11 @@ let timerInit = (timeArg = 20) => {
 //-------- -------- -------- --------
 //-------- included js libs start
 //-------- -------- -------- --------
-//-----module greensock js
+
+//= vendors/firework.js
+
 //= vendors/greensock.js
+
 //-------- -------- -------- --------
 //-------- included js libs end
 //-------- -------- -------- --------

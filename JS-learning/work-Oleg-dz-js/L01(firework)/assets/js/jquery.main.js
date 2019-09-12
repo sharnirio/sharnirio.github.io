@@ -22,7 +22,7 @@ function initRemResize() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    btmAnimate(), clickFirework(), pageReload(), initRemResize();
+    btmAnimate(), clickFirework(), pageReload(), initRemResize(), firewokInnit();
 }, !1);
 
 var pageReload = function() {
@@ -106,7 +106,176 @@ var pageReload = function() {
         return document.getElementById(id);
     }
     timer1.start(), requestAnimationFrame(tick);
-}, _gsScope = "undefined" != typeof module && module.exports && "undefined" != typeof global ? global : window;
+};
+
+//-------- -------- -------- --------
+//-------- js custom end
+//-------- -------- -------- --------
+//-------- -------- -------- --------
+//-------- included js libs start
+//-------- -------- -------- --------
+// original script https://codepen.io/sharnirio/pen/NWKYyJG
+function firewokInnit() {
+    // Local variables
+    var fireworks = [], particles = [], mouse = {
+        down: !1,
+        x: 0,
+        y: 0
+    }, currentHue = 0, clickLimiterTotal = 10, clickLimiterTick = 10, timerTotal = 100, timerTick = 10;
+    // Helper function to return random numbers within a specified range
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+ // Helper function to calculate the distance between 2 points
+        function calculateDistance(p1x, p1y, p2x, p2y) {
+        var xDistance = p1x - p2x, yDistance = p1y - p2y;
+        return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+    }
+ // Setup some basic variables
+        // Helper function for canvas animations
+    window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(cb) {
+        window.setTimeout(callback, 1e3 / 60);
+    };
+    var canvas = document.getElementById("canvas"), canvasCtx = canvas.getContext("2d"), canvasWidth = window.innerWidth, canvasHeight = window.innerHeight;
+    // Firework class
+    function Firework(sx, sy, tx, ty) {
+        // Populate coordinate array with initial data
+        for (
+        // Set coordinates (x/y = actual, sx/sy = starting, tx/ty = target)
+        this.x = this.sx = sx, this.y = this.sy = sy, this.tx = tx, this.ty = ty, // Calculate distance between starting and target point
+        this.distanceToTarget = calculateDistance(sx, sy, tx, ty), this.distanceTraveled = 0, 
+        // To simulate a trail effect, the last few coordinates will be stored
+        this.coordinates = [], this.coordinateCount = 3; this.coordinateCount--; ) this.coordinates.push([ this.x, this.y ]);
+ // Some settings, you can adjust them if you'd like to do so.
+                this.angle = Math.atan2(ty - sy, tx - sx), this.speed = 10, this.acceleration = 80, 
+        this.brightness = random(50, 80), this.targetRadius = 1, this.targetDirection = !0;
+    }
+    // Particle class
+    function Particle(x, y) {
+        // Populate coordinate array with initial data
+        for (
+        // Set the starting point
+        this.x = x, this.y = y, // To simulate a trail effect, the last few coordinates will be stored
+        this.coordinates = [], this.coordinateCount = 5; this.coordinateCount--; ) this.coordinates.push([ this.x, this.y ]);
+ // Set a random angle in all possible directions (radians)
+                this.angle = random(0, 2 * Math.PI), this.speed = random(3, 8), // Add some friction and gravity to the particle
+        this.friction = .95, this.gravity = 1, // Change the hue to a random number
+        this.hue = random(currentHue - 20, currentHue + 20), this.brightness = random(50, 80), 
+        this.alpha = 1, // Set how fast the particles decay
+        this.decay = random(.02, .07);
+    }
+ // Updates the particle, should be called each frame
+        // Resize canvas
+    canvas.width = canvasWidth, canvas.height = canvasHeight, // This method should be called each frame to update the firework
+    Firework.prototype.update = function(index) {
+        // Update the coordinates array
+        this.coordinates.pop(), this.coordinates.unshift([ this.x, this.y ]), // Cycle the target radius (used for the pulsing target circle)
+        this.targetDirection ? 1 < this.targetRadius ? this.targetRadius -= .15 : this.targetDirection = !1 : this.targetRadius < 8 ? this.targetRadius += .15 : this.targetDirection = !0, 
+        // Speed up the firework (could possibly travel faster than the speed of light)
+        this.speed *= this.acceleration;
+        // Calculate the distance the firework has travelled so far (based on velocities)
+        var vx = Math.cos(this.angle) * this.speed, vy = Math.sin(this.angle) * this.speed;
+        this.distanceTraveled = calculateDistance(this.sx, this.sy, this.x + vx, this.y + vy), 
+        // If the distance traveled (including velocities) is greater than the initial distance
+        // to the target, then the target has been reached. If that's not the case, keep traveling.
+        this.distanceTraveled >= this.distanceToTarget ? (// Create a bunch of particles at the given position
+        function(x, y) {
+            var particleCount = 60;
+            for (;particleCount--; ) particles.push(new Particle(x, y));
+        } // Add an event listener to the window so we're able to react to size changes
+        (this.tx, this.ty), fireworks.splice(index, 1)) : (this.x += vx, this.y += vy);
+    }, // Draws the firework
+    Firework.prototype.draw = function() {
+        this.coordinates[this.coordinates.length - 1];
+ // Draw the rocket
+        // canvasCtx.beginPath();
+        // canvasCtx.moveTo(lastCoordinate[0], lastCoordinate[1]);
+        // canvasCtx.lineTo(this.x, this.y);
+        // canvasCtx.strokeStyle = 'hsl(' + currentHue + ',100%,' + this.brightness + '%)';
+        // canvasCtx.stroke();
+        // Draw the target (pulsing circle)
+                canvasCtx.beginPath(), canvasCtx.arc(this.tx, this.ty, this.targetRadius, 0, 2 * Math.PI), 
+        canvasCtx.stroke();
+    }, Particle.prototype.update = function(index) {
+        // Update the coordinates array
+        this.coordinates.pop(), this.coordinates.unshift([ this.x, this.y ]), // Slow it down (based on friction)
+        this.speed *= this.friction, // Apply velocity to the particle
+        this.x += Math.cos(this.angle) * this.speed, this.y += Math.sin(this.angle) * this.speed + this.gravity, 
+        // Fade out the particle, and remove it if alpha is low enough
+        this.alpha -= this.decay, this.alpha <= this.decay && particles.splice(index, 1);
+    }, // Draws the particle
+    Particle.prototype.draw = function() {
+        var lastCoordinate = this.coordinates[this.coordinates.length - 1];
+        canvasCtx.beginPath(), canvasCtx.moveTo(lastCoordinate[0], lastCoordinate[1]), canvasCtx.lineTo(this.x, this.y), 
+        canvasCtx.strokeStyle = "hsla(" + this.hue + ",100%," + this.brightness + "%," + this.alpha + ")", 
+        canvasCtx.stroke();
+    }, window.addEventListener("resize", function(e) {
+        canvas.width = canvasWidth = window.innerWidth, canvas.height = canvasHeight = window.innerHeight;
+    });
+    // Add event listeners to the canvas to handle mouse interactions
+    // canvas.addEventListener('mousemove', function(e) {
+    // 	e.preventDefault();
+    // 	mouse.x = e.pageX - canvas.offsetLeft;
+    // 	mouse.y = e.pageY - canvas.offsetTop;
+    // });
+    // canvas.addEventListener('click', function(e) {
+    // 	e.preventDefault();
+    // 	mouse.down = true;
+    // 	setTimeout(() => {
+    // 		mouse.down = false;
+    // 	}, 10);
+    // });
+    var fireworkBlock = $(".firework-block");
+    fireworkBlock.on("mousemove", ".firework-item", function(e) {
+        e.preventDefault(), mouse.x = e.pageX - canvas.offsetLeft, mouse.y = e.pageY - canvas.offsetTop;
+    }), fireworkBlock.on("mousedown", ".firework-item", function(e) {
+        e.preventDefault(), mouse.down = !0, setTimeout(function() {
+            mouse.down = !1;
+        }, 10);
+    }), // 	canvas.addEventListener('click', function(e) {
+    // 	e.preventDefault();
+    // 		mouse.down = true;
+    // 	setTimeout(() => {
+    // 		mouse.down = false;
+    // 	}, 10);
+    // });
+    // #new
+    // canvas.addEventListener('mouseup', function(e) {
+    //   e.preventDefault();
+    //   mouse.down = false;
+    // });
+    // Main application / script, called when the window is loaded
+    function gameLoop() {
+        // This function will rund endlessly by using requestAnimationFrame (or fallback to setInterval)
+        requestAnimFrame(gameLoop), // Increase the hue to get different colored fireworks over time
+        currentHue += .5, // 'Clear' the canvas at a specific opacity, by using 'destination-out'. This will create a trailing effect.
+        canvasCtx.globalCompositeOperation = "destination-out", canvasCtx.fillStyle = "rgba(0, 0, 0, 0.5)", 
+        canvasCtx.fillRect(0, 0, canvasWidth, canvasHeight), canvasCtx.globalCompositeOperation = "lighter";
+        for (// Loop over all existing fireworks (they should be updated & drawn)
+        var i = fireworks.length; i--; ) fireworks[i].draw(), fireworks[i].update(i);
+ // Loop over all existing particles (they should be updated & drawn)
+                for (i = particles.length; i--; ) particles[i].draw(), particles[i].update(i);
+ // Launch fireworks automatically to random coordinates, if the user does not interact with the scene
+                timerTotal <= timerTick ? mouse.down || (fireworks.push(new Firework(canvasWidth / 2, canvasHeight, random(0, canvasWidth), random(0, canvasHeight / 2))), 
+        timerTick = 0) : timerTick++, // Limit the rate at which fireworks can be spawned by mouse
+        clickLimiterTotal <= clickLimiterTick ? mouse.down && (fireworks.push(new Firework(canvasWidth / 2, canvasHeight, mouse.x, mouse.y)), 
+        clickLimiterTick = 0) : clickLimiterTick++;
+    }();
+}
+
+/*!
+ * VERSION: 2.1.3
+ * DATE: 2019-05-17
+ * UPDATES AND DOCS AT: http://greensock.com
+ *
+ * Includes all of the following: TweenLite, TweenMax, TimelineLite, TimelineMax, EasePack, CSSPlugin, RoundPropsPlugin, BezierPlugin, AttrPlugin, DirectionalRotationPlugin
+ *
+ * @license Copyright (c) 2008-2019, GreenSock. All rights reserved.
+ * This work is subject to the terms at http://greensock.com/standard-license or for
+ * Club GreenSock members, the software agreement that was issued with your membership.
+ *
+ * @author: Jack Doyle, jack@greensock.com
+ **/ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != typeof global ? global : window;
 
 (_gsScope._gsQueue || (_gsScope._gsQueue = [])).push(function() {
     var a, b, c, d, e, f, g, i, j, k, l, m, n, o, p, q;

@@ -15,7 +15,7 @@
 .main-section {
 	// #fix
 	// display: none;
-	z-index: 2;
+	z-index: 13
 }
 
 //keyframes
@@ -209,7 +209,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: 1;
+	z-index: 12;
 }
 
 .firework-item {
@@ -233,7 +233,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	z-index: 1;
+	z-index: 12;
 }
 
 .result {
@@ -261,4 +261,13 @@
 .result-btn {
 	text-align: center;
 	margin-top: 20px;
+}
+
+#canvas {
+	display: block;
+	cursor: crosshair;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 11;
 }
