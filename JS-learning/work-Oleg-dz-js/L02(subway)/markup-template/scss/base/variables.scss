@@ -50,7 +50,7 @@ $base-font-family: $base-font-sans-serif;
 $vertical-rhythm: ($line-height-base * 1em);
 
 // Headers
-$h1-font-size: 30px;
+$h1-font-size: 40px;
 $h2-font-size: 27px;
 $h3-font-size: 24px;
 $h4-font-size: 21px;
@@ -64,9 +64,9 @@ $container-pading-right: $container-pading-left;
 $container-width-full: $container-width + $container-pading-left + $container-pading-right;
 
 // Buttons
-$btn-padding-y: 1.5rem;
-$btn-padding-x: 3rem;
-$btn-font-size: 3rem;
+$btn-padding-y: 1rem;
+$btn-padding-x: 2rem;
+$btn-font-size: 1.2rem;
 $btn-radius: 3px;
 $btn-border-width: 1px;
 $btn-line-height: 1.1;

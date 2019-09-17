@@ -9,5 +9,116 @@
 @import 'base/forms';
 @import 'base/typography';
 body {
-	background-color: #000;
+	background-color: green;
+}
+h1 {
+	padding-top: 20px;
+}
+.block-wrapper {
+	.container {
+}
+}
+
+.block-inner {
+	background-color: rgba(0,0,0,.5);
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 15px;
+}
+.block-item {
+	text-align: center;
+	position: relative;
+	img {
+		cursor: pointer;
+	}
+}
+.burger {
+// grid-column-row: span 3;
+// grid-row-start: span 2;
+grid-column: 2/3;
+grid-row: 2/4;
+}
+.salat  {
+// grid-column: 2/3;
+// grid-column-start: span 2;
+}
+.block-staffing {
+	position: relative;
+	display: inline-block;
+}
+.staffing {
+	position: absolute;
+	width: 30%;
+	&:nth-of-type(2) {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+	}
+	&:nth-of-type(3) {
+		left: 50%;
+		top: 0;
+		transform: translate(-50%,0%);
+	}
+	&:nth-of-type(4) {
+		top: 0%;
+		right: 0%;
+	}
+	&:nth-of-type(5) {
+		left: 0%;
+		top: 50%;
+		transform: translate(0%,-50%);
+	}
+	&:nth-of-type(6) {
+		right: 0%;
+		top: 50%;
+		transform: translate(0%,-50%);
+	}
+	&:nth-of-type(7) {
+		left: 0%;
+		top: 0%;
+	}
+	&:nth-of-type(8) {
+		left: 0%;
+		bottom: 0%;
+	}
+	&:nth-of-type(9) {
+		left: 50%;
+		bottom: 0%;
+		transform: translate(-50%,0%);
+	}
+}
+
+.block-staffing {
+}
+.staffing {
+}
+.staffing-hide {
+	opacity: 0;
+}
+
+.cheese {
+}
+.bob {
+}
+.onion {
+}
+.tomato {
+}
+.burger {
+}
+.salat {
+}
+.chicken {
+}
+.cucumber {
+}
+.chips {
+}
+.becon {
+}
+.block-btn {
+}
+.btn {
 }
