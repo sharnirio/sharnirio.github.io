@@ -30,7 +30,7 @@ function clickForStaf(arr) {
 				tl.set(classImg, { position: "absolute", top: classImgPos.top, left: classImgPos.left }).to(classImg, 1.2, { left: "50%", top: "50%", opacity: 0.4, x: "-50%", y: "-50%" }).to(classImg, 0.3, { opacity: 0 }).to($classStaff, 0.5, { scale: 1, opacity: 1 });
 				if (i2 == classListLength) {
 					let tl2 = new TimelineMax();
-					tl2.add('point').to(blockBtn, 2, { opacity: 0, x: "-100%" }, 'newPoint').to(fergit, 1.2, { scale: 1, opacity: 1, x: "-50%" }, 'newPoint').add('newPoint').to(fergit, 1, { scale: 0, opacity: 0 }, 'newPoint+=6').to(burger, 1, { scale: 0, opacity: 0 }, 'newPoint+=6').to(shayrma, 1, { scale: 1, opacity: 1, x: "-50%" })
+					tl2.add('point').to(blockBtn, 2, { opacity: 0, x: "-100%" }, 'point').to(fergit, 1.2, { scale: 1, opacity: 1, x: "-50%" }, 'point').add('newPoint').to(fergit, 1, { scale: 0, opacity: 0 }, 'newPoint+=6').to(burger, 1, { scale: 0, opacity: 0 }, 'newPoint+=6').to(shayrma, 1, { scale: 1, opacity: 1, x: "-50%" })
 				}
 			});
 		}

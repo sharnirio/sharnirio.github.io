@@ -958,11 +958,8 @@ h1 {
 
 .fergit {
 	bottom:20px;
-	-webkit-transform:translate(-50%,0%);
-	-ms-transform:translate(-50%,0%);
-	transform:translate(-50%,0%);
 	z-index:1;
-	font-size:16vw;
+	font-size:6.25rem;
 }
 
 .fergit,

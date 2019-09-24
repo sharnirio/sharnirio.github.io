@@ -145,9 +145,8 @@ h1 {
 	position: absolute;
 	bottom: 20px;
 	left: 50%;
-	transform: translate(-50%, 0%);
 	z-index: 1;
-	font-size: 16vw;
+	font-size: rem(100px);
 	opacity: 0;
 	transform: scale(0.5);
 }

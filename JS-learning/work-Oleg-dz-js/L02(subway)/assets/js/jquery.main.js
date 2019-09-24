@@ -40,11 +40,11 @@ function clickForStaf(arr) {
             }), i2 == classListLength && new TimelineMax().add("point").to(blockBtn, 2, {
                 opacity: 0,
                 x: "-100%"
-            }, "newPoint").to(fergit, 1.2, {
+            }, "point").to(fergit, 1.2, {
                 scale: 1,
                 opacity: 1,
                 x: "-50%"
-            }, "newPoint").add("newPoint").to(fergit, 1, {
+            }, "point").add("newPoint").to(fergit, 1, {
                 scale: 0,
                 opacity: 0
             }, "newPoint+=6").to(burger, 1, {
