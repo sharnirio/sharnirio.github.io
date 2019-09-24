@@ -8,13 +8,64 @@ function _typeof(obj) {
     })(obj);
 }
 
-document.addEventListener("DOMContentLoaded", function() {}, !1);
+document.addEventListener("DOMContentLoaded", function() {
+    clickForStaf(staffClassList), pageReload();
+}, !1);
 
 //-------- -------- -------- --------
 //-------- js custom start
 //-------- -------- -------- --------
 // tutorial https://abraxabra.ru/blog/prochee/greensock-for-beginners-a-tutorial-on-web-animation-part-1/
-//-------- -------- -------- --------
+var staffClassList = [ ".salat", ".onion", ".chicken", ".tomato", ".cucumber", ".cheese", ".chips", ".bob", ".becon" ];
+
+function clickForStaf(arr) {
+    for (var classList = arr, classListLength = classList.length, fergit = $(".fergit"), shayrma = $(".shayrma"), burger = $(".burger"), blockBtn = $(".block-btn img"), i2 = 0, _loop = function(i) {
+        $(".block-item".concat(classList[i])).on("click", function() {
+            var tl = new TimelineMax(), classImg = $(this).find("img"), classImgPos = classImg.position(), $classStaff = $(".block-staffing ".concat(classList[i]));
+            i2++, tl.set(classImg, {
+                position: "absolute",
+                top: classImgPos.top,
+                left: classImgPos.left
+            }).to(classImg, 1.2, {
+                left: "50%",
+                top: "50%",
+                opacity: .4,
+                x: "-50%",
+                y: "-50%"
+            }).to(classImg, .3, {
+                opacity: 0
+            }).to($classStaff, .5, {
+                scale: 1,
+                opacity: 1
+            }), i2 == classListLength && new TimelineMax().add("point").to(blockBtn, 2, {
+                opacity: 0,
+                x: "-100%"
+            }, "newPoint").to(fergit, 1.2, {
+                scale: 1,
+                opacity: 1,
+                x: "-50%"
+            }, "newPoint").add("newPoint").to(fergit, 1, {
+                scale: 0,
+                opacity: 0
+            }, "newPoint+=6").to(burger, 1, {
+                scale: 0,
+                opacity: 0
+            }, "newPoint+=6").to(shayrma, 1, {
+                scale: 1,
+                opacity: 1,
+                x: "-50%"
+            });
+        });
+    }, i = 0; i < classListLength; i++) _loop(i);
+}
+
+var pageReload = function() {
+    document.querySelector(".shayrma a").addEventListener("click", function() {
+        location.reload();
+    });
+}, _gsScope = "undefined" != typeof module && module.exports && "undefined" != typeof global ? global : window;
+
+ //-------- -------- -------- --------
 //-------- js custom end
 //-------- -------- -------- --------
 //-------- -------- -------- --------
@@ -32,10 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {}, !1);
  * Club GreenSock members, the software agreement that was issued with your membership.
  *
  * @author: Jack Doyle, jack@greensock.com
- **/
-var _gsScope = "undefined" != typeof module && module.exports && "undefined" != typeof global ? global : window;
-
-(_gsScope._gsQueue || (_gsScope._gsQueue = [])).push(function() {
+ **/ (_gsScope._gsQueue || (_gsScope._gsQueue = [])).push(function() {
     var a, b, c, d, e, f, g, i, j, k, l, m, n, o, p, q;
     _gsScope._gsDefine("TweenMax", [ "core.Animation", "core.SimpleTimeline", "TweenLite" ], function(a, b, c) {
         function g(a, b, d) {
