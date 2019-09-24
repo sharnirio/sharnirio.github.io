@@ -115,6 +115,10 @@ $button-hover-darken-persent: 15% !default;
 	}
 }
 
+.btn-dark {
+	//color button mixin $background | $color | $border | $hover-background | $hover-color | $hover-border
+	@include button-variant(red , $white, red);
+}
 
 
 .btn-outline{
