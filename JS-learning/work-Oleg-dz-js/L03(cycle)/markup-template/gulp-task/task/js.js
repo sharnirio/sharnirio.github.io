@@ -6,7 +6,7 @@ module.exports = function() {
 		return $.gulp.src($.config.pathVar.path.src.js)
 			.pipe($.gp.plumber({ errorHandler: $.gp.notify.onError("Error: <%= error.message %>") }))
 			.pipe($.gp.rigger())
-			// .pipe($.gp.babel())
+			.pipe($.gp.babel())
 			.pipe($.gulp.dest($.config.pathVar.path.build.js))
 	});
 
@@ -16,7 +16,7 @@ module.exports = function() {
 		return $.gulp.src($.config.pathVar.path.src.jsProd)
 			.pipe($.gp.plumber({ errorHandler: $.gp.notify.onError("Error: <%= error.message %>") }))
 			.pipe($.gp.rigger())
-			// .pipe($.gp.babel())
+			.pipe($.gp.babel())
 			// .pipe($.gp.uglify({
 			// 			//reduce or not the name of the arguments of variables, etc.
 			// 			mangle: false,

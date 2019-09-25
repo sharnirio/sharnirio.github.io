@@ -9,4 +9,15 @@
 @import 'base/forms';
 @import 'base/typography';
 // if the project is on wp
-@import 'base/wp-reset';
+// @import 'base/wp-reset';
+h1 {
+	text-align: center;
+	padding-top: 30px;
+}
+.canvas-block {
+display: flex;
+justify-content: center;
+}
+.canvas1 {
+	background-color: tomato;
+}
