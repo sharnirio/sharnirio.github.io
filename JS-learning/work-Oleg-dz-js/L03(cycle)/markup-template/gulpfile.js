@@ -38,9 +38,18 @@ global.$ = {
 }
 
 //cycle for all tasks
-$.config.configInit.forEach(function (taskPath) {
-	require(taskPath)();
-})
+// $.config.configInit.forEach(function (taskPath) {
+// 	require(taskPath)();
+// })
+// all tasks
+require('./gulp-task/task/style.js')();
+require('./gulp-task/task/serve.js')();
+require('./gulp-task/task/other.js')();
+require('./gulp-task/task/js.js')();
+require('./gulp-task/task/html.js')();
+require('./gulp-task/task/image.js')();
+require('./gulp-task/task/watch.js')();
+require('./gulp-task/task/dev-task.js')();
 
 //----------#BUILD DEV FOLDER
 //TASK ---- gulp build
