@@ -55,7 +55,7 @@ h1 {
 		cursor: pointer;
 
 		&:hover {
-			opacity: 0.7;
+			opacity: 0.9;
 		}
 	}
 }
@@ -184,4 +184,37 @@ h1 {
 
 .shayrma-img {
 	z-index: 0;
+}
+
+.draggable.is-pointer-down {
+	background: #09F;
+}
+
+.block-item  {
+	img.drop-active {
+  border-color: #aaa;
+  opacity: 0.2;
+}
+
+img.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid;
+  opacity: 0.2;
+}
+
+img{
+
+
+  touch-action: none;
+          transform: translate(0px, 0px);
+
+  transition: background-color 0.3s;
+}
+
+img.can-drop {
+  background-color: #4e4;
+  opacity: 0.2;
+}
+
 }
