@@ -57,22 +57,26 @@ function displaceInit(arg) {
 			var draggableElement = event.relatedTarget;
 			var draggableElementData = draggableElement.getAttribute('data-veg');
 			var staffElement = document.querySelector(".block-staffing .".concat(draggableElementData));
-			lastElArr.push(draggableElement);
-			lastEl = lastElArr[lastElArr.length - 1];
-			console.log(lastElArr);
+			staffElement.classList.add('js-op-1');
+			draggableElement.classList.add('js-op-0');
+			draggableElement.style.cssText="transform: translate(0px, 0px);";
+			draggableElement.dataset.x = 0;
+			draggableElement.dataset.y = 0;
 
-			$('.block-btn img').off('click')
-			$('.block-btn img').on('click', function(){
-				console.log(lastElArr[lastElArr.length - 1]);
-				tl.to(lastEl, 0.4, { opacity: 1, scale: 1});
-				lastElArr.pop();
-				lastEl = lastElArr[lastElArr.length - 1];
+			// interact(draggableElement).unset();
 
-			});
+			// tl.to(draggableElement, 0.4, {scale: 0.3}).to(draggableElement, 0.4, {className:"+=js-drops"}).to(staffElement, 0.4, { opacity: 1, scale: 1}).to(draggableElement, 0.4, { clearProps:"all"}) ;
 
-			draggableElement.classList.add('drops');
-			tl.to(draggableElement, 0.4, { opacity: 0, scale: 0.3}).to(staffElement, 0.4, { opacity: 1, scale: 1});
-			// event.relatedTarget.textContent = 'Dropped'
+
+			// lastElArr.push(draggableElement);
+			// lastEl = lastElArr[lastElArr.length - 1];
+			// $('.block-btn img').off('click');
+			// $('.block-btn img').on('click', function(){
+			// 	console.log(lastElArr[lastElArr.length - 1]);
+			// 	tl.to(lastEl, 0.4, { opacity: 1, scale: 1});
+			// 	lastElArr.pop();
+			// 	lastEl = lastElArr[lastElArr.length - 1];
+			// });
 		},
 		ondropdeactivate: function(event) {
 			// remove active dropzone feedback
@@ -90,6 +94,62 @@ function displaceInit(arg) {
 			})
 		],
 		autoScroll: true,
+		// dragMoveListener from the dragging demo above
+		onmove: dragMoveListener
+	})
+	interact('.block-inner > .block-item:not(.burger)').dropzone({
+		// only accept elements matching this CSS selector
+		accept: '.block-staffing > .staffing',
+		// Require a 75% element overlap for a drop to be possible
+		overlap: 0.1,
+		// listen for drop related events:
+		ondropactivate: function(event) {
+			// add active dropzone feedback
+			event.target.classList.add('drop-active2')
+		},
+		ondragenter: function(event) {
+			var draggableElement = event.relatedTarget
+			var dropzoneElement = event.target
+			// feedback the possibility of a drop
+			dropzoneElement.classList.add('drop-target2')
+			draggableElement.classList.add('can-drop2')
+			var draggableElementData = draggableElement.getAttribute('data-veg');
+			var staffElement = document.querySelector(".block-item.".concat(draggableElementData));
+			draggableElement.classList.remove('js-op-1');
+			staffElement.classList.remove('js-op-0');
+			// draggableElement.style.cssText="transform: translate(0px, 0px);";
+			// draggableElement.dataset.x = 0;
+			// draggableElement.dataset.y = 0;
+		},
+		ondragleave: function(event) {
+			// remove the drop feedback style
+			event.target.classList.remove('drop-target2')
+			event.relatedTarget.classList.remove('can-drop2')
+		},
+		ondrop: function(event) {
+			var draggableElement = event.relatedTarget;
+			var draggableElementData = draggableElement.getAttribute('data-veg');
+			// var staffElement = document.querySelector(".block-staffing .".concat(draggableElementData));
+			// draggableElement.classList.removeClass('js-op-1');
+			// staffElement.classList.removeClass('js-op-0');
+
+		},
+		ondropdeactivate: function(event) {
+			// remove active dropzone feedback
+			event.target.classList.remove('drop-active2')
+			event.target.classList.remove('drop-target2')
+		}
+	})
+
+	interact('.block-inner .staffing').draggable({
+		inertia: true,
+		modifiers: [
+			interact.modifiers.restrictRect({
+				restriction: 'parent',
+				endOnly: true
+			})
+		],
+		autoScroll: false,
 		// dragMoveListener from the dragging demo above
 		onmove: dragMoveListener
 	})
