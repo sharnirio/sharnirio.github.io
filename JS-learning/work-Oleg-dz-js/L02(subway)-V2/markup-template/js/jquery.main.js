@@ -8,9 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // tutorial https://abraxabra.ru/blog/prochee/greensock-for-beginners-a-tutorial-on-web-animation-part-1/
 var staffClassList = [".salat", ".onion", ".chicken", ".tomato", ".cucumber", ".cheese", ".chips", ".bob", ".becon"]
+var lastElArr = [];
+var lastEl = [];
 
 function displaceInit(arg) {
-
+	let tl = new TimelineMax();
+	let tl2 = new TimelineMax();
 	function dragMoveListener(event) {
 		var target = event.target
 		// keep the dragged position in the data-x/data-y attributes
@@ -51,7 +54,24 @@ function displaceInit(arg) {
 			event.relatedTarget.classList.remove('can-drop')
 		},
 		ondrop: function(event) {
-			console.log('Dropped');
+			var draggableElement = event.relatedTarget;
+			var draggableElementData = draggableElement.getAttribute('data-veg');
+			var staffElement = document.querySelector(".block-staffing .".concat(draggableElementData));
+			lastElArr.push(draggableElement);
+			lastEl = lastElArr[lastElArr.length - 1];
+			console.log(lastElArr);
+
+			$('.block-btn img').off('click')
+			$('.block-btn img').on('click', function(){
+				console.log(lastElArr[lastElArr.length - 1]);
+				tl.to(lastEl, 0.4, { opacity: 1, scale: 1});
+				lastElArr.pop();
+				lastEl = lastElArr[lastElArr.length - 1];
+
+			});
+
+			draggableElement.classList.add('drops');
+			tl.to(draggableElement, 0.4, { opacity: 0, scale: 0.3}).to(staffElement, 0.4, { opacity: 1, scale: 1});
 			// event.relatedTarget.textContent = 'Dropped'
 		},
 		ondropdeactivate: function(event) {
@@ -73,6 +93,7 @@ function displaceInit(arg) {
 		// dragMoveListener from the dragging demo above
 		onmove: dragMoveListener
 	})
+
 }
 
 
