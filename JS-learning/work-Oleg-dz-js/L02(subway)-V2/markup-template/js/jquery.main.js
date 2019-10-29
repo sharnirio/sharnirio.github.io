@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 	displaceInit(staffClassList);
 	pageReload();
+	animate();
 }, false);
 //-------- -------- -------- --------
 //-------- js custom start
@@ -8,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // tutorial https://abraxabra.ru/blog/prochee/greensock-for-beginners-a-tutorial-on-web-animation-part-1/
 var staffClassList = [".salat", ".onion", ".chicken", ".tomato", ".cucumber", ".cheese", ".chips", ".bob", ".becon"]
-var lastElArr = [];
-var lastEl = [];
 
 function displaceInit(arg) {
 	let tl = new TimelineMax();
@@ -62,21 +61,6 @@ function displaceInit(arg) {
 			draggableElement.style.cssText="transform: translate(0px, 0px);";
 			draggableElement.dataset.x = 0;
 			draggableElement.dataset.y = 0;
-
-			// interact(draggableElement).unset();
-
-			// tl.to(draggableElement, 0.4, {scale: 0.3}).to(draggableElement, 0.4, {className:"+=js-drops"}).to(staffElement, 0.4, { opacity: 1, scale: 1}).to(draggableElement, 0.4, { clearProps:"all"}) ;
-
-
-			// lastElArr.push(draggableElement);
-			// lastEl = lastElArr[lastElArr.length - 1];
-			// $('.block-btn img').off('click');
-			// $('.block-btn img').on('click', function(){
-			// 	console.log(lastElArr[lastElArr.length - 1]);
-			// 	tl.to(lastEl, 0.4, { opacity: 1, scale: 1});
-			// 	lastElArr.pop();
-			// 	lastEl = lastElArr[lastElArr.length - 1];
-			// });
 		},
 		ondropdeactivate: function(event) {
 			// remove active dropzone feedback
@@ -116,10 +100,15 @@ function displaceInit(arg) {
 			var draggableElementData = draggableElement.getAttribute('data-veg');
 			var staffElement = document.querySelector(".block-item.".concat(draggableElementData));
 			draggableElement.classList.remove('js-op-1');
+			staffElement.style.cssText = "transition: opacity 1.3s ease";
 			staffElement.classList.remove('js-op-0');
-			// draggableElement.style.cssText="transform: translate(0px, 0px);";
-			// draggableElement.dataset.x = 0;
-			// draggableElement.dataset.y = 0;
+			setTimeout(function() {
+				draggableElement.removeAttribute("style");
+				draggableElement.dataset.x = 0;
+				draggableElement.dataset.y = 0;
+			}, 1000);
+
+
 		},
 		ondragleave: function(event) {
 			// remove the drop feedback style
@@ -156,6 +145,28 @@ function displaceInit(arg) {
 
 }
 
+function animate() {
+	var imgEl = $('.block-item:not(.burger) > img');
+	// var hideEl = $('.block-item > .js-op-0');
+	console.log(imgEl);
+	// console.log(hideEl);
+
+	imgEl.on("click", function() {
+		setTimeout(function() {
+		console.log($('.block-item.js-op-0').length);
+		if($('.block-item.js-op-0').length >= 9) {
+			interact('.block-inner .staffing').unset();
+			let fergit = $(".fergit");
+			let shayrma = $(".shayrma");
+			let burger = $(".burger");
+			let blockBtn = $(".block-btn img");
+			let tl2 = new TimelineMax();
+					tl2.add('point').to(blockBtn, 1, { opacity: 0, x: "-100%" }, 'point').to(fergit, 1, { scale: 1, opacity: 1, x: "-50%" }, 'point').add('newPoint').to(fergit, 1, { scale: 0, opacity: 0 }, 'newPoint+=3').to(burger, 1, { scale: 0, opacity: 0 }, 'newPoint+=3').to(shayrma, 1, { scale: 1, opacity: 1, x: "-50%" })
+		}
+	}, 2000)
+	});
+
+}
 
 let pageReload = () => {
 	let btnVar = document.querySelector('.shayrma a');
@@ -172,7 +183,7 @@ let pageReload = () => {
 //-------- -------- -------- --------
 
 //= vendors/greensock.js
-//= vendors/displace.min.js
+//= vendors/interactjs.min.js
 
 //-------- -------- -------- --------
 //-------- included js libs end

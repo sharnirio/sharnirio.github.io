@@ -218,11 +218,20 @@ h1 {
 
 html {
 	.js-op-0 {
+		// transition: opacity 0.3s ease;
 		opacity: 0;
+				&.drop-active {
+// transition: none;
+		}
 	}
 
 	.js-op-1 {
 		z-index: 99;
 		opacity: 1;
+
+		&.block-item {
+// transition: none;
+		}
 	}
+
 }
