@@ -17,16 +17,16 @@ module.exports = function() {
 			.pipe($.gp.plumber({ errorHandler: $.gp.notify.onError("Error: <%= error.message %>") }))
 			.pipe($.gp.rigger())
 			// .pipe($.gp.babel())
-			.pipe($.gp.uglify({
-			// 			//reduce or not the name of the arguments of variables, etc.
-						mangle: false,
-							output: {
-								// align js code
-								beautify: true,
-								// delete or not comments
-								comments: true,
-							}
-			}))
+			// .pipe($.gp.uglify({
+			// // 			//reduce or not the name of the arguments of variables, etc.
+			// 			mangle: false,
+			// 				output: {
+			// 					// align js code
+			// 					beautify: true,
+			// 					// delete or not comments
+			// 					comments: true,
+			// 				}
+			// }))
 			.pipe($.gulp.dest($.config.pathVar.path.production.js))
 	});
 
