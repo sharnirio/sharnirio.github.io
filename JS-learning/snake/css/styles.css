@@ -1,0 +1,40 @@
+html,
+body {
+	margin: 0;
+}
+
+.fields {
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+	width: 400px;
+	margin: 20px;
+	overflow: hidden;
+}
+
+.fields>div {
+	width: 20px;
+	height: 20px;
+	box-sizing: border-box;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	float: left;
+}
+
+div[data-game="fruit"] {
+	background: #ff0;
+}
+div[data-game="random-fruit"] {
+	background: #0f0;
+}
+div[data-game="snake"] {
+	background: #f00;
+}
+
+div[data-game="wall"] {
+	background: blue;
+}
+.fields-info {
+	font-size: 30px;
+	text-align: center;
+	max-width: 600px;
+}
