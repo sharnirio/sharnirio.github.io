@@ -8,19 +8,60 @@
 @import 'base/helpers';
 @import 'base/forms';
 @import 'base/typography';
+@import 'vendors/anicollection';
 // if the project is on wp
 // @import 'base/wp-reset';
+body {
+	text-align: center;
+	background-color: tomato;
+	overflow: hidden;
+	// background-image: url(http://samples.builtwith.care/js-banner-2/img/background-wide.jpg);
+}
 h1 {
 	text-align: center;
 	padding-top: 30px;
 }
-#wrapper {
-
+.js-hide {
+	display: none;
+	opacity: 0;
+	&.js-show {
+		display: block;
+	}
 }
+
 .jump-block {
+	height: 100vh;
+	display: flex;
+flex-direction: column;
+justify-content: flex-end;
 
 }
-body {
-	background-color: #000;
-	background-image: url(http://samples.builtwith.care/js-banner-2/img/background-wide.jpg);
+
+
+.dino-start {
+}
+.dino-start-img {
+}
+.dino-start-bm {
+	color: #fff;
+	padding: 10px 0;
+	background-color: #2881c5;
+	position: relative;
+	margin-left: -2000px;
+	margin-right: -2000px;
+	min-height: 170px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	h3 {
+		margin-bottom: 0px;
+	}
+	p {
+		margin-bottom: 5px;
+	}
+}
+.dino-start-btn {
+}
+.btn {
 }
