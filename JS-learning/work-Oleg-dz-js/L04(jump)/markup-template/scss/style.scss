@@ -1,0 +1,26 @@
+//-----import media mixins
+@import 'base/variables';
+@import "base/fonts";
+@import "vendors/include-media";
+@import 'vendors/normalize';
+@import "base/mixins";
+@import "base/button";
+@import 'base/helpers';
+@import 'base/forms';
+@import 'base/typography';
+// if the project is on wp
+// @import 'base/wp-reset';
+h1 {
+	text-align: center;
+	padding-top: 30px;
+}
+#wrapper {
+
+}
+.jump-block {
+
+}
+body {
+	background-color: #000;
+	background-image: url(http://samples.builtwith.care/js-banner-2/img/background-wide.jpg);
+}
