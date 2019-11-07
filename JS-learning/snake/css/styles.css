@@ -23,18 +23,69 @@ body {
 div[data-game="fruit"] {
 	background: #ff0;
 }
-div[data-game="random-fruit"] {
+
+*[data-game="random-fruit"] {
 	background: #0f0;
 }
-div[data-game="snake"] {
+
+*[data-game="snake"] {
 	background: #f00;
 }
 
-div[data-game="wall"] {
+*[data-game="wall"] {
 	background: blue;
+}
+
+h1 {
+	font-size: 30px;
+	text-align: center;
+	max-width: 600px;
+}
+
+.fields-start-btn,
+.fields-reload-btn {
+	max-width: 600px;
+	text-align: center;
+}
+
+.fields-start-btn a,
+.fields-reload-btn a {
+	display: inline-block;
+	padding: 5px 10px;
+	color: #fff;
+	font-size: 20px;
+	background-color: tomato;
+	text-decoration: none;
+	transition: opacity 0.3s ease;
+}
+
+.fields-reload-btn a:hover {
+	opacity: 0.7;
+}
+ p{
+	font-size: 25px;
 }
 .fields-info {
 	font-size: 30px;
 	text-align: center;
 	max-width: 600px;
+}
+
+html .js-hide {
+	display: none;
+}
+
+html .js-hide.js-show {
+	display: block;
+}
+.fields-wrapper {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-gap: 50px;
+}
+.fields-sq {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
 }

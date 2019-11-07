@@ -1,21 +1,43 @@
 <!doctype html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>1</title>
-        <link href="css/styles.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Shake2</h1>
-        <div class="fields"></div>
-        <div class="fields-info">Твои очки - <span class="fields-point">0</span></div>
-        <script src="js/helper.js"></script>
-        <script src="js/matrix.js"></script>
-        <script src="js/element.js"></script>
-        <script src="js/fruit.js"></script>
-        <script src="js/wall.js"></script>
-        <script src="js/snake.js"></script>
-        <script src="js/scripts.js"></script>
-    </body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Snake</title>
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="fields-wrapper">
+		<div class="fields-item">
+			<div class="fields"></div>
+			<div class="fields-info">
+				<p>Твои очки - <span class="fields-point">0</span></p>
+			</div>
+		</div>
+		<div class="fields-item">
+			<h1>Snake game</h1>
+			<div class="fields-start-btn">
+				<p>Управление производиться клавишами &#8592; &#8593; &#8594; &#8595;</p>
+				<p>Змейка - <span class="fields-sq" data-game="snake"></span></p>
+				<p>Стена - <span class="fields-sq" data-game="wall"></span></p>
+				<p>Фрукт - <span class="fields-sq" data-game="random-fruit"></span></p>
+				<a href="#">Нажми клавишу Enter или кликните сюда что бы начать</a>
+			</div>
+			<div class="fields-reload-btn js-hide">
+				<p>Игра окончена ваш финальный счет - <span class="fields-point-final">0</span></p>
+				<a href="#">Нажми что бы начать заново</a>
+			</div>
+		</div>
+	</div>
+	<script src="js/helper.js"></script>
+	<script src="js/matrix.js"></script>
+	<script src="js/element.js"></script>
+	<script src="js/fruit.js"></script>
+	<script src="js/wall.js"></script>
+	<script src="js/snake.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+
 </html>

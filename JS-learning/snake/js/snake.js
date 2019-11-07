@@ -7,6 +7,7 @@ class Snake extends Elem {
 		this.course = course;
 		this.alive = true;
 		this.point = 0;
+		this.speed = 1;
 	}
 
 	move() {
@@ -47,11 +48,10 @@ class Snake extends Elem {
 			break
 			case "fruit":
 			case "random-fruit":
-			(new Fruit(this.matrix, true, 1)).show();
 			this.point++;
 			this.cords.unshift(head);
 			this.matrix.setCell(head[0], head[1], 'snake');
-			fruit2.show();
+			fruit.show();
 			document.querySelector('.fields-point').textContent = this.point;
 			break
 			case "":
