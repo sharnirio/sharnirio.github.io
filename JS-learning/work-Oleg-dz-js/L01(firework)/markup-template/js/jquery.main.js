@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	pageReload();
 	initRemResize();
 	firewokInnit();
+	timerInit();
 }, false);
 //-------- -------- -------- --------
 //-------- js custom start

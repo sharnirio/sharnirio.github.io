@@ -27,6 +27,10 @@ h1 {
 	&.js-show {
 		display: block;
 	}
+	&.js-show-o  {
+		opacity: 1;
+		display: block;
+	}
 }
 
 .jump-block {
@@ -63,5 +67,43 @@ justify-content: flex-end;
 }
 .dino-start-btn {
 }
-.btn {
+#output {
+	margin-bottom: auto;
+	padding: 20vh 0 20px;
+	font-size: rem(60px);
+	color: #fff;
+}
+.dino-game {
+}
+.dino-game-img {
+	position: relative;
+
+}
+	.dino-game-img-dino {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 0;
+		padding-bottom: 0;
+		padding-left: 12px;
+	}
+.dino-game-img-bottle {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+> img {
+	// position: absolute;
+	left: 0px;
+
+	&:nth-of-type(2n) {
+		position: relative;
+		// display: none;
+	}
+}
+
+}
+.dino-game-btn {
+	padding: 20px 0;
 }
