@@ -1,14 +1,15 @@
 //-----import media mixins
-@import 'base/variables';
+@import "base/variables";
 @import "base/fonts";
 @import "vendors/include-media";
-@import 'vendors/normalize';
+@import "vendors/normalize";
 @import "base/mixins";
 @import "base/button";
-@import 'base/helpers';
-@import 'base/forms';
-@import 'base/typography';
-@import 'vendors/anicollection';
+@import "base/helpers";
+@import "base/forms";
+@import "base/typography";
+@import "vendors/anicollection";
+
 // if the project is on wp
 // @import 'base/wp-reset';
 body {
@@ -17,17 +18,21 @@ body {
 	overflow: hidden;
 	// background-image: url(http://samples.builtwith.care/js-banner-2/img/background-wide.jpg);
 }
+
 h1 {
 	text-align: center;
 	padding-top: 30px;
 }
+
 .js-hide {
 	display: none;
 	opacity: 0;
+
 	&.js-show {
 		display: block;
 	}
-	&.js-show-o  {
+
+	&.js-show-o {
 		opacity: 1;
 		display: block;
 	}
@@ -36,16 +41,16 @@ h1 {
 .jump-block {
 	height: 100vh;
 	display: flex;
-flex-direction: column;
-justify-content: flex-end;
-
+	flex-direction: column;
+	justify-content: flex-end;
 }
-
 
 .dino-start {
 }
+
 .dino-start-img {
 }
+
 .dino-start-bm {
 	color: #fff;
 	padding: 10px 0;
@@ -58,52 +63,70 @@ justify-content: flex-end;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
 	h3 {
 		margin-bottom: 0px;
 	}
+
 	p {
 		margin-bottom: 5px;
 	}
 }
+
 .dino-start-btn {
 }
+
 #output {
 	margin-bottom: auto;
 	padding: 20vh 0 20px;
 	font-size: rem(60px);
 	color: #fff;
 }
+
 .dino-game {
 }
+
 .dino-game-img {
+	// position: relative;
+}
+
+.dino-game-img-dino {
+	// position: absolute;
+	// left: 50%;
+	// transform: translateX(-50%);
+	// bottom: 0;
+	padding-bottom: 0;
+	padding-left: 12px;
+}
+
+.dino-game-img-bottle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	position: relative;
 
-}
-	.dino-game-img-dino {
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		bottom: 0;
-		padding-bottom: 0;
-		padding-left: 12px;
-	}
-.dino-game-img-bottle {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-position: relative;
-> img {
-	// position: absolute;
-	left: 0px;
-
-	&:nth-of-type(2n) {
-		position: relative;
-		// display: none;
+	> .dino-game-img-inner {
+		position: static;
+		text-align: center;
+		transform: translate(0%, 0%);
+		width: 141px;
+		&.js-off {
+			position: absolute;
+			left: -100px;
+			top: 0;
+			transform: translate(-50%, -100%);
+		}
 	}
 }
 
-}
 .dino-game-btn {
 	padding: 20px 0;
+}
+.dino-game-img img {
+	position: relative;
+}
+.an-jump {
+	transform: translateY(-200px);
+	transition: all 0.3s ease;
 }

@@ -1,14 +1,15 @@
 jQuery(document).ready(function() {
 	firstAn();
 	secondAn();
+	jumpAn();
+	// imgLeftAn();
 });
-
-
 
 
 //-------- -------- -------- --------
 //-------- js custom end
 //-------- -------- -------- --------
+
 function firstAn() {
 	let tl = new TimelineMax();
 	let firsText = $('.firs-text');
@@ -53,12 +54,78 @@ function thirdAn() {
 		dinoGame.addClass('js-show');
 	}})
 	.to(dinoGame, 1, { opacity: 1, scale:1, onComplete: function() {
-		// timerInit();
+		imgLeftAn();
 	}})
 }
 
-let timerInit = (timeArg = 3) => {
+function jumpAn() {
+	let tl4 = new TimelineMax();
+	var jumpBtn = $('.dino-game-btn');
+	var dinoImg = $('.dino-game-img img');
+
+	jumpBtn.on('click', function(event) {
+		event.preventDefault();
+		tl4.to(dinoImg, 0.7, { ease: Circ.easeOut, top: -200 }).to(dinoImg, 0.6, { top: 0 })
+	});
+}
+
+function imgLeftAn() {
+	var tl5 = new TimelineMax();
+	var bottleImg = $('.dino-game-img-inner.js-off');
+	var dinoImg = $('.dino-game-img img');
+	var timeAnn = 3;
+	var animateOn = true;
+
+	if (document.documentElement.clientWidth <= 1024) {
+		timeAnn = 2;
+	}
+	if (bottleImg.length == 0) {
+		console.log("You win");
+	}
+
+	if (bottleImg.length > 0) {
+		var bottleImgLast = bottleImg.last();
+
+		TweenMax.to(bottleImgLast, timeAnn, {
+			ease: Power0.easeOut,
+			left: "50%",
+			onComplete: function() {
+				clearInterval(idInterval);
+				if (animateOn) {
+				bottleImgLast.removeClass('js-off');
+				imgLeftAn();
+				}
+			}
+		})
+
+		var idInterval = setInterval(() => {
+			var bottleImgLastPosX = bottleImgLast.offset().left;
+			var bottleImgLastFullPosX = bottleImgLastPosX + bottleImgLast.width();
+			var bottleImgLastFullPosY = bottleImgLast.offset().top;
+			var dinoImgFullPosX = dinoImg.offset().left;
+			var dinoImgFullPosY = dinoImg.offset().top + dinoImg.height();
+			if (bottleImgLastFullPosX >= dinoImgFullPosX && bottleImgLastFullPosY <= dinoImgFullPosY) {
+				animateOn = false;
+				clearInterval(idInterval);
+				crashAn();
+			}
+		}, 100);
+	}
+}
+
+function crashAn() {
+	var dinoImg = $('.dino-game-img img');
+	TweenMax.to(dinoImg, 2, {x: 100, y: 0, rotation: 810, onComplete: function () {
+		finalAnn();
+	}
+	})
+}
+
+function finalAnn() {
 	console.log(123);
+}
+
+let timerInit = (timeArg = 3) => {
 	var time = timeArg,
 		fps = 60;
 	var Timer = function(obj) {
@@ -134,11 +201,3 @@ let timerInit = (timeArg = 3) => {
 		return document.getElementById(id);
 	}
 }
-//-------- -------- -------- --------
-//-------- included js libs start
-//-------- -------- -------- --------
-
-
-//-------- -------- -------- --------
-//-------- included js libs end
-//-------- -------- -------- --------
