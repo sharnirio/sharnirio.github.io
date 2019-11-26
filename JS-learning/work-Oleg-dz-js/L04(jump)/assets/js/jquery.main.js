@@ -3,10 +3,19 @@
 jQuery(document).ready(function () {
   firstAn();
   secondAn();
-  jumpAn(); // imgLeftAn();
+  jumpAn();
+  pageReload(".end .btn");
+  pageReload(".end-win-text .btn"); // finalAnnWin();
 }); //-------- -------- -------- --------
 //-------- js custom end
 //-------- -------- -------- --------
+
+function pageReload(btnClick) {
+  var btnVar = document.querySelector(btnClick);
+  btnVar.addEventListener('click', function pageReload() {
+    location.reload();
+  });
+}
 
 function firstAn() {
   var tl = new TimelineMax();
@@ -50,19 +59,25 @@ function secondAn() {
 function thirdAn() {
   var tl3 = new TimelineMax();
   var dinoGame = $('.dino-game');
-  tl3.set(dinoGame, {
-    scale: 0.5
+  var dinoGameImg = $('.dino-game-img img');
+  tl3.set(dinoGameImg, {
+    scale: 0.5,
+    y: -100,
+    x: -100
   }).to(dinoGame, 0, {
     onComplete: function onComplete() {
       dinoGame.addClass('js-show');
     }
+  }).to(dinoGameImg, 1, {
+    scale: 1,
+    y: 0,
+    x: 0
   }).to(dinoGame, 1, {
     opacity: 1,
-    scale: 1,
     onComplete: function onComplete() {
       imgLeftAn();
     }
-  });
+  }, -1);
 }
 
 function jumpAn() {
@@ -81,17 +96,14 @@ function jumpAn() {
 }
 
 function imgLeftAn() {
-  var tl5 = new TimelineMax();
   var bottleImg = $('.dino-game-img-inner.js-off');
   var dinoImg = $('.dino-game-img img');
-  var timeAnn = 3;
+  var timeAnn = document.documentElement.clientWidth <= 767 ? 1.5 : document.documentElement.clientWidth <= 1024 ? 2 : 1.5;
   var animateOn = true;
 
-  if (document.documentElement.clientWidth <= 1024) {
-    timeAnn = 2;
-  }
-
   if (bottleImg.length == 0) {
+    animateOn = false;
+    finalAnnWin();
     console.log("You win");
   }
 
@@ -116,7 +128,7 @@ function imgLeftAn() {
       var dinoImgFullPosX = dinoImg.offset().left;
       var dinoImgFullPosY = dinoImg.offset().top + dinoImg.height();
 
-      if (bottleImgLastFullPosX >= dinoImgFullPosX && bottleImgLastFullPosY <= dinoImgFullPosY) {
+      if (bottleImgLastFullPosX + 2 >= dinoImgFullPosX && bottleImgLastFullPosY + 2 <= dinoImgFullPosY) {
         animateOn = false;
         clearInterval(idInterval);
         crashAn();
@@ -138,7 +150,57 @@ function crashAn() {
 }
 
 function finalAnn() {
-  console.log(123);
+  var tl6 = new TimelineMax();
+  var dinoGame = $('.dino-game');
+  var end = $('.end');
+  tl6.to(dinoGame, 1, {
+    opacity: 0.3,
+    onComplete: function onComplete() {
+      dinoGame.removeClass('js-show');
+      end.addClass('js-show');
+    }
+  }).to(end, 1, {
+    opacity: 1
+  });
+}
+
+function finalAnnWin() {
+  var tl5 = new TimelineMax();
+  var endWin = $('.end-win');
+  var dino = $('.end-win-img-dino');
+  var bottle = $('.end-win-img-bottle');
+  var conf = $('.end-win-img-conf');
+  var text = $('.end-win-text');
+  var dinoGame = $('.dino-game');
+  var container = $('.container');
+  var output = $('#output');
+  tl5.to(dinoGame, 1, {
+    delay: 1,
+    opacity: 0.3,
+    onComplete: function onComplete() {
+      dinoGame.removeClass('js-show');
+      endWin.addClass('js-show');
+      container.addClass('js-hide');
+      output.addClass('js-hide');
+    }
+  }).to(endWin, 0.5, {
+    opacity: 1
+  }).to(bottle, 1, {
+    opacity: 1,
+    y: 0
+  }).to(dino, 1, {
+    opacity: 1,
+    x: 0,
+    y: 0
+  }).to(conf, .3, {
+    yoyo: true,
+    opacity: 1,
+    repeat: 6
+  }).to(conf, .3, {
+    opacity: 0
+  }).to(text, .3, {
+    opacity: 1
+  });
 }
 
 var timerInit = function timerInit() {

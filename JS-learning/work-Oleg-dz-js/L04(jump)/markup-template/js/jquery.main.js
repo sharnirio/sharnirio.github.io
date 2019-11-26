@@ -2,13 +2,22 @@ jQuery(document).ready(function() {
 	firstAn();
 	secondAn();
 	jumpAn();
-	// imgLeftAn();
+	pageReload(".end .btn");
+	pageReload(".end-win-text .btn");
+	// finalAnnWin();
 });
 
 
 //-------- -------- -------- --------
 //-------- js custom end
 //-------- -------- -------- --------
+
+function pageReload(btnClick) {
+	let btnVar = document.querySelector(btnClick);
+	btnVar.addEventListener('click', function pageReload() {
+		location.reload();
+	})
+}
 
 function firstAn() {
 	let tl = new TimelineMax();
@@ -74,16 +83,14 @@ function jumpAn() {
 }
 
 function imgLeftAn() {
-	let tl5 = new TimelineMax();
 	let bottleImg = $('.dino-game-img-inner.js-off');
 	let dinoImg = $('.dino-game-img img');
-	let timeAnn = 3;
+	let timeAnn = (document.documentElement.clientWidth <= 767) ? 1.5 : (document.documentElement.clientWidth <= 1024) ? 2 : 1.5;
 	let animateOn = true;
 
-	if (document.documentElement.clientWidth <= 1024) {
-		timeAnn = 2;
-	}
 	if (bottleImg.length == 0) {
+		animateOn = false;
+		finalAnnWin();
 		console.log("You win");
 	}
 
@@ -108,7 +115,7 @@ function imgLeftAn() {
 			let bottleImgLastFullPosY = bottleImgLast.offset().top;
 			let dinoImgFullPosX = dinoImg.offset().left;
 			let dinoImgFullPosY = dinoImg.offset().top + dinoImg.height();
-			if (bottleImgLastFullPosX >= dinoImgFullPosX && bottleImgLastFullPosY <= dinoImgFullPosY) {
+			if (bottleImgLastFullPosX+2 >= dinoImgFullPosX && bottleImgLastFullPosY+2 <= dinoImgFullPosY) {
 				animateOn = false;
 				clearInterval(idInterval);
 				crashAn();
@@ -139,6 +146,46 @@ function finalAnn() {
 	.to(end, 1, {
 		opacity: 1
 	})
+}
+
+function finalAnnWin() {
+	let tl5 = new TimelineMax();
+	let endWin = $('.end-win');
+	let dino = $('.end-win-img-dino');
+	let bottle = $('.end-win-img-bottle');
+	let conf = $('.end-win-img-conf');
+	let text = $('.end-win-text');
+	let dinoGame = $('.dino-game');
+	let container = $('.container');
+	let output = $('#output');
+	tl5.to(dinoGame, 1, {
+			delay: 1,
+			opacity: 0.3,
+			onComplete: function () {
+				dinoGame.removeClass('js-show');
+				endWin.addClass('js-show');
+				container.addClass('js-hide');
+				output.addClass('js-hide');
+			}
+		}).to(endWin, 0.5, {
+				opacity: 1
+			}).to(bottle, 1, {
+		opacity: 1,
+		y: 0
+	}).to(dino, 1, {
+		opacity: 1,
+		x: 0,
+		y: 0
+	}).to(conf, .3, {
+		yoyo: true,
+		opacity: 1,
+		repeat: 6
+	}).to(conf, .3, {
+		opacity: 0
+	}).to(text, .3, {
+		opacity: 1
+	})
+
 }
 
 let timerInit = (timeArg = 3) => {

@@ -26,7 +26,7 @@ global.$ = {
 			//if you need additional options
 			suffix: {
 			// 1: '@1x',
-			2: '@2x',
+			// 2: '@2x',
 			// 3: '@3x'
 		}
 		}
