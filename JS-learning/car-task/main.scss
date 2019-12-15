@@ -1,0 +1,161 @@
+.wrapper {
+	background-color: #C2E9F8;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	overflow-x: hidden;
+}
+
+.top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.cloud {
+	@extend %a;
+	left: 30px;
+	bottom: -150px;
+}
+
+.sun {
+	@extend %a;
+	right: 130px;
+	bottom: -150px;
+}
+
+.cloud1 {
+	@extend %a;
+	right: 230px;
+	bottom: -200px;
+}
+
+.mount {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	position: relative;
+	bottom: -170px;
+
+	&>img {
+		margin-left: -45px;
+		margin-right: -45px;
+	}
+}
+
+.mount1 {
+	padding-bottom: 50px;
+}
+
+.mount2 {
+	padding-bottom: 150px;
+}
+
+.mount3 {
+	padding-bottom: 50px;
+}
+
+.mount4 {}
+
+
+.knoll {
+	position: relative;
+
+	img {
+		max-width: 100%;
+		display: block;
+	}
+}
+
+%a {
+	position: absolute;
+}
+
+.tree-img {
+	@extend %a;
+	bottom: 0px;
+	left: 170px;
+
+}
+
+.tree-big-img {
+	@extend %a;
+	left: 50px;
+	bottom: 0px;
+
+}
+
+.tree-img-1 {
+	@extend %a;
+	bottom: 0px;
+	right: 100px;
+	z-index: 1;
+}
+
+.tree-big-img-1 {
+	@extend %a;
+	right: -50px;
+	bottom: 0px;
+}
+
+.bush1-img {
+	@extend %a;
+	right: -20px;
+	bottom: 20px;
+}
+
+.knoll-img {
+	width: 100%;
+	max-width: 100%;
+}
+
+.road {
+	position: relative;
+	min-height: 95px;
+	background-color: #A08E8C;
+}
+
+.bottom {
+	min-height: 35px;
+	background-color: #9CC53B;
+	position: relative;
+
+	.bush {
+		@extend %a;
+		left: 40px;
+		bottom: 0px;
+	}
+
+	.bush1 {
+		@extend %a;
+		left: 120px;
+		bottom: 0px;
+	}
+}
+
+.car-block {
+	display: flex;
+	@extend %a;
+	left: 50px;
+	bottom: 20px;
+}
+
+.smoke {
+	padding-bottom: 30px;
+}
+
+.car {}
+
+.stone1 {
+	@extend %a;
+	bottom: 50px;
+	right: 30%;
+}
+
+.stone2 {
+	@extend %a;
+	bottom: 80px;
+	right: 10%;
+}
