@@ -12,25 +12,55 @@
 	top: 0;
 	left: 0;
 	right: 0;
+	z-index: 9;
 }
-
+.an-l {
+	@extend %a;
+	left: -20%;
+}
+.an-r {
+	@extend %a;
+	right: -20%;
+}
 .cloud {
-	@extend %a;
-	left: 30px;
 	bottom: -150px;
 }
-
-.sun {
-	@extend %a;
-	right: 130px;
-	bottom: -150px;
-}
-
 .cloud1 {
-	@extend %a;
-	right: 230px;
 	bottom: -200px;
 }
+.cloud2 {
+	bottom: -250px;
+}
+.cloud3 {
+	bottom: -120px;
+}
+.cloud4 {
+	bottom: -180px;
+}
+
+.cloud-r {
+	bottom: -140px;
+}
+.cloud1-r {
+	bottom: -230px;
+}
+.cloud2-r {
+	bottom: -70px;
+}
+.cloud3-r {
+	bottom: -190px;
+}
+.cloud4-r {
+	bottom: -280px;
+}
+.an-s {
+	@extend %a;
+	right: 0%;
+	bottom: 0px;
+	z-index: -1;
+}
+
+
 
 .mount {
 	display: flex;
@@ -38,6 +68,8 @@
 	align-items: flex-end;
 	position: relative;
 	bottom: -170px;
+	max-height: 300px;
+	z-index: 9;
 
 	&>img {
 		margin-left: -45px;
@@ -62,6 +94,7 @@
 
 .knoll {
 	position: relative;
+	z-index: 10;
 
 	img {
 		max-width: 100%;
@@ -112,12 +145,14 @@
 }
 
 .road {
+	z-index: 11;
 	position: relative;
 	min-height: 95px;
 	background-color: #A08E8C;
 }
 
 .bottom {
+	z-index: 12;
 	min-height: 35px;
 	background-color: #9CC53B;
 	position: relative;
