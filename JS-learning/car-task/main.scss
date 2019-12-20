@@ -14,26 +14,33 @@
 	right: 0;
 	z-index: 9;
 }
+
 .an-l {
 	@extend %a;
 	left: -20%;
 }
+
 .an-r {
 	@extend %a;
 	right: -20%;
 }
+
 .cloud {
 	bottom: -150px;
 }
+
 .cloud1 {
 	bottom: -200px;
 }
+
 .cloud2 {
 	bottom: -250px;
 }
+
 .cloud3 {
 	bottom: -120px;
 }
+
 .cloud4 {
 	bottom: -180px;
 }
@@ -41,18 +48,23 @@
 .cloud-r {
 	bottom: -140px;
 }
+
 .cloud1-r {
 	bottom: -230px;
 }
+
 .cloud2-r {
 	bottom: -70px;
 }
+
 .cloud3-r {
 	bottom: -190px;
 }
+
 .cloud4-r {
 	bottom: -280px;
 }
+
 .an-s {
 	@extend %a;
 	right: 0%;
@@ -171,26 +183,151 @@
 }
 
 .car-block {
-	display: flex;
 	@extend %a;
-	left: 50px;
-	bottom: 20px;
+	display: inline-flex;
+	align-items: center;
+	left: -30%;
+	transform: translateX(-100%);
+	bottom: 10px;
+	position: relative;
+	z-index: 2;
 }
 
 .smoke {
-	padding-bottom: 30px;
+	padding-bottom: 20px;
+	transform-origin: right center;
 }
 
 .car {}
 
 .stone1 {
 	@extend %a;
-	bottom: 50px;
-	right: 30%;
+	top: 20px;
+	right: 20%;
 }
 
 .stone2 {
 	@extend %a;
-	bottom: 80px;
-	right: 10%;
+	bottom: 20px;
+	left: 20%;
+}
+.ufo {
+	position: absolute;
+	bottom: 20px;
+	right: 0;
+	z-index: 9;
+}
+html svg.rocket-svg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 40%;
+	height: auto;
+	overflow: visible;
+}
+.rocket {
+  transform-box: fill-box;
+  offset-anchor: 50% 50%;
+  /*   if offset anchor isn't supported we can use transform-origin instead */
+  transform-origin: 50% 50%;
+  offset-rotate: auto;
+  offset-path: path('M20.2 679.7c210.3-19.1 398.9-219.6 236.5-257.5-170.5-16.8-132.5 146.2-6.8 184.7 141.6 55.7 242.3-9.9 215.3-89.3-43.7-94-330-292-85-347.3 135.5-18.7 251 54.7 302.9 141.5 50.2 85 25.5 183.8 136.6 248.6C1000 627 1037.7 427 1039 395.7c20.3-196.6-133.8-218-199.5-170s-11.3 138.5 107 114S1126.7 147.6 1092.6 67c-2.4-12.2-1.4-23.1 9.2-31.8 100.8-49.4 112.2 198.4 239-23.8');
+  animation: move 10s infinite linear;
+}
+
+@keyframes move {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+//  animation
+#rigth-wheel {
+	animation: wheelRight 2s linear infinite;
+	animation-delay: 500ms;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+#left-wheel {
+	animation: wheelLeft 2s linear infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+
+@-webkit-keyframes wheelRight {
+	from {
+		-webkit-transform: translate(0px, 0px) rotateZ(0deg);
+		transform: translate(0px, 0px) rotateZ(0deg);
+
+	}
+
+	50% {
+		-webkit-transform: translate(3px, -6px) rotateZ(180deg);
+		transform: translate(3px, -6px) rotateZ(180deg);
+	}
+
+	to {
+		-webkit-transform: translate(0px, 0px) rotateZ(360deg);
+		transform: translate(0px, 0px) rotateZ(360deg);
+	}
+}
+
+@keyframes wheelRight {
+	from {
+		-webkit-transform: translate(0px, 0px) rotateZ(0deg);
+		transform: translate(0px, 0px) rotateZ(0deg);
+
+	}
+
+	50% {
+		-webkit-transform: translate(3px, -6px) rotateZ(180deg);
+		transform: translate(3px, -6px) rotateZ(180deg);
+	}
+
+	to {
+		-webkit-transform: translate(0px, 0px) rotateZ(360deg);
+		transform: translate(0px, 0px) rotateZ(360deg);
+	}
+}
+
+@-webkit-keyframes wheelLeft {
+	from {
+		-webkit-transform: translate(0px, 0px) rotateZ(0deg);
+		transform: translate(0px, 0px) rotateZ(0deg);
+
+	}
+
+	50% {
+		-webkit-transform: translate(6px, -3px) rotateZ(180deg);
+		transform: translate(6px, -3px) rotateZ(180deg);
+	}
+
+	to {
+		-webkit-transform: translate(0px, 0px) rotateZ(360deg);
+		transform: translate(0px, 0px) rotateZ(360deg);
+	}
+}
+
+@keyframes wheelLeft {
+	from {
+		-webkit-transform: translate(0px, 0px) rotateZ(0deg);
+		transform: translate(0px, 0px) rotateZ(0deg);
+
+	}
+
+	50% {
+		-webkit-transform: translate(6px, -3px) rotateZ(180deg);
+		transform: translate(6px, -3px) rotateZ(180deg);
+	}
+
+	to {
+		-webkit-transform: translate(0px, 0px) rotateZ(360deg);
+		transform: translate(0px, 0px) rotateZ(360deg);
+	}
 }
