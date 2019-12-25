@@ -16,11 +16,11 @@
 }
 
 .an-l {
-  left: -20%;
+  left: 0%;
 }
 
 .an-r {
-  right: -20%;
+  right: 0%;
 }
 
 .an-s {
@@ -313,8 +313,9 @@ html svg.rocket-svg {
   height: auto;
   fill: #ccc;
   position: absolute;
-  top: 0;
+  bottom: calc(-100vh + 200px);
   left: 0;
   right: 0;
+  /* Fix Safari rendering bug */
   transform: translateZ(0);
 }

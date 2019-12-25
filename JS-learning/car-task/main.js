@@ -12,16 +12,16 @@ jQuery(document).ready(function () {
 
 //function jsActive()
 function cloudA() {
-	// tlTop.staggerTo(topImg, 3, {left:"+100%"}, 0);
 
 	var anLeft = $('.an-l');
 	var anRight = $('.an-r');
 	var anDuration = 18;
-	// var tlAnLeft = gsap.timeline({repeat: -1, repeatDelay: 0, ease: "none"});
 
+	gsap.set(anLeft, {xPercent: -100})
 	gsap.to(anLeft, {repeat: -1, ease: "none",duration: anDuration, stagger: anDuration/3, css: {left:"+100%"}});
 	gsap.to(anLeft, {repeat: -1, ease: "none", yoyo:true,duration: 2, css: {y:"70%"}});
 
+	gsap.set(anRight, {xPercent: 100})
 	gsap.to(anRight, {delay: -anDuration+5, repeat: -1, ease: "none",duration: anDuration, stagger: anDuration/4, css: {right:"+100%"}});
 	gsap.to(anRight, {repeat: -1, ease: "none", yoyo:true,duration: 2, css: {y:"-70%"}});
 
