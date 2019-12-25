@@ -25,6 +25,20 @@
 	right: -20%;
 }
 
+.an-s {
+	@extend %a;
+	right: 0%;
+	top: 0px;
+	z-index: -1;
+	transform: translate(-50%,-50%);
+}
+
+.sun {
+	width: 105px;
+	height: 105px;
+	border-radius: 50%;
+	background-color: #FFF8A7;
+}
 .cloud {
 	bottom: -150px;
 }
@@ -64,14 +78,6 @@
 .cloud4-r {
 	bottom: -280px;
 }
-
-.an-s {
-	@extend %a;
-	right: 0%;
-	bottom: 0px;
-	z-index: -1;
-}
-
 
 
 .mount {
@@ -227,7 +233,7 @@ html svg.rocket-svg {
 	height: auto;
 	overflow: visible;
 }
-.rocket {
+.rocket2 {
   transform-box: fill-box;
   offset-anchor: 50% 50%;
   /*   if offset anchor isn't supported we can use transform-origin instead */
@@ -330,4 +336,26 @@ html svg.rocket-svg {
 		-webkit-transform: translate(0px, 0px) rotateZ(360deg);
 		transform: translate(0px, 0px) rotateZ(360deg);
 	}
+}
+
+
+
+
+#svg {
+  overflow: visible;
+	height: auto;
+	fill: #ccc;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+
+
+//   /* Fix Safari rendering bug */
+  transform: translateZ(0);
+}
+
+path {
+  // stroke-width: 2;
+  // stroke: gray;
 }
