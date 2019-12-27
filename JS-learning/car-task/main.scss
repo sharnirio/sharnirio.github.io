@@ -1,3 +1,23 @@
+@mixin aspect-ratio($x, $y, $withinSelector: div) {
+	$var-aspect-ratio: ($y / $x);
+	$var-aspect-ratio-round: round($var-aspect-ratio * 10000) / 10000;
+	position: relative;
+	overflow: hidden;
+	&:before {
+		content: "";
+		display: block;
+		width: 100%;
+		padding-top: $var-aspect-ratio-round * 100%;
+	}
+	& > #{$withinSelector} {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+}
+
 .wrapper {
 	position: relative;
 	min-height: 100vh;
@@ -7,6 +27,8 @@
 	overflow-x: hidden;
 }
 .wrapper-background {
+	transform: translateZ(0);
+	// will-change: transform;
 	background-color: #C2E9F8;
 	position: absolute;
 	top: 0;
@@ -47,46 +69,14 @@
 	border-radius: 50%;
 	background-color: #FFF8A7;
 }
+
 .cloud {
-	top: 50px;
-}
-
-.cloud1 {
-	top: 120px;
-}
-
-.cloud2 {
-	top: 150px;
-}
-
-.cloud3 {
-	top: 170px;
-}
-
-.cloud4 {
-	top: 220px;
+	top: 100px;
 }
 
 .cloud-r {
-	top: 240px;
+	top: 150px;
 }
-
-.cloud1-r {
-	top: 130px;
-}
-
-.cloud2-r {
-	top: 70px;
-}
-
-.cloud3-r {
-	top: 190px;
-}
-
-.cloud4-r {
-	top: 280px;
-}
-
 
 .mount {
 	display: flex;
@@ -223,11 +213,45 @@
 	bottom: 20px;
 	left: 25%;
 }
+.ufo-block {
+	@include aspect-ratio(1920,500,"#svg");
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 70px;
+	z-index: -1;
+	@media (max-width: 1200px) {
+		bottom: 0;
+	}
+	&:before {
+		padding-top: 28%;
+	}
+}
+#svg {
+  overflow: visible;
+	height: auto;
+	fill: #ccc;
+	// position: absolute;
+	// bottom: calc(-100vh + 200px);
+	// left: 0;
+	// right: 0;
+	 /* Fix Safari rendering bug */
+  transform: translateZ(0);
+}
+
+path {
+  // stroke-width: 2;
+  // stroke: gray;
+}
+
 .ufo {
 	position: absolute;
+	top: 0;
 	bottom: 20px;
 	right: 0;
+	left: 0;
 	z-index: 9;
+	background-color: #000;
 }
 html svg.rocket-svg {
 	position: fixed;
@@ -342,24 +366,4 @@ html svg.rocket-svg {
 		-webkit-transform: translate(0px, 0px) rotateZ(360deg);
 		transform: translate(0px, 0px) rotateZ(360deg);
 	}
-}
-
-
-
-
-#svg {
-  overflow: visible;
-	height: auto;
-	fill: #ccc;
-	position: absolute;
-	bottom: calc(-100vh + 200px);
-	left: 0;
-	right: 0;
-	 /* Fix Safari rendering bug */
-  transform: translateZ(0);
-}
-
-path {
-  // stroke-width: 2;
-  // stroke: gray;
 }

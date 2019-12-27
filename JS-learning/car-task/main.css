@@ -8,6 +8,7 @@
 }
 
 .wrapper-background {
+  transform: translateZ(0);
   background-color: #C2E9F8;
   position: absolute;
   top: 0;
@@ -48,43 +49,11 @@
 }
 
 .cloud {
-  top: 50px;
-}
-
-.cloud1 {
-  top: 120px;
-}
-
-.cloud2 {
-  top: 150px;
-}
-
-.cloud3 {
-  top: 170px;
-}
-
-.cloud4 {
-  top: 220px;
+  top: 100px;
 }
 
 .cloud-r {
-  top: 240px;
-}
-
-.cloud1-r {
-  top: 130px;
-}
-
-.cloud2-r {
-  top: 70px;
-}
-
-.cloud3-r {
-  top: 190px;
-}
-
-.cloud4-r {
-  top: 280px;
+  top: 150px;
 }
 
 .mount {
@@ -206,11 +175,57 @@
   left: 25%;
 }
 
+.ufo-block {
+  position: relative;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  z-index: -1;
+}
+
+.ufo-block:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 26.04%;
+}
+
+.ufo-block > #svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .ufo-block {
+    bottom: 0;
+  }
+}
+
+.ufo-block:before {
+  padding-top: 28%;
+}
+
+#svg {
+  overflow: visible;
+  height: auto;
+  fill: #ccc;
+  /* Fix Safari rendering bug */
+  transform: translateZ(0);
+}
+
 .ufo {
   position: absolute;
+  top: 0;
   bottom: 20px;
   right: 0;
+  left: 0;
   z-index: 9;
+  background-color: #000;
 }
 
 html svg.rocket-svg {
@@ -314,16 +329,4 @@ html svg.rocket-svg {
     -webkit-transform: translate(0px, 0px) rotateZ(360deg);
     transform: translate(0px, 0px) rotateZ(360deg);
   }
-}
-
-#svg {
-  overflow: visible;
-  height: auto;
-  fill: #ccc;
-  position: absolute;
-  bottom: calc(-100vh + 200px);
-  left: 0;
-  right: 0;
-  /* Fix Safari rendering bug */
-  transform: translateZ(0);
 }

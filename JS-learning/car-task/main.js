@@ -15,28 +15,29 @@ function cloudA() {
 
 	var anLeft = $('.an-l');
 	var anRight = $('.an-r');
-	var anDuration = 18;
+	var anDuration = 12;
 
 	gsap.set(anLeft, {x: "-100%"})
 	gsap.to(anLeft, {repeat: -1, ease: "none",duration: anDuration, stagger: anDuration/3, css: {x: "100vw"}});
-	gsap.to(anLeft, {repeat: -1, ease: "none", yoyo:true,duration: 2, css: {y:"70%"}});
+
+	gsap.to(anLeft, {repeat: -1, ease: "none",duration: 2, yoyo:true, y: gsap.utils.wrap(["70%","-70%","50%","-50%"]) });
 
 	gsap.set(anRight, {x: "100%"})
 	gsap.to(anRight, {delay: -anDuration+5, repeat: -1, ease: "none",duration: anDuration, stagger: anDuration/4, css: {x: "-100vw"}});
-	gsap.to(anRight, {repeat: -1, ease: "none", yoyo:true,duration: 2, css: {y:"-70%"}});
+	gsap.to(anRight, {repeat: -1, ease: "none", yoyo:true,duration: 2, css: {y:gsap.utils.wrap(["-90%","80%","-80%","90%"])}});
 
 
 }
 
 function sunA() {
-	var anDurationSun = 20;
+	var anDurationSun = 30;
 	var anSun = $('.an-s');
 	var wrapperBlock = $('.wrapper-background');
 
 
 	gsap.set(anSun, {xPercent: 100, yPercent: -100})
-	gsap.to(anSun, {delay: 0, repeat: -1, ease: "none", yoyo:true, duration: anDurationSun/2, css: {x:"-70vh",
-	y: "70vh", backgroundColor: "#CD853F", scale: 1.5}});
+	gsap.to(anSun, {delay: 0, repeat: -1, ease: "none", yoyo:true, duration: anDurationSun/2, css: {x:"-70vw",
+	y: "90vh", backgroundColor: "#CD853F", scale: 2}});
 
 	gsap.to(wrapperBlock, {repeat: -1, yoyo:true, ease: "none",duration: anDurationSun/2, css: {backgroundColor: "#CD853F"}});
 }
