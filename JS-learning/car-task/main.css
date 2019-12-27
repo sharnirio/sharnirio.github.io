@@ -1,10 +1,19 @@
 .wrapper {
-  background-color: #C2E9F8;
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow-x: hidden;
+}
+
+.wrapper-background {
+  background-color: #C2E9F8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .top {
@@ -176,8 +185,7 @@
 .car-block {
   display: inline-flex;
   align-items: center;
-  left: -30%;
-  transform: translateX(-100%);
+  left: 0%;
   bottom: 10px;
   position: relative;
   z-index: 2;

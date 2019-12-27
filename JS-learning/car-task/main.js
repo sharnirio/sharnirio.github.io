@@ -18,11 +18,11 @@ function cloudA() {
 	var anDuration = 18;
 
 	gsap.set(anLeft, {xPercent: -100})
-	gsap.to(anLeft, {repeat: -1, ease: "none",duration: anDuration, stagger: anDuration/3, css: {left:"+100%"}});
+	gsap.to(anLeft, {repeat: -1, ease: "none",duration: anDuration, stagger: anDuration/3, css: {left:"+100%", xPercent: 100}});
 	gsap.to(anLeft, {repeat: -1, ease: "none", yoyo:true,duration: 2, css: {y:"70%"}});
 
 	gsap.set(anRight, {xPercent: 100})
-	gsap.to(anRight, {delay: -anDuration+5, repeat: -1, ease: "none",duration: anDuration, stagger: anDuration/4, css: {right:"+100%"}});
+	gsap.to(anRight, {delay: -anDuration+5, repeat: -1, ease: "none",duration: anDuration, stagger: anDuration/4, css: {right:"+100%", xPercent: -100}});
 	gsap.to(anRight, {repeat: -1, ease: "none", yoyo:true,duration: 2, css: {y:"-70%"}});
 
 
@@ -31,7 +31,7 @@ function cloudA() {
 function sunA() {
 	var anDurationSun = 20;
 	var anSun = $('.an-s');
-	var wrapperBlock = $('.wrapper');
+	var wrapperBlock = $('.wrapper-background');
 
 
 	gsap.set(anSun, {xPercent: 100, yPercent: -100})
@@ -47,9 +47,9 @@ function carA() {
 	var anDuration = 12;
 	var anDurationSun = 20;
 
-
-	gsap.to(carBlock, {repeat: -1, ease: "none",duration: anDuration, css: {left:"+100%", x: 0}});
-	tlCar.to(carBlock, {duration: anDuration*2/5, css: {y:"-70px"}}).to(carBlock, {duration: anDuration*3/5, css: {y:"0px"}});
+	gsap.set(carBlock, {xPercent: -100})
+	gsap.to(carBlock, {repeat: -1, ease: "none",duration: anDuration, css: {left:"+100%", xPercent: 100}});
+	tlCar.to(carBlock, {duration: anDuration*1/5, css: {y:"-70px"}}).to(carBlock, {duration: anDuration*4/5, css: {y:"0px"}});
 	gsap.to(smoke, {repeat: -1, ease: "none", duration: 1, yoyo:true, css: {opacity:0.6, scale: 0.8, fill: "#000"}});
 }
 
