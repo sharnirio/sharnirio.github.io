@@ -17,6 +17,7 @@
 .top {
 	position: fixed;
 	top: 0;
+	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 9;
@@ -47,43 +48,43 @@
 	background-color: #FFF8A7;
 }
 .cloud {
-	bottom: -150px;
+	top: 50px;
 }
 
 .cloud1 {
-	bottom: -200px;
+	top: 120px;
 }
 
 .cloud2 {
-	bottom: -250px;
+	top: 150px;
 }
 
 .cloud3 {
-	bottom: -120px;
+	top: 170px;
 }
 
 .cloud4 {
-	bottom: -180px;
+	top: 220px;
 }
 
 .cloud-r {
-	bottom: -140px;
+	top: 240px;
 }
 
 .cloud1-r {
-	bottom: -230px;
+	top: 130px;
 }
 
 .cloud2-r {
-	bottom: -70px;
+	top: 70px;
 }
 
 .cloud3-r {
-	bottom: -190px;
+	top: 190px;
 }
 
 .cloud4-r {
-	bottom: -280px;
+	top: 280px;
 }
 
 
@@ -201,7 +202,6 @@
 	align-items: center;
 	left: 0%;
 	bottom: 10px;
-	position: relative;
 	z-index: 2;
 }
 
@@ -214,14 +214,14 @@
 
 .stone1 {
 	@extend %a;
-	top: 20px;
-	right: 20%;
+	top: 10px;
+	right: 15%;
 }
 
 .stone2 {
 	@extend %a;
 	bottom: 20px;
-	left: 20%;
+	left: 25%;
 }
 .ufo {
 	position: absolute;
