@@ -4,6 +4,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
 		a {
 			padding: 5px 10px;
 			background-color: pink;
