@@ -1,3 +1,17 @@
+#header {
+	padding: 30px;
+	background-color: #ccc;
+	nav {
+		display: flex;
+		justify-content: center;
+		a {
+			padding: 5px 10px;
+			background-color: pink;
+			margin-right: 10px;
+		}
+	}
+}
+
 .flex {
 	body {
 		min-height: 100vh;
