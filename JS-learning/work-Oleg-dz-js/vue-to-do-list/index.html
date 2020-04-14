@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css.css">
+  <title>Smart slider</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Let's create a Todo list.</h1>
+    <ol>
+      <li>ability to add, edit, delete </li>
+      <li>ability to make task as complete</li>
+      <li>ability to clear all complete</li>
+      <li>abiltity to delete all tasks</li>
+    </ol>
+    <div id="app">
+      <h2>Please add you first task</h2>
+      <p><label><input type="text" v-model="inputValue"><span class="add" @click="addTask">add task</span></label></p>
+      <p><label @click="checkAllTask"><input type="checkbox" v-model="allCheck"> All task as complete</label><span class="delete" @click="removeAllCompleateTask">delete all complete task</span></p>
+      <ul class="list">
+        <li v-for="(todo, index) in todos" :class="{isCompleate: todo.compleate }">
+          <label class="done"><input type="checkbox" v-model="todo.compleate"><span>done</span></label>
+          <span v-if="todo.disable" class="text">{{todo.text}}</span>
+          <input v-else class="text" type="text" v-model="todo.text" @blur="todo.disable = true" :disabled="todo.disable"><span v-if="!todo.compleate" class="edit" @click="editTask(index)">edit</span> <span class="remove" @click="removeTask(index)">x</span>
+        </li>
+      </ul>
+      <!-- <p>{{ todos }}</p> -->
+    </div>
+  </div>
+</body>
+<!-- версия для разработки, отображает полезные предупреждения в консоли -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="main.js"></script>
+
+</html>
