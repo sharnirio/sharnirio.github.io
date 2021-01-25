@@ -64,3 +64,18 @@
 .grid #wrapper {
   background-color: tomato;
 }
+
+html.grid-v2,
+.grid-v2 body {
+  height: 100%;
+}
+
+.grid-v2 #wrapper {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto 1fr auto;
+}
+
+.grid-v2 #main {
+  background-color: tomato;
+}
